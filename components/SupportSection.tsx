@@ -29,7 +29,7 @@ export default function SupportSection() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-maroon relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Abstract Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-maroon rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
@@ -83,7 +83,7 @@ export default function SupportSection() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-maroon to-[#4a0000] rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group">
+        <div className="bg-gradient-to-r from-[#C41E3A] to-[#A01830] rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--brand-gold)_0%,_transparent_50%)] opacity-20 pointer-events-none" />
           
           <div className="flex-1 text-center md:text-left">

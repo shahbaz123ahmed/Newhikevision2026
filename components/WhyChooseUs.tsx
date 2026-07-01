@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-maroon overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
           <div className="max-w-3xl">
@@ -79,7 +79,6 @@ export default function WhyChooseUs() {
             <div className="flex -space-x-4">
               {[1, 2, 3, 4, 5].map((i) => (
                 <div key={i} className="w-16 h-16 rounded-full border-4 border-maroon bg-gray-200 overflow-hidden relative group-hover:scale-110 transition-transform duration-500 shadow-xl">
-                   <div className="absolute inset-0 bg-maroon/20 mix-blend-overlay" />
                    <img src={`https://i.pravatar.cc/150?u=${i}`} alt="Expert" className="w-full h-full object-cover" />
                 </div>
               ))}

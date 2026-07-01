@@ -46,13 +46,13 @@ export default function TechnologiesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Premium Technologies Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-maroon">
+      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 pl-4 lg:pl-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold font-black text-xs uppercase tracking-[0.2em]">
                 <ShieldCheck size={14} />
                 <span>Next-Gen Security Standards</span>
@@ -85,7 +85,7 @@ export default function TechnologiesPage() {
               </div>
             </div>
             
-            <div className="relative group">
+            <div className="relative group mt-10 lg:mt-14">
               <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-3xl transform rotate-6 transition-transform group-hover:rotate-12 duration-1000" />
               <div className="relative bg-white/5 backdrop-blur-md rounded-[60px] p-6 border border-white/10 overflow-hidden">
                  <img 
@@ -93,7 +93,7 @@ export default function TechnologiesPage() {
                    alt="Core Tech" 
                    className="w-full h-auto object-cover rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
                  />
-                 <div className="absolute inset-0 bg-gradient-to-t from-maroon/80 to-transparent" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                  <div className="absolute bottom-10 left-10 text-white">
                     <p className="text-5xl font-black uppercase tracking-tight leading-none mb-2">Core <span className="text-gold">Tech</span></p>
                     <div className="flex items-center gap-3">
@@ -182,7 +182,7 @@ export default function TechnologiesPage() {
       <section className="py-24 bg-white relative overflow-hidden">
          <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[100px]" />
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-maroon rounded-[50px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
+            <div className="page-hero rounded-[50px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
                <div className="w-full md:w-1/2 space-y-6 relative z-10">
                   <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
                      ADVANCED <span className="text-gold">SURVEILLANCE</span> FOR EVERY ENVIRONMENT

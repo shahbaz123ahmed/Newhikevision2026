@@ -98,7 +98,7 @@ export default function AdminDashboard() {
           <div className="px-6 py-4 bg-gray-50 rounded-3xl border border-gray-100 flex items-center gap-4">
              <div className="text-right">
                 <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Unread Alerts</p>
-                <p className="text-xl font-black text-maroon">{data?.stats.unreadMessages + data?.stats.pendingEnquiries}</p>
+                <p className="text-xl font-black text-maroon">{(data?.stats?.unreadMessages || 0) + (data?.stats?.pendingEnquiries || 0)}</p>
              </div>
           </div>
           <button 
@@ -321,7 +321,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* System Health / Storage Mockup */}
-        <div className="bg-[#6b0000] p-8 rounded-[40px] text-white overflow-hidden relative border border-white/5 shadow-2xl">
+        <div className="bg-[#C41E3A] p-8 rounded-[40px] text-white overflow-hidden relative border border-white/5 shadow-2xl">
            <h3 className="text-xl font-black uppercase tracking-tight mb-1 relative z-10">System <span className="text-white"> Health</span></h3>
            <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-10 relative z-10">Performance Matrix</p>
            

@@ -58,6 +58,9 @@ export async function POST(req: Request) {
     }
 
 
+    const validCategory = (category && category !== "undefined" && category !== "") ? category : undefined;
+    const validSubCategory = (subCategory && subCategory !== "undefined" && subCategory !== "") ? subCategory : undefined;
+
     const product = await Product.create({ 
       name, 
       slug, 
@@ -65,8 +68,8 @@ export async function POST(req: Request) {
       description, 
       features, 
       keyFeatures, 
-      category: category || undefined, 
-      subCategory: subCategory || undefined, 
+      category: validCategory, 
+      subCategory: validSubCategory, 
       isFeatured, 
       images: imageUrls 
     });

@@ -19,6 +19,13 @@ export default function Navbar() {
     const fetchCatalog = async () => {
       try {
         const res = await fetch('/api/nav-products');
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new TypeError("Response is not JSON");
+        }
         const data = await res.json();
         if (Array.isArray(data)) {
           setCategories(data);
@@ -48,7 +55,7 @@ export default function Navbar() {
   return (
     <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
       {/* Top contact bar - More professional with icons */}
-      <div className="brand-bar bg-maroon text-white overflow-hidden">
+      <div className={`brand-bar bg-maroon text-white overflow-hidden transition-all duration-300 ${scrolled ? 'h-0 opacity-0 pointer-events-none' : 'h-10'}`}>
         <div className="max-w-7xl mx-auto pl-2 pr-4 sm:pl-4 sm:pr-6 lg:pl-6 lg:pr-8 flex items-center justify-between h-10">
           <div className="flex items-center gap-4 sm:gap-6">
             <a href="mailto:sales@hikvisionuae.ae" className="flex items-center gap-2 text-[10px] sm:text-xs hover:text-gold transition-colors">
@@ -116,22 +123,19 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-1">
               <Link 
                 href="/" 
-                className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-all duration-300 relative group"
+                className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors"
               >
-                <span className="relative z-10">Home</span>
-                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                <span className="absolute inset-0 bg-maroon/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                Home
               </Link>
 
               {/* Products Dropdown - Mega Menu */}
               <div className="relative group/prod">
                 <Link 
                   href="/products" 
-                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-all duration-300 relative flex items-center gap-1"
+                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
-                  <span className="relative z-10">Products</span>
-                  <ChevronRight size={14} className="rotate-90 group-hover/prod:rotate-[-90deg] transition-transform duration-300 text-gold" />
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold origin-left transform scale-x-0 group-hover/prod:scale-x-100 transition-transform duration-300 ease-out"></span>
+                  Products
+                  <ChevronRight size={14} className="rotate-90 group-hover/prod:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
                 {/* Products Mega Menu - Redesigned to match screenshot */}
@@ -189,11 +193,10 @@ export default function Navbar() {
               <div className="relative group/tech">
                 <Link 
                   href="/technologies" 
-                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-all duration-300 relative flex items-center gap-1"
+                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
-                  <span className="relative z-10">Technologies</span>
-                  <ChevronRight size={14} className="rotate-90 group-hover/tech:rotate-[-90deg] transition-transform duration-300 text-gold" />
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold origin-left transform scale-x-0 group-hover/tech:scale-x-100 transition-transform duration-300 ease-out"></span>
+                  Technologies
+                  <ChevronRight size={14} className="rotate-90 group-hover/tech:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
@@ -205,8 +208,8 @@ export default function Navbar() {
                         alt="Advanced Core Technologies" 
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110" 
                       />
-                      {/* Gradient Overlay - Maroon themed */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-maroon/95 via-maroon/20 to-transparent"></div>
+                      {/* Gradient Overlay - Black themed */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
                       
                       {/* Content Overlay */}
                       <div className="absolute inset-0 p-10 flex flex-col justify-end">
@@ -314,11 +317,10 @@ export default function Navbar() {
               <div className="relative group/sol">
                 <Link 
                   href="/solutions" 
-                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-all duration-300 relative flex items-center gap-1"
+                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
-                  <span className="relative z-10">Solutions</span>
-                  <ChevronRight size={14} className="rotate-90 group-hover/sol:rotate-[-90deg] transition-transform duration-300 text-gold" />
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold origin-left transform scale-x-0 group-hover/sol:scale-x-100 transition-transform duration-300 ease-out"></span>
+                  Solutions
+                  <ChevronRight size={14} className="rotate-90 group-hover/sol:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/sol:opacity-100 group-hover/sol:visible group-hover/sol:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
@@ -400,11 +402,9 @@ export default function Navbar() {
                 <Link 
                   key={link.name} 
                   href={link.href} 
-                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-all duration-300 relative group"
+                  className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors"
                 >
-                  <span className="relative z-10">{link.name}</span>
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                  <span className="absolute inset-0 bg-maroon/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  {link.name}
                 </Link>
               ))}
             </div>

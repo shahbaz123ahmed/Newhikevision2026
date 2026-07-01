@@ -3,12 +3,12 @@
 import { useState, useEffect, use } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  ChevronRight, 
-  ShieldCheck, 
-  ArrowRight, 
-  ChevronLeft, 
-  ShoppingBag, 
+import {
+  ChevronRight,
+  ShieldCheck,
+  ArrowRight,
+  ChevronLeft,
+  ShoppingBag,
   Eye,
   CheckCircle2,
   FileText,
@@ -21,10 +21,25 @@ import {
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
+const HERO_IMAGES: Record<string, string> = {
+  // Map category/subcategory slugs to local files in the public folder
+  'fingerprint-terminals': '/Solutions/hero2.png',
+  'turret-cameras': '/Solutions/hero2.png',
+  'bullet-cameras': '/Solutions/hero3.png',
+  'dome-cameras': '/Solutions/hero4.png',
+  'fixed-bullet-cameras': '/Solutions/hero5.png',
+  'ip-ptz-cameras': '/Solutions/hero7.png',
+  'poe-switches': '/Solutions/hero8.png',
+  'indoor-stations': '/Solutions/hero9.png',
+  'pro-series-nvr': '/Solutions/hero6.png',
+  // You can add more hardcoded mappings here:
+  // 'slug-name': '/path-to-image.jpg',
+};
+
 export default function ProductsCatchAllPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = use(params);
   const router = useRouter();
-  
+
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -52,17 +67,17 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           const cat = allData.find((c: any) => c.slug === slug[0]);
           if (cat) setData({ type: 'category', ...cat });
           else setError(true);
-        } 
+        }
         else if (slug.length === 2) {
           // Sub-category Page
           const res = await fetch(`/api/products?subcategory=${slug[1]}`);
           const prodData = await res.json();
-          
+
           const navRes = await fetch(`/api/nav-products`);
           const navData = await navRes.json();
           const cat = navData.find((c: any) => c.slug === slug[0]);
           const sub = cat?.subCategories?.find((s: any) => s.slug === slug[1]);
-          
+
           if (sub) setData({ type: 'subcategory', sub, products: prodData, category: cat });
           else setError(true);
         }
@@ -70,7 +85,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           // Product Detail Page
           const res = await fetch(`/api/products/${slug[2]}`);
           const product = await res.json();
-          
+
           const navRes = await fetch(`/api/nav-products`);
           const navData = await navRes.json();
           const cat = navData.find((c: any) => c.slug === slug[0]);
@@ -126,7 +141,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
     if (!data?.product) return;
     const { product, sub, category } = data;
     const doc = new jsPDF();
-    
+
     // Header
     doc.setFillColor(139, 0, 0); // Maroon
     doc.rect(0, 0, 210, 40, 'F');
@@ -216,8 +231,8 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
     return (
       <main className="min-h-screen bg-gray-50 pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 py-20 text-center flex flex-col items-center justify-center">
-           <div className="w-12 h-12 border-4 border-maroon border-t-transparent rounded-full animate-spin mb-4" />
-           <p className="text-gray-400 font-black uppercase tracking-widest text-[10px]">Synchronizing Products...</p>
+          <div className="w-12 h-12 border-4 border-maroon border-t-transparent rounded-full animate-spin mb-4" />
+          <p className="text-gray-400 font-black uppercase tracking-widest text-[10px]">Synchronizing Products...</p>
         </div>
       </main>
     );
@@ -228,7 +243,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
       <main className="min-h-screen bg-gray-50 pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 py-20 text-center">
           <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-             <ShieldCheck size={40} className="text-gray-300" />
+            <ShieldCheck size={40} className="text-gray-300" />
           </div>
           <h1 className="text-2xl font-black text-gray-900 mb-4 uppercase">Resource Not Found</h1>
           <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8">The requested path does not match our current catalog.</p>
@@ -242,21 +257,29 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 
   // CATEGORY VIEW
   if (data.type === 'category') {
+    const heroBg = HERO_IMAGES[slug[0]] || data.image;
     return (
       <main className="min-h-screen bg-gray-50 pb-20">
         {/* Category Hero */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-maroon">
+        <section
+          className="relative pt-32 pb-20 overflow-hidden page-hero"
+          style={heroBg ? {
+            backgroundImage: `linear-gradient(to bottom, rgba(15, 15, 17, 0.50), rgba(22, 22, 28, 0.60)), url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          } : undefined}
+        >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
-          
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <Link 
+            <Link
               href="/products"
               className="inline-flex items-center gap-2 text-gold font-black uppercase tracking-widest text-[10px] mb-8 hover:gap-4 transition-all"
             >
               <ChevronLeft size={14} /> Back to Catalog
             </Link>
-            
+
             <div className="max-w-4xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-gold" />
@@ -275,7 +298,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.subCategories?.map((sub: any) => (
-              <div 
+              <div
                 key={sub._id}
                 className="group bg-white rounded-[40px] p-10 border border-gray-100 shadow-xl shadow-gray-200/40 hover:shadow-maroon/10 transition-all duration-500 flex flex-col h-full"
               >
@@ -286,13 +309,13 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                     <ShieldCheck size={40} className="text-maroon/10" />
                   )}
                 </div>
-                
+
                 <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 group-hover:text-maroon transition-colors">
                   {sub.name}
                 </h2>
-                
+
                 <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
-                  <Link 
+                  <Link
                     href={`/products/${slug[0]}/${sub.slug}`}
                     className="inline-flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[10px] hover:gap-3 transition-all"
                   >
@@ -309,13 +332,21 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 
   // SUBCATEGORY VIEW
   if (data.type === 'subcategory') {
+    const heroBg = HERO_IMAGES[slug[1]] || data.sub?.image;
     return (
       <main className="min-h-screen bg-gray-50 pb-20">
         {/* Subcategory Hero */}
-        <section className="relative pt-32 pb-24 overflow-hidden bg-maroon">
+        <section
+          className="relative pt-32 pb-24 overflow-hidden page-hero"
+          style={heroBg ? {
+            backgroundImage: `linear-gradient(to bottom, rgba(15, 15, 17, 0.50), rgba(22, 22, 28, 0.60)), url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          } : undefined}
+        >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/20 to-transparent" />
-          
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center gap-2 text-gold font-black uppercase tracking-widest text-[10px] mb-8 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 backdrop-blur-md">
               <Link href="/products" className="hover:text-white transition-colors">Catalog</Link>
@@ -324,14 +355,14 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
               <ChevronRight size={10} className="text-white/30" />
               <span className="text-white/40">{data.sub?.name || slug[1]}</span>
             </div>
-            
+
             <div className="max-w-4xl">
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 leading-none">
                 {data.sub?.name || slug[1].replace(/-/g, ' ')}
               </h1>
               <div className="flex items-center gap-6">
                 <p className="text-gold font-bold uppercase tracking-widest text-xs">
-                   {data.products.length} Professional Products
+                  {data.products.length} Professional Products
                 </p>
                 <div className="h-4 w-px bg-white/20" />
                 <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Hikvision Pro Series</p>
@@ -344,7 +375,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {data.products.length > 0 ? data.products.map((prod: any) => (
-              <Link 
+              <Link
                 key={prod._id}
                 href={`/products/${slug[0]}/${slug[1]}/${prod.slug}`}
                 className="group bg-white rounded-3xl p-6 border border-gray-100 shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-500 flex flex-col"
@@ -359,7 +390,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                     <Eye size={16} className="text-maroon" />
                   </div>
                 </div>
-                
+
                 <div className="flex-grow">
                   <span className="text-[9px] font-black text-maroon uppercase tracking-widest block mb-1">{data.category?.name}</span>
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight mb-2 line-clamp-1">{prod.subTitle}</p>
@@ -367,7 +398,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                     {prod.name}
                   </h3>
                 </div>
-                
+
                 <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((s) => (
@@ -442,144 +473,143 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
             <div className="absolute inset-0 bg-maroon/60 backdrop-blur-md" onClick={() => !formLoading && setShowEnquiryModal(false)} />
             <div className="relative bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-               {/* Modal Header */}
-               <div className="p-6 sm:p-10 bg-gray-50/50 border-b border-gray-100 flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                     <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 flex items-center justify-center p-3 shadow-sm">
-                        {product.images?.[0] ? (
-                          <img src={product.images[0]} alt="" className="w-full h-full object-contain" />
-                        ) : (
-                          <ShieldCheck size={24} className="text-maroon" />
-                        )}
-                     </div>
-                     <div>
-                        <span className="text-[10px] font-black text-maroon uppercase tracking-widest block mb-1">Product Enquiry</span>
-                        <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">{product.name}</h3>
-                     </div>
+              {/* Modal Header */}
+              <div className="p-6 sm:p-10 bg-gray-50/50 border-b border-gray-100 flex items-center justify-between">
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 flex items-center justify-center p-3 shadow-sm">
+                    {product.images?.[0] ? (
+                      <img src={product.images[0]} alt="" className="w-full h-full object-contain" />
+                    ) : (
+                      <ShieldCheck size={24} className="text-maroon" />
+                    )}
                   </div>
-                  <button 
-                    onClick={() => setShowEnquiryModal(false)}
-                    className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-maroon transition-colors"
-                  >
-                    <X size={20} />
-                  </button>
-               </div>
+                  <div>
+                    <span className="text-[10px] font-black text-maroon uppercase tracking-widest block mb-1">Product Enquiry</span>
+                    <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">{product.name}</h3>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowEnquiryModal(false)}
+                  className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-maroon transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
 
-               {/* Modal Body */}
-               <div className="p-6 sm:p-10">
-                  {formSuccess ? (
-                    <div className="text-center py-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                       <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
-                          <CheckCircle2 size={40} />
-                       </div>
-                       <h4 className="text-2xl font-black text-gray-900 uppercase mb-2">Enquiry Sent!</h4>
-                       <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Thank you for reaching out. Our team will contact you shortly.</p>
+              {/* Modal Body */}
+              <div className="p-6 sm:p-10">
+                {formSuccess ? (
+                  <div className="text-center py-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+                      <CheckCircle2 size={40} />
                     </div>
-                  ) : (
-                    <form onSubmit={handleEnquirySubmit} className="space-y-6">
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                          <div className="space-y-2">
-                             <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Your Name</label>
-                             <input 
-                               required
-                               type="text" 
-                               placeholder="John Doe"
-                               value={formData.name}
-                               onChange={(e) => setFormData({...formData, name: e.target.value})}
-                               className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
-                             />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email Address</label>
-                             <input 
-                               required
-                               type="email" 
-                               placeholder="john@example.com"
-                               value={formData.email}
-                               onChange={(e) => setFormData({...formData, email: e.target.value})}
-                               className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
-                             />
-                          </div>
-                       </div>
-                       <div className="space-y-2">
-                          <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Mobile Number</label>
-                          <input 
-                            required
-                            type="tel" 
-                            placeholder="+971 XX XXX XXXX"
-                            value={formData.mobile}
-                            onChange={(e) => setFormData({...formData, mobile: e.target.value})}
-                            className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
-                          />
-                       </div>
-                       <div className="space-y-2">
-                          <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Requirement Details</label>
-                          <textarea 
-                            required
-                            rows={4}
-                            placeholder="Please describe your requirements..."
-                            value={formData.details}
-                            onChange={(e) => setFormData({...formData, details: e.target.value})}
-                            className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm resize-none"
-                          />
-                       </div>
-                       <button 
-                         disabled={formLoading}
-                         className="w-full py-5 bg-maroon text-white rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-black transition-all shadow-xl shadow-maroon/20 active:scale-[0.98] disabled:opacity-50"
-                       >
-                         {formLoading ? 'Processing...' : (
-                           <>
-                             Send Enquiry
-                             <Send size={16} />
-                           </>
-                         )}
-                       </button>
-                    </form>
-                  )}
-               </div>
+                    <h4 className="text-2xl font-black text-gray-900 uppercase mb-2">Enquiry Sent!</h4>
+                    <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Thank you for reaching out. Our team will contact you shortly.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleEnquirySubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Your Name</label>
+                        <input
+                          required
+                          type="text"
+                          placeholder="John Doe"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email Address</label>
+                        <input
+                          required
+                          type="email"
+                          placeholder="john@example.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Mobile Number</label>
+                      <input
+                        required
+                        type="tel"
+                        placeholder="+971 XX XXX XXXX"
+                        value={formData.mobile}
+                        onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Requirement Details</label>
+                      <textarea
+                        required
+                        rows={4}
+                        placeholder="Please describe your requirements..."
+                        value={formData.details}
+                        onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:border-maroon/30 transition-colors font-bold text-sm resize-none"
+                      />
+                    </div>
+                    <button
+                      disabled={formLoading}
+                      className="w-full py-5 bg-maroon text-white rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-black transition-all shadow-xl shadow-maroon/20 active:scale-[0.98] disabled:opacity-50"
+                    >
+                      {formLoading ? 'Processing...' : (
+                        <>
+                          Send Enquiry
+                          <Send size={16} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         )}
 
         {/* Product Hero Section */}
-        <section className="relative pt-32 pb-24 overflow-hidden bg-maroon">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-gold/5 to-transparent" />
-          
+        <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-maroon/10">
+          <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-maroon/15 via-transparent to-transparent pointer-events-none" />
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-gold font-black uppercase tracking-widest text-[10px] mb-12 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 backdrop-blur-md">
-              <Link href="/products" className="hover:text-white transition-colors">Catalog</Link>
-              <ChevronRight size={10} className="text-white/30" />
-              <Link href={`/products/${slug[0]}`} className="hover:text-white transition-colors">{data.category?.name || slug[0]}</Link>
-              <ChevronRight size={10} className="text-white/30" />
-              <Link href={`/products/${slug[0]}/${slug[1]}`} className="hover:text-white transition-colors">{data.sub?.name || slug[1]}</Link>
-              <ChevronRight size={10} className="text-white/30" />
-              <span className="text-white/40 truncate max-w-[150px]">{product.name}</span>
+            <div className="flex items-center gap-2 text-gray-500 font-black uppercase tracking-widest text-[10px] mb-12 bg-white w-fit px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+              <Link href="/products" className="hover:text-maroon transition-colors">Catalog</Link>
+              <ChevronRight size={10} className="text-gray-300" />
+              <Link href={`/products/${slug[0]}`} className="hover:text-maroon transition-colors">{data.category?.name || slug[0]}</Link>
+              <ChevronRight size={10} className="text-gray-300" />
+              <Link href={`/products/${slug[0]}/${slug[1]}`} className="hover:text-maroon transition-colors">{data.sub?.name || slug[1]}</Link>
+              <ChevronRight size={10} className="text-gray-300" />
+              <span className="text-maroon truncate max-w-[150px]">{product.name}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="h-px w-12 bg-gold" />
-                  <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Product Details</span>
+                  <div className="h-px w-12 bg-maroon" />
+                  <span className="text-maroon font-black uppercase tracking-[0.3em] text-xs">Product Details</span>
                 </div>
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight mb-4 leading-none">
+                <h1 className="inline-block text-3xl sm:text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-[#C41E3A] uppercase tracking-tight mb-4 leading-none py-1">
                   {product.name}
                 </h1>
-                <p className="text-xl font-bold text-gold/80 uppercase tracking-tight mb-8">
+                <p className="text-xl font-bold text-[#C41E3A] uppercase tracking-tight mb-8">
                   {product.subTitle}
                 </p>
                 <div className="flex gap-4">
-                  <button 
+                  <button
                     onClick={() => setShowEnquiryModal(true)}
-                    className="px-8 py-4 bg-white text-maroon rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-gold transition-all shadow-xl active:scale-95"
+                    className="px-8 py-4 bg-maroon text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-black transition-all shadow-xl shadow-maroon/20 active:scale-95"
                   >
                     Enquire Now
                   </button>
-                  <button 
+                  <button
                     onClick={generatePDF}
-                    className="px-8 py-4 bg-transparent border-2 border-white/20 text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:border-gold hover:text-gold transition-all"
+                    className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-full font-black uppercase tracking-widest text-[10px] hover:border-maroon hover:text-maroon transition-all shadow-sm"
                   >
                     Datasheet
                   </button>
@@ -587,15 +617,16 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
               </div>
 
               {/* Floating product visual in hero */}
-              <div className="hidden lg:block relative">
-                 <div className="absolute inset-0 bg-gold/10 rounded-full blur-[100px] animate-pulse" />
-                 <div className="relative aspect-square bg-white/5 backdrop-blur-sm rounded-[40px] border border-white/10 p-12 flex items-center justify-center">
-                    {product.images?.[0] ? (
-                      <img src={product.images[0]} alt="" className="w-full h-full object-contain drop-shadow-2xl" />
-                    ) : (
-                      <ShieldCheck size={100} className="text-white/10" />
-                    )}
-                 </div>
+              <div className="hidden lg:block relative group">
+                <div className="absolute inset-0 bg-maroon/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+                <div className="relative aspect-square bg-white rounded-[40px] border-[2px] border-[#C41E3A] p-12 flex items-center justify-center shadow-2xl overflow-hidden group">
+
+                  {product.images?.[0] ? (
+                    <img src={product.images[0]} alt="" className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500 relative z-30" />
+                  ) : (
+                    <ShieldCheck size={100} className="text-gray-200 relative z-30" />
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -606,23 +637,24 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
             {/* Image Gallery */}
             <div className="space-y-6">
-              <div className="aspect-square rounded-[40px] bg-gray-50 border border-gray-100 flex items-center justify-center p-12 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-maroon/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="aspect-square rounded-[40px] bg-gray-50 border-[2px] border-[#C41E3A] flex items-center justify-center p-12 overflow-hidden relative group">
+
+                <div className="absolute inset-0 bg-gradient-to-br from-maroon/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 {product.images?.[0] ? (
-                  <img 
-                    src={product.images[0]} 
-                    alt={product.name} 
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700" 
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : (
                   <ShieldCheck size={120} className="text-maroon/5" />
                 )}
-                
+
                 <div className="absolute bottom-8 left-8 flex items-center gap-3">
-                   <div className="px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-white shadow-xl flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-gray-900">Official Product</span>
-                   </div>
+                  <div className="px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-white shadow-xl flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-900">Official Product</span>
+                  </div>
                 </div>
               </div>
 
@@ -652,15 +684,15 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                     ))}
                   </div>
                 </div>
-                
-                <h2 className="text-2xl sm:text-4xl font-black text-gray-900 uppercase tracking-tight mb-4 leading-tight">
+
+                <h2 className="inline-block text-2xl sm:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-[#C41E3A] uppercase tracking-tight mb-4 leading-tight py-1">
                   {product.name}
                 </h2>
                 <p className="text-xl font-bold text-maroon uppercase tracking-tight mb-6">
                   {product.subTitle}
                 </p>
                 <div className="h-1 w-20 bg-gold rounded-full mb-8" />
-                
+
                 <p className="text-gray-500 leading-relaxed font-medium text-sm">
                   {product.description}
                 </p>
@@ -678,14 +710,14 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 
               {/* Actions */}
               <div className="mt-auto space-y-4">
-                <button 
+                <button
                   onClick={() => setShowEnquiryModal(true)}
                   className="w-full py-5 bg-maroon text-white rounded-[24px] font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:bg-maroon transition-all shadow-2xl shadow-maroon/20 active:scale-95"
                 >
                   <ShoppingBag size={18} />
                   Request Professional Quote
                 </button>
-                <button 
+                <button
                   onClick={generatePDF}
                   className="w-full py-5 bg-white border-2 border-gray-100 text-gray-900 rounded-[24px] font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:border-maroon hover:text-maroon transition-all"
                 >
@@ -698,26 +730,26 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 
           {/* Full Specifications Section */}
           <div className="mt-32 border-t border-gray-100 pt-20">
-             <div className="flex items-center gap-4 mb-12">
-                <div className="p-3 bg-gray-50 rounded-2xl text-maroon">
-                   <Info size={24} />
-                </div>
-                <div>
-                   <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Full Specifications</h2>
-                   <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Deep Technical Analysis</p>
-                </div>
-             </div>
+            <div className="flex items-center gap-4 mb-12">
+              <div className="p-3 bg-gray-50 rounded-2xl text-maroon">
+                <Info size={24} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Full Specifications</h2>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Deep Technical Analysis</p>
+              </div>
+            </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
-                {product.features?.map((feat: string, i: number) => (
-                  <div key={i} className="flex gap-6 items-start group">
-                     <span className="text-3xl font-black text-gray-100 group-hover:text-maroon/10 transition-colors">{(i + 1).toString().padStart(2, '0')}</span>
-                     <p className="text-sm font-bold text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
-                        {feat}
-                     </p>
-                  </div>
-                ))}
-             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+              {product.features?.map((feat: string, i: number) => (
+                <div key={i} className="flex gap-6 items-start group">
+                  <span className="text-3xl font-black text-[#C41E3A] transition-colors">{(i + 1).toString().padStart(2, '0')}</span>
+                  <p className="text-sm font-bold text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
+                    {feat}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>
@@ -728,16 +760,16 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
 }
 
 const AlertCircle = ({ size, className }: { size: number, className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <circle cx="12" cy="12" r="10" />

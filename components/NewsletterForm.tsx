@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ export default function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
       if (res.ok) {
         setSuccess(true);
@@ -29,32 +29,41 @@ export default function NewsletterForm() {
     }
   };
 
+  if (success) {
+    return (
+      <div className="flex items-center gap-3 px-6 py-4 bg-[#34C759]/10 border border-[#34C759]/30 rounded-2xl text-[#34C759] font-black text-sm uppercase tracking-widest animate-fade-in">
+        <CheckCircle2 size={20} />
+        You&apos;re subscribed! Welcome aboard.
+      </div>
+    );
+  }
+
   return (
-    <div className="relative group">
-      {success ? (
-        <div className="bg-green-500 text-white rounded-2xl py-4 px-6 text-sm font-black uppercase tracking-widest flex items-center gap-3 animate-in fade-in zoom-in duration-300">
-          <CheckCircle2 size={18} />
-          Subscribed!
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="relative">
-          <input 
-            type="email" 
-            required
-            placeholder="Your email address" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl py-4 pl-6 pr-14 text-sm focus:outline-none focus:border-maroon transition-colors font-medium"
-          />
-          <button 
-            type="submit"
-            disabled={loading}
-            className="absolute right-2 top-2 bottom-2 aspect-square rounded-xl bg-maroon text-white flex items-center justify-center hover:bg-gold hover:text-maroon transition-all disabled:opacity-50"
-          >
-            <Send size={18} className={loading ? "animate-pulse" : ""} />
-          </button>
-        </form>
-      )}
-    </div>
+    <form onSubmit={handleSubmit} className="relative flex items-center gap-3">
+      <div className="relative flex-1">
+        <input
+          type="email"
+          required
+          placeholder="Enter your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full bg-white border border-gray-200 rounded-2xl py-4 px-5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#C41E3A] focus:ring-2 focus:ring-[#C41E3A]/10 transition-all font-medium shadow-sm"
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={loading}
+        className="shrink-0 flex items-center gap-2 px-6 py-4 rounded-2xl bg-[#C41E3A] hover:bg-[#A01830] text-white font-black text-sm uppercase tracking-widest transition-all disabled:opacity-60 shadow-md shadow-[#C41E3A]/20 active:scale-95"
+      >
+        {loading ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : (
+          <>
+            <Send size={16} />
+            <span className="hidden sm:inline">Subscribe</span>
+          </>
+        )}
+      </button>
+    </form>
   );
 }

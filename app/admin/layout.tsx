@@ -107,7 +107,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className="h-screen bg-[#f5f6f8] flex overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-72 bg-[#6b0000] text-white flex flex-col relative overflow-hidden shadow-2xl z-20 h-full shrink-0">
+      <aside className="w-72 bg-[#C41E3A] text-white flex flex-col relative overflow-hidden shadow-2xl z-20 h-full shrink-0">
         <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
         
         <div className="p-6 flex justify-center items-center h-24 border-b border-white/5 relative z-10 shrink-0">

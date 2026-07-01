@@ -26,24 +26,65 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       {/* Professional Catalog Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-maroon mb-16">
+      <section className="relative pt-32 pb-24 overflow-hidden page-hero mb-16">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="h-px w-12 bg-gold" />
-            <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
-          </div>
-          
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tight mb-8 leading-[0.85]">
-              Professional <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Catalog.</span>
-            </h1>
-            <p className="text-white/60 text-lg font-medium leading-relaxed max-w-2xl uppercase tracking-widest text-xs">
-              Explore the region's most comprehensive collection of official Hikvision security solutions, engineered for excellence in the UAE.
-            </p>
+        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 pl-4 lg:pl-8">
+              <div className="flex items-center gap-3">
+                <div className="h-px w-12 bg-gold" />
+                <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tight leading-[0.85]">
+                Premium <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Catalog.</span>
+              </h1>
+              <p className="text-white/60 text-lg font-medium leading-relaxed max-w-2xl uppercase tracking-widest text-xs">
+                Explore the region's most comprehensive collection of official Hikvision security solutions, engineered for excellence in the UAE.
+              </p>
+              <div className="flex items-center gap-4">
+                <a 
+                  href="/Download%20Pdf.pdf" 
+                  download 
+                  className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all active:scale-95 shadow-2xl inline-block"
+                >
+                  Download Catalog
+                </a>
+                <div className="flex -space-x-3">
+                   {[1,2,3,4].map(i => (
+                     <div key={i} className="w-10 h-10 rounded-full border-2 border-maroon bg-gray-200 overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
+                     </div>
+                   ))}
+                   <div className="w-10 h-10 rounded-full border-2 border-maroon bg-gold flex items-center justify-center text-maroon text-[10px] font-black">
+                      +1k
+                   </div>
+                </div>
+                <span className="text-xs font-black text-white/40 uppercase tracking-widest">Trusted by Experts</span>
+              </div>
+            </div>
+
+              <div className="relative group mt-10 lg:mt-14">
+              <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-3xl transform rotate-6 transition-transform group-hover:rotate-12 duration-1000" />
+              <div className="relative bg-white/5 backdrop-blur-md rounded-[60px] p-6 border border-white/10 overflow-hidden">
+                 <img 
+                   src="/solutions.png" 
+                   alt="Products Hero" 
+                   className="w-full aspect-[4/3] lg:aspect-square object-cover rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                 <div className="absolute bottom-10 left-10 text-white">
+                    <p className="text-5xl font-black uppercase tracking-tight leading-none mb-2">Our <span className="text-gold">Products</span></p>
+                    <div className="flex items-center gap-3">
+                       <div className="h-px w-8 bg-gold" />
+                       <p className="text-xs font-black uppercase tracking-[0.3em] text-gold/80">Premium Catalog</p>
+                    </div>
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

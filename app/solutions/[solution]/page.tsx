@@ -211,7 +211,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       </div>
 
       {/* Premium Industry Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-maroon">
+      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
         
@@ -236,12 +236,16 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
                 {solutionData.description}
               </p>
               
-              <div className="flex items-center gap-4">
-                <button className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all shadow-2xl active:scale-95 inline-flex items-center gap-2">
-                  <span>Explore Features</span>
-                  <ArrowRight size={16} />
-                </button>
-              </div>
+              {resolvedParams.solution !== 'ai-powered-smart-cameras' && 
+               resolvedParams.solution !== 'ptz-surveillance-systems' && 
+               resolvedParams.solution !== 'thermal-imaging-cameras' && (
+                <div className="flex items-center gap-4">
+                  <button className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all shadow-2xl active:scale-95 inline-flex items-center gap-2">
+                    <span>Explore Features</span>
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Image Content */}
@@ -249,11 +253,11 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-[100px] animate-pulse" />
                 <div className="relative h-[450px] md:h-[550px] overflow-hidden rounded-[60px] shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-maroon/80 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                   <img 
                     src={solutionData.heroImg} 
                     alt={solutionData.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out opacity-80"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out"
                   />
                   <div className="absolute bottom-10 left-10 z-20 bg-white/5 backdrop-blur-xl p-8 rounded-3xl border-l-4 border-gold max-w-xs border border-white/10">
                     <p className="text-sm font-black text-white uppercase tracking-widest mb-2">Trusted Solution</p>
@@ -376,7 +380,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       )}
 
       {/* Final CTA Full Width */}
-      <section className="py-24 bg-maroon relative overflow-hidden">
+      <section className="py-24 page-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/10 rounded-full blur-[150px]" />
         

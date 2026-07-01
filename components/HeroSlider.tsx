@@ -87,33 +87,31 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-maroon">
+    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#C41E3A]">
       {/* Slides */}
       {posters.map((poster, index) => (
-        <div 
+        <div
           key={poster.id}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            index === current 
-              ? 'opacity-100 scale-100 translate-x-0 z-10' 
-              : index < current 
-                ? 'opacity-0 scale-110 -translate-x-full z-0' 
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current
+              ? 'opacity-100 scale-100 translate-x-0 z-10'
+              : index < current
+                ? 'opacity-0 scale-110 -translate-x-full z-0'
                 : 'opacity-0 scale-110 translate-x-full z-0'
-          }`}
+            }`}
         >
-          {/* Background Image with Parallax-ish feel */}
           <Image
             src={poster.image}
             alt={poster.title}
             fill
-            quality={100}
             sizes="100vw"
             className="object-cover transition-opacity duration-1000"
             priority
+            quality={75}
           />
-          
+
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-          
+
           {/* Content */}
           <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center pt-24 sm:pt-32 lg:pt-24">
             <div className={`max-w-3xl text-white transition-all duration-700 delay-300 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -121,30 +119,29 @@ export default function HeroSlider() {
                 <Shield size={16} />
                 <span>{poster.tag}</span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-4 leading-[0.95] sm:leading-[0.9]">
                 {poster.title} <br />
                 <span className={poster.accent === 'gold' ? 'text-gold' : 'text-maroon'}>{poster.subtitle}</span>
               </h1>
-              
+
               <p className="text-base md:text-xl text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-xl opacity-90">
                 {poster.desc}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                <Link 
-                  href="/products" 
-                  className={`inline-flex justify-center items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition-all shadow-2xl ${
-                    poster.accent === 'gold' 
-                      ? 'bg-gold text-maroon hover:bg-white' 
+                <Link
+                  href="/products"
+                  className={`inline-flex justify-center items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition-all shadow-2xl ${poster.accent === 'gold'
+                      ? 'bg-gold text-maroon hover:bg-white'
                       : 'bg-maroon text-white hover:bg-gold hover:text-maroon'
-                  }`}
+                    }`}
                 >
                   {poster.cta1}
                   <ArrowRight size={20} />
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="inline-flex justify-center items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold border-2 border-white/20 backdrop-blur-xl text-white hover:bg-white/10 transition-all"
                 >
                   {poster.cta2}
@@ -158,14 +155,14 @@ export default function HeroSlider() {
 
       {/* Navigation Controls - Responsive positioning */}
       <div className="absolute bottom-12 right-6 sm:right-12 z-30 flex items-center gap-2 sm:gap-4">
-        <button 
+        <button
           onClick={prevSlide}
           className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md"
           aria-label="Previous slide"
         >
           <ChevronLeft size={20} />
         </button>
-        <button 
+        <button
           onClick={nextSlide}
           className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md"
           aria-label="Next slide"

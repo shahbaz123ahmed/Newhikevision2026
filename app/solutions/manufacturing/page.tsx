@@ -7,7 +7,7 @@ export default function ManufacturingSolutionPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-maroon overflow-hidden">
+      <section className="relative pt-32 pb-20 page-hero overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop" 
@@ -122,7 +122,7 @@ export default function ManufacturingSolutionPage() {
           </div>
 
           {/* Features Grid */}
-          <div className="bg-maroon rounded-[60px] p-12 md:p-24 overflow-hidden relative">
+          <div className="page-hero rounded-[60px] p-12 md:p-24 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/10 to-transparent" />
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-16">
@@ -152,7 +152,7 @@ export default function ManufacturingSolutionPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-maroon relative overflow-hidden">
+      <section className="py-24 page-hero relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
             Secure Your <span className="text-gold">Facility Today</span>

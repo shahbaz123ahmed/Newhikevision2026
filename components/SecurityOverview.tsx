@@ -26,14 +26,14 @@ export default function SecurityOverview() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-maroon relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-maroon/5 -skew-x-12 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
-          
+
           {/* Content Side */}
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon/5 border border-maroon/10 text-maroon font-black text-[10px] uppercase tracking-[0.2em] mb-8">
@@ -43,12 +43,12 @@ export default function SecurityOverview() {
               </span>
               Security Excellence
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-[1.1] tracking-tighter mb-8">
               Hikvision UAE <br />
               <span className="text-maroon">Security Solutions</span>
             </h2>
-            
+
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-12 max-w-2xl">
               Experience cutting-edge security technology with Hikvision in the UAE. We provide comprehensive security solutions featuring advanced surveillance systems, smart cameras, and integrated security platforms designed for the unique needs of UAE businesses and properties.
             </p>
@@ -58,7 +58,7 @@ export default function SecurityOverview() {
                 Choose Hikvision UAE for
                 <div className="h-px flex-1 bg-gray-100 dark:bg-white/10" />
               </h3>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {benefits.map((benefit, i) => (
                   <div key={i} className="group">
@@ -80,8 +80,8 @@ export default function SecurityOverview() {
               </div>
 
               <div className="pt-10">
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-maroon text-white font-black hover:bg-gold transition-all shadow-xl hover:shadow-maroon/20 group"
                 >
                   Request a Solution Design
@@ -95,16 +95,17 @@ export default function SecurityOverview() {
           <div className="flex-1 w-full lg:w-auto">
             <div className="relative group">
               {/* Main Image Container */}
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white dark:border-zinc-900 transform group-hover:scale-[1.02] transition-transform duration-700">
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A] transform group-hover:scale-[1.02] transition-transform duration-700">
                 <div className="absolute inset-0 bg-gradient-to-tr from-maroon/20 to-transparent z-10" />
-                <Image 
-                  src="/solutions_bg.png" 
-                  alt="Hikvision Security UAE" 
-                  width={800} 
-                  height={1000} 
+                <Image
+                  src="/solutions_bg.png"
+                  alt="Hikvision Security UAE"
+                  width={800}
+                  height={1000}
+                  priority
                   className="w-full h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
-                
+
                 {/* Floating Badge */}
                 <div className="absolute bottom-10 left-10 right-10 p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 z-20">
                   <div className="flex items-center gap-6">

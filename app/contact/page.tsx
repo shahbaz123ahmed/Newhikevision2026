@@ -42,7 +42,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-gray-50 pt-32 pb-20">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="relative rounded-[60px] overflow-hidden bg-maroon py-24 px-8 md:px-20 flex flex-col items-center text-center">
+        <div className="relative rounded-[60px] overflow-hidden page-hero py-24 px-8 md:px-20 flex flex-col items-center text-center">
           <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] scale-150" />
           </div>

@@ -8,12 +8,12 @@ export default function SecuritySolutions() {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Image Side */}
           <div className="flex-1 relative order-2 lg:order-1">
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
-              <Image 
-                src="/solutions_bg.png" 
-                alt="Authorized Hikvision Distributor Showroom" 
-                width={800} 
-                height={600} 
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A]">
+              <Image
+                src="/solutions_bg.png"
+                alt="Authorized Hikvision Distributor Showroom"
+                width={800}
+                height={600}
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -25,7 +25,7 @@ export default function SecuritySolutions() {
                 <p className="text-sm opacity-90">Visit our professional showroom in Dubai for a live demonstration.</p>
               </div>
             </div>
-            
+
             {/* Stats Overlay */}
             <div className="absolute -bottom-10 -right-10 bg-maroon text-white p-8 rounded-3xl shadow-2xl hidden md:block z-20">
               <p className="text-4xl font-black mb-1 leading-none tracking-tighter text-gold">24/7</p>
@@ -39,24 +39,24 @@ export default function SecuritySolutions() {
               <ShieldCheck size={14} />
               Authorized Hikvision Distributor - UAE
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter mb-8">
               Professional Hikvision <br />
               <span className="text-maroon">Security Solutions</span>
             </h2>
-            
+
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
                 As a trusted <span className="font-bold text-gray-900">Hikvision distributor in UAE</span>, we offer comprehensive security solutions and professional-grade surveillance equipment. Our extensive inventory includes the latest Hikvision products at competitive prices.
               </p>
-              
+
               <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50">
                 <p className="mb-6 font-medium">
                   For detailed product information and pricing, please contact our technical sales team:
                 </p>
-                
-                <a 
-                  href="tel:+971509893134" 
+
+                <a
+                  href="tel:+971509893134"
                   className="inline-flex items-center gap-4 text-2xl md:text-3xl font-black text-maroon hover:text-gold transition-colors"
                 >
                   <div className="w-12 h-12 rounded-full bg-maroon/10 flex items-center justify-center text-maroon">
@@ -64,7 +64,7 @@ export default function SecuritySolutions() {
                   </div>
                   +971 50 989 3134
                 </a>
-                
+
                 <p className="mt-6 text-sm text-gray-500 italic">
                   Our experts will assist you in selecting the right security solutions tailored to your requirements.
                 </p>

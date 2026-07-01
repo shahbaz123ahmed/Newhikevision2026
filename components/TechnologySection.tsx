@@ -46,18 +46,18 @@ const technologies = [
 
 export default function TechnologySection() {
   return (
-    <section className="py-24 bg-[#fcfcfc] dark:bg-maroon overflow-hidden">
+    <section className="py-24 bg-[#F5F5F7] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-maroon font-black uppercase tracking-[0.4em] text-xs mb-4">Innovation & Excellence</h2>
-          <p className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tighter mb-6">
+          <p className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-6">
             Our <span className="text-maroon">Technologies</span>
           </p>
           <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
         </div>
 
         <div className="relative">
-          {/* Central Crossing Lines - Solid Brand Maroon (#6b0000) */}
+          {/* Central Crossing Lines - Solid Brand Red (#C41E3A) */}
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[3px] bg-maroon/40 -translate-y-1/2 z-0" />
           <div className="hidden lg:block absolute top-0 left-1/2 w-[3px] h-full bg-maroon/40 -translate-x-1/2 z-0" />
           
@@ -71,27 +71,27 @@ export default function TechnologySection() {
             {technologies.map((tech) => (
               <div 
                 key={tech.id}
-                className={`group relative p-8 md:p-12 rounded-[2.5rem] bg-white dark:bg-zinc-900/50 border border-gray-100 dark:border-white/5 transition-all duration-500 hover:shadow-2xl ${tech.border} hover:-translate-y-2 overflow-hidden`}
+                className={`group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-gray-100 transition-all duration-500 hover:shadow-2xl ${tech.border} hover:-translate-y-2 overflow-hidden`}
               >
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
-                    <div className={`w-16 h-16 rounded-2xl bg-gray-50 dark:bg-white/5 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-white dark:group-hover:bg-white group-hover:text-maroon transition-all duration-500 shadow-sm ${tech.textShadow} group-hover:scale-110`}>
+                    <div className={`w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-700 group-hover:bg-white group-hover:text-maroon transition-all duration-500 shadow-sm ${tech.textShadow} group-hover:scale-110`}>
                       {tech.icon}
                     </div>
                     <div className="flex-1">
                       <span className="block text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
                         {tech.subtitle}
                       </span>
-                      <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white group-hover:text-maroon transition-colors duration-300">
+                      <h3 className="text-2xl md:text-3xl font-black text-gray-900 group-hover:text-maroon transition-colors duration-300">
                         {tech.title}
                       </h3>
                     </div>
                   </div>
 
-                  <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-lg text-gray-600 leading-relaxed mb-10 group-hover:text-gray-900 transition-colors duration-300">
                     {tech.description}
                   </p>
 

@@ -6,19 +6,29 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-maroon pt-24">
+    <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-maroon">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-maroon/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+      <section className="relative h-[calc(100vh-85px)] min-h-[600px] flex items-center pt-24 overflow-hidden mb-16">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/hero.png"
+            alt="About Hikvision UAE" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]">
-              Securing the <span className="text-gold">UAE</span> <br />
-              With <span className="text-gold">Intelligence.</span>
+        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
+          <div className="max-w-3xl space-y-8 pl-4 lg:pl-8">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-12 bg-gold" />
+              <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.85]">
+              Securing the UAE <br />
+              With <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Intelligence.</span>
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed font-medium mb-12">
+            <p className="text-white/80 text-lg font-medium leading-relaxed max-w-2xl">
               As the premier authorized distributor of Hikvision technologies in the United Arab Emirates, we deliver world-class surveillance solutions to government, industrial, and residential sectors.
             </p>
           </div>
@@ -26,7 +36,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white dark:bg-maroon border-b border-gray-100 dark:border-white/5">
+      <section className="py-20 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {[
@@ -48,9 +58,11 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-               <div className="aspect-square rounded-[3rem] bg-gray-100 dark:bg-white/5 overflow-hidden border border-gray-100 dark:border-white/10 p-4">
-                  <img src="/Solutions/Manufacturing.png" alt="Mission" className="w-full h-full object-cover rounded-[2.5rem] opacity-80" />
+            <div className="relative group cursor-pointer">
+               <div className="aspect-square rounded-[3rem] bg-gray-100 dark:bg-white/5 border-2 border-[#C41E3A] p-4 shadow-xl transition-all duration-700 group-hover:shadow-2xl">
+                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+                     <img src="/Solutions/Manufacturing.png" alt="Mission" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1" />
+                  </div>
                </div>
                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl animate-pulse"></div>
             </div>
@@ -88,7 +100,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-maroon relative overflow-hidden">
+      <section className="py-24 page-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-8">

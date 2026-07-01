@@ -188,9 +188,14 @@ export default function ProductsPage() {
       if (res.ok) {
         setIsModalOpen(false);
         fetchData();
+      } else {
+        const errData = await res.json();
+        console.error("Server Error:", errData);
+        alert(`Failed to save product: ${errData.message}`);
       }
     } catch (error) {
       console.error("Error saving:", error);
+      alert("A network or unexpected error occurred.");
     } finally {
       setIsSubmitting(false);
     }

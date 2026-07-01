@@ -135,7 +135,7 @@ export default function AdminTable({
                 filteredData.map((item, idx) => (
                   <tr key={idx} className="hover:bg-gray-50/30 transition-colors group">
                     {columns.map((col) => (
-                      <td key={col.key} className="px-6 py-4 whitespace-nowrap">
+                      <td key={col.key} className="px-6 py-4 whitespace-normal min-w-[120px]">
                         {col.render ? col.render(item[col.key], item) : (
                           <span className="text-sm font-bold text-gray-700">{item[col.key]}</span>
                         )}
