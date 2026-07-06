@@ -356,7 +356,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-30" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold font-black text-xs uppercase tracking-[0.2em] mb-8">
                   <Eye size={14} />
@@ -381,7 +381,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
                 </button>
               </div>
 
-              <div className="relative group">
+              <div className="relative group lg:mt-16">
                 <div className="absolute -inset-10 bg-gold/10 rounded-full blur-[120px] animate-pulse" />
                 <div className="relative rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group h-[500px] bg-white/5 backdrop-blur-md">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
@@ -507,7 +507,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold font-black text-xs uppercase tracking-[0.2em] mb-6">
                   <Sun size={14} />
@@ -531,14 +531,16 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
                 </div>
               </div>
 
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-[100px] animate-pulse" />
-                <div className="relative bg-white/5 backdrop-blur-xl rounded-[60px] p-8 border border-white/10 overflow-hidden shadow-2xl">
-                  <img
-                    src={techData.heroImg}
-                    alt="ColorVu Technology"
-                    className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(255,215,0,0.3)] transition-transform duration-[2s] group-hover:scale-110"
-                  />
+              <div className="relative group lg:mt-16">
+                <div className="absolute inset-0 bg-gold/10 rounded-[40px] blur-[100px] animate-pulse" />
+                <div className="relative bg-white/5 backdrop-blur-xl rounded-[40px] p-6 group-hover:p-0 border border-white/10 overflow-hidden shadow-2xl h-[540px] transition-all duration-700">
+                  <div className="relative w-full h-full rounded-[30px] group-hover:rounded-[38px] overflow-hidden bg-white/5 flex items-center justify-center transition-all duration-700">
+                    <img
+                      src={techData.heroImg}
+                      alt="ColorVu Technology"
+                      className="w-full h-full object-cover drop-shadow-[0_20px_50px_rgba(255,215,0,0.3)] transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -670,8 +672,8 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold font-bold text-xs uppercase tracking-widest mb-8">
                 <Zap size={14} />
                 <span>{techData.subtitle}</span>
@@ -700,12 +702,12 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative group mt-10 lg:mt-0">
+            <div className="lg:col-span-6 relative group mt-10 lg:mt-16">
               <div className="absolute inset-0 bg-gold/20 rounded-[40px] blur-3xl group-hover:bg-gold/30 transition-all duration-700" />
-              <div className="bg-white/5 backdrop-blur-xl rounded-[40px] p-6 border border-white/10 relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-gold to-white/20" />
-                <div className="relative h-[400px] rounded-[30px] overflow-hidden bg-white/5 flex items-center justify-center p-8">
-                  <img src={techData.heroImg} alt="Technology Visual" className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-[0_20px_50px_rgba(255,215,0,0.2)]" />
+              <div className="bg-white/5 backdrop-blur-xl rounded-[40px] p-6 group-hover:p-0 border border-white/10 relative overflow-hidden shadow-2xl h-[540px] transition-all duration-700">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-gold to-white/20 z-10" />
+                <div className="relative w-full h-full rounded-[30px] group-hover:rounded-[38px] overflow-hidden bg-white/5 flex items-center justify-center transition-all duration-700">
+                  <img src={techData.heroImg} alt="Technology Visual" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-out drop-shadow-[0_20px_50px_rgba(255,215,0,0.2)]" />
                 </div>
               </div>
             </div>

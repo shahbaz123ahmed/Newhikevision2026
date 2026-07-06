@@ -378,7 +378,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
               <Link
                 key={prod._id}
                 href={`/products/${slug[0]}/${slug[1]}/${prod.slug}`}
-                className="group bg-white rounded-3xl p-6 border border-gray-100 shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-500 flex flex-col"
+                className="group bg-white rounded-3xl p-6 border border-maroon shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-500 flex flex-col"
               >
                 <div className="aspect-square rounded-2xl bg-gray-50 flex items-center justify-center mb-6 relative overflow-hidden p-8">
                   {prod.images?.[0] ? (

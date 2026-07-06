@@ -9,8 +9,8 @@ export default function ManufacturingSolutionPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 page-hero overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
             className="w-full h-full object-cover grayscale"
             alt="Manufacturing Background"
           />
@@ -30,9 +30,9 @@ export default function ManufacturingSolutionPage() {
             <button className="px-10 py-5 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-gold hover:text-maroon transition-all shadow-xl active:scale-95">
               Explore Features
             </button>
-            <a 
-              href="/Download%20Pdf.pdf" 
-              download 
+            <a
+              href="/Download%20Pdf.pdf"
+              download
               className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-maroon transition-all active:scale-95 inline-block"
             >
               Download PDF
@@ -66,8 +66,8 @@ export default function ManufacturingSolutionPage() {
             </div>
             <div className="relative">
               <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl">
-                <img 
-                  src="/Solutions/Manufacturing.png" 
+                <img
+                  src="/Solutions/Manufacturing.png"
                   className="w-full h-full object-cover"
                   alt="Manufacturing Security"
                 />
@@ -82,27 +82,27 @@ export default function ManufacturingSolutionPage() {
           {/* Solutions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
             {[
-    {
-      title: "Thermal Imaging Cameras",
-      desc: "24/7 temperature monitoring and early fire detection for industrial safety and asset protection.",
-      icon: <Flame size={32} />,
-      img: "/poster1.png",
-      slug: "thermal-imaging-cameras"
-    },
-    {
-      title: "PTZ Surveillance Systems",
-      desc: "Pan-Tilt-Zoom cameras for 360° coverage, advanced zoom, and auto-tracking for perimeter security.",
-      icon: <Settings size={32} />,
-      img: "/poster2.png",
-      slug: "ptz-surveillance-systems"
-    },
-    {
-      title: "AI-Powered Smart Cameras",
-      desc: "Deep learning cameras for intelligent monitoring, PPE compliance, and advanced analytics.",
-      icon: <Cpu size={32} />,
-      img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
-      slug: "ai-powered-smart-cameras"
-    }
+              {
+                title: "Thermal Imaging Cameras",
+                desc: "24/7 temperature monitoring and early fire detection for industrial safety and asset protection.",
+                icon: <Flame size={32} />,
+                img: "/poster1.png",
+                slug: "thermal-imaging-cameras"
+              },
+              {
+                title: "PTZ Surveillance Systems",
+                desc: "Pan-Tilt-Zoom cameras for 360° coverage, advanced zoom, and auto-tracking for perimeter security.",
+                icon: <Settings size={32} />,
+                img: "/poster.jpeg",
+                slug: "ptz-surveillance-systems"
+              },
+              {
+                title: "AI-Powered Smart Cameras",
+                desc: "Deep learning cameras for intelligent monitoring, PPE compliance, and advanced analytics.",
+                icon: <Cpu size={32} />,
+                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
+                slug: "ai-powered-smart-cameras"
+              }
             ].map((sol, i) => (
               <div key={i} className="group bg-white rounded-[40px] border border-gray-100 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="h-64 relative overflow-hidden">

@@ -30,7 +30,7 @@ const posters = [
   },
   {
     id: 3,
-    image: '/poster2.png',
+    image: '/poster.jpeg',
     tag: 'Premium Access Control',
     title: 'UNCOMPROMISED',
     subtitle: 'PROTECTION.',
@@ -93,10 +93,10 @@ export default function HeroSlider() {
         <div
           key={poster.id}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current
-              ? 'opacity-100 scale-100 translate-x-0 z-10'
-              : index < current
-                ? 'opacity-0 scale-110 -translate-x-full z-0'
-                : 'opacity-0 scale-110 translate-x-full z-0'
+            ? 'opacity-100 scale-100 translate-x-0 z-10'
+            : index < current
+              ? 'opacity-0 scale-110 -translate-x-full z-0'
+              : 'opacity-0 scale-110 translate-x-full z-0'
             }`}
         >
           <Image
@@ -133,8 +133,8 @@ export default function HeroSlider() {
                 <Link
                   href="/products"
                   className={`inline-flex justify-center items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition-all shadow-2xl ${poster.accent === 'gold'
-                      ? 'bg-gold text-maroon hover:bg-white'
-                      : 'bg-maroon text-white hover:bg-gold hover:text-maroon'
+                    ? 'bg-gold text-maroon hover:bg-white'
+                    : 'bg-maroon text-white hover:bg-gold hover:text-maroon'
                     }`}
                 >
                   {poster.cta1}

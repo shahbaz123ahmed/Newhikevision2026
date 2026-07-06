@@ -8,16 +8,16 @@ export default function SecuritySolutions() {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Image Side */}
           <div className="flex-1 relative order-2 lg:order-1">
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A]">
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A] group">
               <Image
                 src="/solutions_bg.png"
                 alt="Authorized Hikvision Distributor Showroom"
                 width={800}
                 height={600}
-                className="w-full h-auto"
+                className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-8 left-8 right-8 text-white pointer-events-none">
                 <div className="flex items-center gap-3 mb-2">
                   <ShieldCheck className="text-gold" size={24} />
                   <span className="font-bold tracking-widest uppercase text-xs">Official Partner</span>
@@ -27,7 +27,7 @@ export default function SecuritySolutions() {
             </div>
 
             {/* Stats Overlay */}
-            <div className="absolute -bottom-10 -right-10 bg-maroon text-white p-8 rounded-3xl shadow-2xl hidden md:block z-20">
+            <div className="absolute -bottom-10 -right-10 bg-maroon text-white p-8 rounded-3xl shadow-2xl hidden md:block z-20 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2">
               <p className="text-4xl font-black mb-1 leading-none tracking-tighter text-gold">24/7</p>
               <p className="text-xs font-bold uppercase tracking-widest opacity-80">Technical <br />Support</p>
             </div>

@@ -23,7 +23,7 @@ export default function RetailSolutionPage() {
               <span className="text-maroon font-black uppercase tracking-[0.2em] text-[10px]">Retail Sector Solutions</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-gray-900 uppercase tracking-tighter mb-8 leading-[0.9]">
-              Retail <br /> <span className="text-maroon">Excellence.</span>
+              Retail <br /> <span className="text-maroon">Excellence</span>
             </h1>
             <p className="text-gray-500 text-lg font-bold uppercase tracking-widest mb-12 leading-relaxed">
               Secure and Optimize Your Retail Space with Advanced Video Surveillance. AI-powered analytics and smart retail solutions for the UAE.
@@ -98,22 +98,22 @@ export default function RetailSolutionPage() {
           </div>
 
           {/* Business Insights Section */}
-          <div className="relative rounded-[60px] overflow-hidden bg-maroon p-12 md:p-24">
-             <div className="absolute inset-0 opacity-30">
+          <div className="relative rounded-[60px] overflow-hidden bg-gradient-to-br from-white to-gray-50/50 border border-gray-150/80 shadow-2xl shadow-gray-200/50 p-12 md:p-24">
+             <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Analytics" />
              </div>
              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
-                   <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
-                     Data Driven <br /> <span className="text-gold">Operations</span>
+                   <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tight mb-8">
+                     Data Driven <br /> <span className="text-maroon">Operations</span>
                    </h2>
-                    <p className="text-white/70 text-lg font-medium leading-relaxed mb-12">
+                    <p className="text-gray-600 text-lg font-medium leading-relaxed mb-12">
                       Beyond security, our retail solutions provide actionable business intelligence. Understand your customers better with advanced footfall analysis and heatmapping.
                     </p>
                    <div className="space-y-6">
                       {["Heat Mapping", "People Counting", "Queue Management", "Store Traffic Analysis"].map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-4 text-white">
-                           <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                        <div key={idx} className="flex items-center gap-4 text-gray-800">
+                           <div className="w-6 h-6 rounded-full bg-maroon/10 flex items-center justify-center text-maroon shadow-sm">
                               <ChevronRight size={14} />
                            </div>
                            <span className="font-black uppercase tracking-widest text-xs">{item}</span>
@@ -121,22 +121,22 @@ export default function RetailSolutionPage() {
                       ))}
                    </div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-[40px]">
+                <div className="bg-white/80 backdrop-blur-md border border-gray-100/85 p-10 rounded-[40px] shadow-xl shadow-gray-100/50">
                    <div className="flex items-center justify-between mb-8">
-                      <p className="text-white font-black uppercase tracking-widest text-xs">AI Performance</p>
-                      <span className="text-gold font-black">99.8%</span>
+                      <p className="text-gray-900 font-black uppercase tracking-widest text-xs">AI Performance</p>
+                      <span className="text-maroon font-black text-lg">99.8%</span>
                    </div>
-                   <div className="w-full h-3 bg-white/10 rounded-full mb-10 overflow-hidden">
-                      <div className="w-[99.8%] h-full bg-gold rounded-full" />
+                   <div className="w-full h-3 bg-gray-100 rounded-full mb-10 overflow-hidden">
+                      <div className="w-[99.8%] h-full bg-maroon rounded-full" />
                    </div>
                    <div className="grid grid-cols-2 gap-8">
                       <div>
-                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1">Accuracy</p>
-                        <p className="text-white text-2xl font-black uppercase">Extreme</p>
+                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Accuracy</p>
+                        <p className="text-gray-900 text-2xl font-black uppercase">Extreme</p>
                       </div>
                       <div>
-                        <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1">Response</p>
-                        <p className="text-white text-2xl font-black uppercase">Instant</p>
+                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Response</p>
+                        <p className="text-gray-900 text-2xl font-black uppercase">Instant</p>
                       </div>
                    </div>
                 </div>
