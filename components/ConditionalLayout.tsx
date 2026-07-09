@@ -11,7 +11,9 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   return (
     <>
       {!isAdminPage && <Navbar />}
-      {children}
+      <div className={isAdminPage ? "" : "animate-fade-in"}>
+        {children}
+      </div>
       {!isAdminPage && <Footer />}
     </>
   );

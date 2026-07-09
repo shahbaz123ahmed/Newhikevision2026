@@ -11,7 +11,7 @@ const posters = [
     image: '/hero.png',
     tag: 'Official Platinum Distributor',
     title: 'LEADING UAE IN',
-    subtitle: 'SECURITY.',
+    subtitle: 'SECURITY',
     desc: 'The region\'s most trusted provider of Hikvision solutions, delivering cutting-edge surveillance for government and private sectors.',
     cta1: 'Our Solutions',
     cta2: 'Contact Sales',
@@ -22,7 +22,7 @@ const posters = [
     image: '/poster1.png',
     tag: 'AI-Driven Intelligence',
     title: 'SMARTER CITIES',
-    subtitle: 'SAFER LIVES.',
+    subtitle: 'SAFER LIVES',
     desc: 'Pioneering AI surveillance with DeepinView and AcuSense technology, optimized for the UAE\'s dynamic urban infrastructure.',
     cta1: 'Explore AI',
     cta2: 'Support',
@@ -33,7 +33,7 @@ const posters = [
     image: '/poster.jpeg',
     tag: 'Premium Access Control',
     title: 'UNCOMPROMISED',
-    subtitle: 'PROTECTION.',
+    subtitle: 'PROTECTION',
     desc: 'State-of-the-art biometric and facial recognition systems designed for the unique security needs of Dubai and Abu Dhabi.',
     cta1: 'View Products',
     cta2: 'Get Quote',
@@ -44,7 +44,7 @@ const posters = [
     image: '/poster3.png',
     tag: 'Thermal Innovation',
     title: 'THERMAL VISION',
-    subtitle: 'REINVENTED.',
+    subtitle: 'REINVENTED',
     desc: 'Advanced heat-detection and fire prevention systems, engineered to perform in the Middle East\'s extreme environmental conditions.',
     cta1: 'Thermal Range',
     cta2: 'Expert Advice',
@@ -55,7 +55,7 @@ const posters = [
     image: '/poster4.png',
     tag: 'Intelligent Living',
     title: 'SMART HOMES',
-    subtitle: 'FUTURE-READY.',
+    subtitle: 'FUTURE-READY',
     desc: 'Seamlessly integrating Hik-Connect ecosystems into modern UAE residences for ultimate control and peace of mind.',
     cta1: 'Smart Home',
     cta2: 'Visit Store',
@@ -66,6 +66,7 @@ const posters = [
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const nextSlide = () => {
     if (isAnimating) return;
@@ -82,6 +83,7 @@ export default function HeroSlider() {
   };
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -93,28 +95,34 @@ export default function HeroSlider() {
         <div
           key={poster.id}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current
-            ? 'opacity-100 scale-100 translate-x-0 z-10'
+            ? 'opacity-100 translate-x-0 z-10'
             : index < current
-              ? 'opacity-0 scale-110 -translate-x-full z-0'
-              : 'opacity-0 scale-110 translate-x-full z-0'
+              ? 'opacity-0 -translate-x-full z-0'
+              : 'opacity-0 translate-x-full z-0'
             }`}
         >
-          <Image
-            src={poster.image}
-            alt={poster.title}
-            fill
-            sizes="100vw"
-            className="object-cover object-[75%_center] md:object-center transition-opacity duration-1000"
-            priority
-            quality={75}
-          />
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={poster.image}
+              alt={poster.title}
+              fill
+              sizes="100vw"
+              className={`object-cover object-[75%_center] md:object-center transition-all duration-[2000ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
+                mounted && index === current ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
+              }`}
+              priority
+              quality={75}
+            />
+          </div>
 
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 md:bg-gradient-to-r md:from-black/85 md:via-black/45 md:to-transparent" />
 
           {/* Content */}
           <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-12 md:pb-0 md:items-center pt-24 md:pt-24">
-            <div className={`max-w-3xl text-white transition-all duration-700 delay-300 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`max-w-3xl text-white transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[400ms] ${
+              mounted && index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-3 sm:mb-6 ${poster.accent === 'gold' ? 'bg-gold/20 border-gold/30 text-gold' : 'bg-maroon/20 border-maroon/30 text-maroon'}`}>
                 <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>{poster.tag}</span>

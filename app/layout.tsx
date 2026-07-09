@@ -123,7 +123,6 @@ const geistMono = Geist_Mono({
 });
 
 import ScrollToTop from "@/components/ScrollToTop";
-import Preloader from "@/components/Preloader";
 
 export default function RootLayout({
   children,
@@ -144,7 +143,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Providers>
-          <Preloader />
           <ConditionalLayout>
             {children}
           </ConditionalLayout>

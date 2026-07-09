@@ -12,7 +12,7 @@ export default function DistributorSection() {
               #1 Hikvision Distributor in UAE
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[0.9] tracking-tighter mb-8">
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter mb-8">
               Professional Security <br />
               <span className="text-maroon">Solutions for UAE</span>
             </h2>
