@@ -39,7 +39,7 @@ export default function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="relative flex items-center gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
       <div className="relative flex-1">
         <input
           type="email"
@@ -53,14 +53,14 @@ export default function NewsletterForm() {
       <button
         type="submit"
         disabled={loading}
-        className="shrink-0 flex items-center gap-2 px-6 py-4 rounded-2xl bg-[#C41E3A] hover:bg-[#A01830] text-white font-black text-sm uppercase tracking-widest transition-all disabled:opacity-60 shadow-md shadow-[#C41E3A]/20 active:scale-95"
+        className="shrink-0 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-[#C41E3A] hover:bg-[#A01830] text-white font-black text-sm uppercase tracking-widest transition-all disabled:opacity-60 shadow-md shadow-[#C41E3A]/20 active:scale-95"
       >
         {loading ? (
           <Loader2 size={16} className="animate-spin" />
         ) : (
           <>
             <Send size={16} />
-            <span className="hidden sm:inline">Subscribe</span>
+            <span>Subscribe</span>
           </>
         )}
       </button>

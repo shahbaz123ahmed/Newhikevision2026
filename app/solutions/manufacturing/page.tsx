@@ -20,7 +20,7 @@ export default function ManufacturingSolutionPage() {
             <div className="h-px w-12 bg-gold" />
             <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Industry Solutions</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tight mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">
             Manufacturing <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold">Security</span>
           </h1>
           <p className="text-gray-400 text-xl font-bold uppercase tracking-widest max-w-2xl mb-10 leading-relaxed">
@@ -122,7 +122,7 @@ export default function ManufacturingSolutionPage() {
           </div>
 
           {/* Features Grid */}
-          <div className="page-hero rounded-[60px] p-12 md:p-24 overflow-hidden relative">
+          <div className="page-hero rounded-[2.5rem] md:rounded-[60px] p-6 md:p-24 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/10 to-transparent" />
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-16">

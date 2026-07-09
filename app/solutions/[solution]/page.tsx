@@ -211,7 +211,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       </div>
 
       {/* Premium Industry Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
+      <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden page-hero">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
         
@@ -226,7 +226,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
                 <ShieldCheck size={14} />
                 <span>Hikvision Official Solution</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl md:text-8xl font-black text-white mb-8 uppercase tracking-tight leading-[0.95] sm:leading-[0.85]">
+              <h1 className="text-2xl sm:text-4xl md:text-7xl font-black text-white mb-8 uppercase tracking-tight leading-[0.95] sm:leading-[0.85]">
                 {solutionData.name.split(' ')[0]} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">
                    {solutionData.name.split(' ').slice(1).join(' ')}
@@ -252,14 +252,14 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
             {solutionData.heroImg !== 'no-image' && (
               <div className="relative group">
                 <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-[100px] animate-pulse" />
-                <div className="relative h-[450px] md:h-[550px] overflow-hidden rounded-[60px] shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <div className="relative h-[300px] sm:h-[450px] md:h-[550px] overflow-hidden rounded-[2.5rem] md:rounded-[60px] shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                   <img 
                     src={solutionData.heroImg} 
                     alt={solutionData.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out"
                   />
-                  <div className="absolute bottom-10 left-10 z-20 bg-white/5 backdrop-blur-xl p-8 rounded-3xl border-l-4 border-gold max-w-xs border border-white/10">
+                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-auto z-20 bg-white/5 backdrop-blur-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-l-4 border-gold max-w-none sm:max-w-xs border border-white/10">
                     <p className="text-sm font-black text-white uppercase tracking-widest mb-2">Trusted Solution</p>
                     <p className="text-xs text-white/50 font-medium leading-relaxed">Deployed across top UAE facilities for maximum security and operational excellence.</p>
                   </div>
@@ -283,7 +283,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {solutionData.benefits.map((benefit: string, index: number) => (
-                  <div key={index} className="bg-white p-8 rounded-[30px] border border-gray-100 hover:border-maroon/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                  <div key={index} className="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[30px] border border-gray-100 hover:border-maroon/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
                     <div className="w-12 h-12 rounded-2xl bg-brand-light flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors">
                       <span className="font-black text-lg">0{index + 1}</span>
                     </div>

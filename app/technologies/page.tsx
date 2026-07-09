@@ -57,7 +57,7 @@ export default function TechnologiesPage() {
                 <ShieldCheck size={14} />
                 <span>Next-Gen Security Standards</span>
               </div>
-              <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.85] tracking-tight">
+              <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.85] tracking-tight">
                 THE FUTURE OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">INTELLIGENCE</span>
               </h1>
               <p className="text-xl text-white/60 font-medium leading-relaxed max-w-lg">
@@ -143,7 +143,7 @@ export default function TechnologiesPage() {
               <Link 
                 key={tech.slug} 
                 href={`/technologies/${tech.slug}`}
-                className="group relative bg-white rounded-[40px] p-8 shadow-xl shadow-gray-200/40 border border-gray-100 flex flex-col lg:flex-row gap-8 items-center transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-maroon/10"
+                className="group relative bg-white rounded-[2rem] md:rounded-[40px] p-6 sm:p-8 shadow-xl shadow-gray-200/40 border border-gray-100 flex flex-col lg:flex-row gap-8 items-center transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-maroon/10"
               >
                 <div className="w-full lg:w-[180px] h-[180px] rounded-3xl overflow-hidden bg-gray-50 p-2 shrink-0 border border-gray-50">
                   <img 
@@ -182,7 +182,7 @@ export default function TechnologiesPage() {
       <section className="py-24 bg-white relative overflow-hidden">
          <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[100px]" />
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="page-hero rounded-[50px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
+            <div className="page-hero rounded-[2.5rem] md:rounded-[50px] p-6 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
                <div className="w-full md:w-1/2 space-y-6 relative z-10">
                   <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
                      ADVANCED <span className="text-gold">SURVEILLANCE</span> FOR EVERY ENVIRONMENT

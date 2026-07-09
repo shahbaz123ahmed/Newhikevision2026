@@ -351,7 +351,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
         </div>
 
         {/* Premium DarkFighter Hero */}
-        <section className="relative pt-32 pb-24 overflow-hidden page-hero">
+        <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden page-hero">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-30" />
 
@@ -363,7 +363,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
                   <span>{techData.subtitle}</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-8 tracking-tight uppercase">
+                <h1 className="text-4xl md:text-6xl font-black text-white leading-[1.05] mb-8 tracking-tight uppercase">
                   {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[0] : techData.metaTitle} <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">
                     {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[1] : ''}
@@ -502,7 +502,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
         </div>
 
         {/* Premium ColorVu Hero */}
-        <section className="relative pt-32 pb-24 overflow-hidden page-hero">
+        <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden page-hero">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
 
@@ -513,7 +513,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
                   <Sun size={14} />
                   <span>{techData.subtitle}</span>
                 </div>
-                <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] mb-8 tracking-tight uppercase">
+                <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.9] mb-8 tracking-tight uppercase">
                   {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[0] : techData.metaTitle} <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">
                     {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[1] : ''}
@@ -667,7 +667,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Premium Tech Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
+      <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden page-hero">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
 
@@ -678,7 +678,7 @@ export default async function TechnologySubPage({ params }: { params: Promise<{ 
                 <Zap size={14} />
                 <span>{techData.subtitle}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight uppercase">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tight uppercase">
                 {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[0] : techData.metaTitle} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">
                   {techData.metaTitle.includes(' – ') ? techData.metaTitle.split(' – ')[1] : ''}

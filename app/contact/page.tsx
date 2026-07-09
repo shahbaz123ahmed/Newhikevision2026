@@ -52,7 +52,7 @@ export default function ContactPage() {
               <MessageSquare size={14} className="text-gold" />
               <span className="text-gold font-black uppercase tracking-[0.25em] text-[10px]">Contact Hikvision Support</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tight mb-8">
+            <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
               Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold">Touch</span>
             </h1>
             <p className="text-gray-400 text-lg font-bold uppercase tracking-widest max-w-2xl mb-12">

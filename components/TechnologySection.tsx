@@ -71,7 +71,7 @@ export default function TechnologySection() {
             {technologies.map((tech) => (
               <div 
                 key={tech.id}
-                className={`group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-gray-100 transition-all duration-500 hover:shadow-2xl ${tech.border} hover:-translate-y-2 overflow-hidden`}
+                className={`group relative p-6 md:p-12 rounded-[2.5rem] bg-white border border-gray-100 transition-all duration-500 hover:shadow-2xl ${tech.border} hover:-translate-y-2 overflow-hidden`}
               >
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />

@@ -285,7 +285,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                 <div className="h-px w-12 bg-gold" />
                 <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Official Category</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tight mb-6 leading-none">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 leading-none">
                 {data.name}
               </h1>
               <p className="text-white/60 text-lg font-medium leading-relaxed max-w-2xl">
@@ -357,7 +357,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
             </div>
 
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 leading-none">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6 leading-none">
                 {data.sub?.name || slug[1].replace(/-/g, ' ')}
               </h1>
               <div className="flex items-center gap-6">
@@ -594,7 +594,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
                   <div className="h-px w-12 bg-maroon" />
                   <span className="text-maroon font-black uppercase tracking-[0.3em] text-xs">Product Details</span>
                 </div>
-                <h1 className="inline-block text-3xl sm:text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-[#C41E3A] uppercase tracking-tight mb-4 leading-none py-1">
+                <h1 className="inline-block text-2xl sm:text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-[#C41E3A] uppercase tracking-tight mb-4 leading-none py-1">
                   {product.name}
                 </h1>
                 <p className="text-xl font-bold text-[#C41E3A] uppercase tracking-tight mb-8">

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
-      <section className="relative h-[calc(100vh-85px)] min-h-[600px] flex items-center pt-24 overflow-hidden mb-16">
+      <section className="relative h-[65vh] sm:h-[calc(100vh-85px)] min-h-[420px] sm:min-h-[600px] flex items-end pb-4 sm:pb-0 sm:items-center pt-16 sm:pt-24 overflow-hidden mb-16">
         <div className="absolute inset-0 z-0">
           <img 
             src="/hero.png"
@@ -18,17 +18,17 @@ export default function AboutPage() {
         </div>
         
         <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
-          <div className="max-w-3xl space-y-8 pl-4 lg:pl-8">
+          <div className="max-w-3xl space-y-6 pl-4 lg:pl-8">
             <div className="flex items-center gap-3">
               <div className="h-px w-12 bg-gold" />
               <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.85]">
+            <h1 className="text-2xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] sm:leading-[0.85]">
               Securing the UAE <br />
               With <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Intelligence.</span>
             </h1>
-            <p className="text-white/80 text-lg font-medium leading-relaxed max-w-2xl">
+            <p className="text-white/80 text-sm sm:text-lg font-medium leading-relaxed max-w-2xl">
               As the premier authorized distributor of Hikvision technologies in the United Arab Emirates, we deliver world-class surveillance solutions to government, industrial, and residential sectors.
             </p>
           </div>
@@ -36,9 +36,9 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white border-b border-gray-100">
+      <section className="py-12 sm:py-20 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-12">
             {[
               { label: "Years in UAE", value: "15+" },
               { label: "Projects Delivered", value: "2,500+" },
@@ -46,8 +46,8 @@ export default function AboutPage() {
               { label: "Cities Covered", value: "7/7" }
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl md:text-6xl font-black text-maroon mb-2">{stat.value}</div>
-                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</div>
+                <div className="text-3xl sm:text-5xl md:text-6xl font-black text-maroon mb-2">{stat.value}</div>
+                <div className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -55,25 +55,25 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div className="relative group cursor-pointer">
-               <div className="aspect-square rounded-[3rem] bg-gray-100 dark:bg-white/5 border-2 border-[#C41E3A] p-4 shadow-xl transition-all duration-700 group-hover:shadow-2xl">
-                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+               <div className="aspect-[4/3] sm:aspect-square rounded-[2rem] sm:rounded-[3rem] bg-gray-100 dark:bg-white/5 border-2 border-[#C41E3A] p-3 sm:p-4 shadow-xl transition-all duration-700 group-hover:shadow-2xl">
+                  <div className="w-full h-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden">
                      <img src="/Solutions/Manufacturing.png" alt="Mission" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1" />
                   </div>
                </div>
-               <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl animate-pulse"></div>
+               <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl animate-pulse hidden sm:block"></div>
             </div>
             
             <div>
               <h2 className="text-maroon font-black uppercase tracking-[0.4em] text-xs mb-4">Our Mission</h2>
-              <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tighter mb-8 leading-[1.1]">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tighter mb-4 sm:mb-8 leading-[1.1]">
                 Empowering Safety Through <br />
                 <span className="text-maroon">Advanced Innovation.</span>
               </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
+              <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 sm:mb-10">
                 Our mission is to provide the UAE with the most advanced, reliable, and intelligent security solutions available. We believe that technology should not only observe but protect, anticipate, and assist in creating a safer society for everyone.
               </p>
               
@@ -83,13 +83,13 @@ export default function AboutPage() {
                   { title: "Local Expertise", desc: "Deep understanding of UAE security regulations and environmental needs.", icon: Target },
                   { title: "Award Winning", desc: "Recognized for excellence in system integration and support.", icon: Award }
                 ].map((item) => (
-                  <div key={item.title} className="flex gap-6 group">
-                    <div className="w-12 h-12 rounded-2xl bg-maroon/5 flex items-center justify-center text-maroon group-hover:bg-maroon group-hover:text-white transition-all">
-                      <item.icon size={24} />
+                  <div key={item.title} className="flex gap-4 sm:gap-6 group">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-maroon/5 flex items-center justify-center text-maroon group-hover:bg-maroon group-hover:text-white transition-all shrink-0">
+                      <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 dark:text-white uppercase tracking-tight">{item.title}</h4>
-                      <p className="text-sm text-gray-400">{item.desc}</p>
+                      <h4 className="font-black text-gray-900 dark:text-white uppercase tracking-tight text-sm sm:text-base">{item.title}</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -100,15 +100,15 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 page-hero relative overflow-hidden">
+      <section className="py-16 sm:py-24 page-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-8">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter mb-6 sm:mb-8">
             Building a Safer <span className="text-gold">Future</span> Together.
           </h2>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-white text-maroon font-black text-lg hover:bg-gold transition-all shadow-2xl">
+          <Link href="/contact" className="inline-flex items-center gap-2.5 sm:gap-3 px-6 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-white text-maroon font-black text-base sm:text-lg hover:bg-gold transition-all shadow-2xl">
             Partner With Us
-            <ArrowRight size={20} />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
         </div>
       </section>
@@ -161,16 +161,16 @@ export default function AboutPage() {
         ]
       })}} />
 
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="py-16 sm:py-24 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <p className="text-[10px] font-black text-maroon uppercase tracking-[0.4em] mb-4">Frequently Asked Questions</p>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter">
               About <span className="text-maroon">Hikvision UAE</span>
             </h2>
             <div className="w-20 h-1 bg-gold mx-auto rounded-full mt-6" />
           </div>
-          <div className="space-y-5">
+          <div className="space-y-4 sm:space-y-5">
             {[
               { q: "What is Hikvision UAE?", a: "Hikvision UAE is the official authorized distributor of Hikvision security products in the UAE, headquartered in Dubai. Established for over 15 years, we supply and install CCTV cameras, NVRs, PTZ cameras, access control, and AI surveillance solutions across all 7 Emirates." },
               { q: "Is Hikvision UAE an official authorized distributor?", a: "Yes. We are the officially authorized Hikvision distributor in the UAE, certified to supply genuine products with manufacturer warranty. Located at Al Khabaisi, Abu Hail, Dubai." },
@@ -179,9 +179,9 @@ export default function AboutPage() {
               { q: "Does Hikvision UAE offer installation?", a: "Yes — from free site survey and system design to professional installation, configuration, and Annual Maintenance Contracts (AMC). Our certified engineers are based in Dubai." },
               { q: "What warranty do products carry?", a: "All genuine Hikvision products from us come with a 3-year manufacturer warranty backed by official distributor support." },
             ].map(({ q, a }, i) => (
-              <div key={i} className="bg-gray-50 rounded-[20px] p-8 border border-gray-100 hover:border-maroon/20 transition-all group">
-                <h3 className="text-base font-black text-gray-900 uppercase tracking-tight mb-3 group-hover:text-maroon transition-colors">{q}</h3>
-                <p className="text-sm text-gray-600 font-medium leading-relaxed">{a}</p>
+              <div key={i} className="bg-gray-50 rounded-[1.25rem] p-5 sm:p-8 border border-gray-100 hover:border-maroon/20 transition-all group">
+                <h3 className="text-sm sm:text-base font-black text-gray-900 uppercase tracking-tight mb-2 sm:mb-3 group-hover:text-maroon transition-colors">{q}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">{a}</p>
               </div>
             ))}
           </div>

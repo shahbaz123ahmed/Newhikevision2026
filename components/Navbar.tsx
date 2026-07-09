@@ -110,12 +110,12 @@ export default function Navbar() {
       </div>
 
       {/* Main navigation - Clean and Modern */}
-      <nav className={`transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md py-2' : 'bg-white py-4'}`}>
+      <nav className={`transition-all duration-300 ${open ? 'bg-white' : scrolled ? 'bg-white/95 backdrop-blur-md' : 'bg-white'} ${scrolled ? 'py-2' : 'py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Link href="/" className="flex items-center group">
-                <img src="/logo.webp" alt="Hikvision logo" className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" />
+                <img src="/logo.webp" alt="Hikvision logo" className="h-10 sm:h-12 w-auto shrink-0 transition-transform group-hover:scale-105" />
               </Link>
             </div>
 
@@ -421,7 +421,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            <div className="md:hidden flex items-center pr-1 sm:pr-2">
               <button 
                 onClick={() => setOpen(!open)} 
                 className="p-2 text-maroon hover:bg-gray-100 rounded-lg transition-colors"
@@ -434,7 +434,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu panel */}
-        <div className={`md:hidden fixed inset-0 ${scrolled ? 'top-24' : 'top-28'} bg-white z-40 transition-all duration-500 ease-in-out ${open ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        <div className={`md:hidden fixed inset-0 ${scrolled ? 'top-[56px]' : 'top-[112px]'} bg-white z-40 transition-all duration-500 ease-in-out ${open ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
           <div className={`flex flex-col h-full transform transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-10'}`}>
             <div className="px-6 py-8 space-y-2 overflow-y-auto h-full pb-32">
               <div className="mb-8 p-6 bg-maroon rounded-3xl text-white">

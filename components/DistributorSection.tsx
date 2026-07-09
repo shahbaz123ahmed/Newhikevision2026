@@ -22,7 +22,7 @@ export default function DistributorSection() {
             </p>
             
             {/* Trust Section */}
-            <div className="flex flex-col sm:flex-row items-center gap-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
               {/* Avatars */}
               <div className="flex -space-x-4">
                 {[

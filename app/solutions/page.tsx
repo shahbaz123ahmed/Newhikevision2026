@@ -101,7 +101,7 @@ export default function SolutionsPage() {
                 <ShieldCheck size={14} />
                 <span>Enterprise Solutions Portfolio</span>
               </div>
-              <h1 className="text-5xl md:text-8xl font-black text-white tracking-tight leading-[0.85] uppercase">
+              <h1 className="text-4xl md:text-7xl font-black text-white tracking-tight leading-[0.85] uppercase">
                 Tailored <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Security</span> <br />
                 For Every <span className="text-white/40">Industry.</span>
@@ -133,12 +133,12 @@ export default function SolutionsPage() {
             
             <div className="relative group mt-10 lg:mt-14">
               <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-3xl transform rotate-6 transition-transform group-hover:rotate-12 duration-1000" />
-              <div className="relative bg-white/5 backdrop-blur-md rounded-[60px] p-6 border border-white/10 overflow-hidden">
-                 <img 
-                   src="/solutions.png" 
-                   alt="Solutions Hero" 
-                   className="w-full aspect-[4/3] lg:aspect-square object-cover rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
-                 />
+              <div className="relative bg-white/5 backdrop-blur-md rounded-[2.5rem] sm:rounded-[60px] p-6 border border-white/10 overflow-hidden">
+                  <img 
+                    src="/solutions.png" 
+                    alt="Solutions Hero" 
+                    className="w-full aspect-[4/3] lg:aspect-square object-cover rounded-[2rem] sm:rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
+                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                  <div className="absolute bottom-10 left-10 text-white">
                     <p className="text-5xl font-black uppercase tracking-tight leading-none mb-2">Smart <span className="text-gold">Solutions</span></p>

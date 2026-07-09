@@ -103,11 +103,11 @@ export default function SecurityOverview() {
                   width={800}
                   height={1000}
                   priority
-                  className="w-full h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
+                  className="w-full h-[350px] sm:h-[500px] lg:h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
 
                 {/* Floating Badge */}
-                <div className="absolute bottom-10 left-10 right-10 p-8 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 z-20">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 z-20">
                   <div className="flex items-center gap-6">
                     <div className="text-center border-r border-white/20 pr-6">
                       <p className="text-4xl font-black text-gold">100%</p>

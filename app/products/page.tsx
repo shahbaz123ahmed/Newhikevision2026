@@ -38,7 +38,7 @@ export default function ProductsPage() {
                 <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
               </div>
               
-              <h1 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tight leading-[0.85]">
+              <h1 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tight leading-[0.85]">
                 Premium <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Catalog.</span>
               </h1>

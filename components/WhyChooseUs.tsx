@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Global UAE Presence Indicator */}
-        <div className="mt-24 p-12 rounded-[4rem] bg-maroon relative overflow-hidden group">
+        <div className="mt-24 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] bg-maroon relative overflow-hidden group">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--brand-gold)_0%,_transparent_60%)] opacity-20" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-white text-center md:text-left">
             <div>

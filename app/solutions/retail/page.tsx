@@ -8,11 +8,11 @@ export default function RetailSolutionPage() {
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative pt-40 pb-32 bg-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
-           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent z-10" />
+        <div className="absolute inset-0 lg:left-1/2 lg:w-1/2 h-full block">
+           <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/40 lg:bg-gradient-to-r lg:from-white lg:via-white/50 lg:to-transparent z-10" />
            <img 
              src="/Solutions/Retail.png" 
-             className="w-full h-full object-cover"
+             className="w-full h-full object-cover opacity-20 lg:opacity-100"
              alt="Retail Security"
            />
         </div>
@@ -22,7 +22,7 @@ export default function RetailSolutionPage() {
               <ShoppingBag size={14} className="text-maroon" />
               <span className="text-maroon font-black uppercase tracking-[0.2em] text-[10px]">Retail Sector Solutions</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-black text-gray-900 uppercase tracking-tighter mb-8 leading-[0.9]">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tighter mb-8 leading-[0.9]">
               Retail <br /> <span className="text-maroon">Excellence</span>
             </h1>
             <p className="text-gray-500 text-lg font-bold uppercase tracking-widest mb-12 leading-relaxed">
@@ -83,7 +83,7 @@ export default function RetailSolutionPage() {
                  color: "bg-maroon"
                }
              ].map((feat, i) => (
-               <div key={i} className="group bg-white p-10 rounded-[40px] border border-gray-100 shadow-xl shadow-gray-200/40 hover:shadow-maroon/10 transition-all duration-500 relative overflow-hidden">
+               <div key={i} className="group bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[40px] border border-gray-100 shadow-xl shadow-gray-200/40 hover:shadow-maroon/10 transition-all duration-500 relative overflow-hidden">
                  <div className={`absolute top-0 right-0 w-32 h-32 ${feat.color} opacity-0 group-hover:opacity-5 transition-opacity rounded-bl-[100px]`} />
                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-8 ${feat.color} shadow-lg transition-transform group-hover:scale-110 duration-500`}>
                    {feat.icon}
@@ -98,7 +98,7 @@ export default function RetailSolutionPage() {
           </div>
 
           {/* Business Insights Section */}
-          <div className="relative rounded-[60px] overflow-hidden bg-gradient-to-br from-white to-gray-50/50 border border-gray-150/80 shadow-2xl shadow-gray-200/50 p-12 md:p-24">
+          <div className="relative rounded-[2.5rem] md:rounded-[60px] overflow-hidden bg-gradient-to-br from-white to-gray-50/50 border border-gray-150/80 shadow-2xl shadow-gray-200/50 p-6 md:p-24">
              <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Analytics" />
              </div>
@@ -121,7 +121,7 @@ export default function RetailSolutionPage() {
                       ))}
                    </div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-md border border-gray-100/85 p-10 rounded-[40px] shadow-xl shadow-gray-100/50">
+                <div className="bg-white/80 backdrop-blur-md border border-gray-100/85 p-6 md:p-10 rounded-[2rem] md:rounded-[40px] shadow-xl shadow-gray-100/50">
                    <div className="flex items-center justify-between mb-8">
                       <p className="text-gray-900 font-black uppercase tracking-widest text-xs">AI Performance</p>
                       <span className="text-maroon font-black text-lg">99.8%</span>

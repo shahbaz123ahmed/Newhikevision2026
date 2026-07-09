@@ -8,7 +8,7 @@ export default function EducationSolutionPage() {
     <main className="min-h-screen bg-gray-50 pt-32 pb-20">
       {/* Hero Section - Clean Academic Aesthetic */}
       <section className="max-w-7xl mx-auto px-4 mb-24">
-        <div className="relative rounded-[60px] overflow-hidden bg-white shadow-2xl shadow-gray-200/50 p-12 md:p-24 flex flex-col items-center text-center">
+        <div className="relative rounded-[2.5rem] md:rounded-[60px] overflow-hidden bg-white shadow-2xl shadow-gray-200/50 p-6 md:p-24 flex flex-col items-center text-center">
            <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] scale-150" />
            </div>
@@ -18,7 +18,7 @@ export default function EducationSolutionPage() {
                 <GraduationCap size={14} className="text-maroon" />
                 <span className="text-maroon font-black uppercase tracking-[0.25em] text-[10px]">Education & Campus Solutions</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tight mb-8 leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tight mb-8 leading-[1.1]">
                  Hikvision Solutions for <br /> <span className="text-maroon">Education in UAE</span>
               </h1>
               <p className="text-gray-500 text-lg font-bold uppercase tracking-widest max-w-3xl mb-12 leading-relaxed">
@@ -125,7 +125,7 @@ export default function EducationSolutionPage() {
 
       {/* Locations Banner */}
       <section className="max-w-7xl mx-auto px-4">
-         <div className="bg-maroon rounded-[40px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+         <div className="bg-maroon rounded-[2.5rem] p-6 sm:p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="absolute inset-0 opacity-10">
                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
             </div>
