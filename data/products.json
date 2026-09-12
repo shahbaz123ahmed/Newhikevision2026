@@ -1,21 +1,4 @@
-export interface Product {
-  id: string;
-  name: string;
-  slug: string;
-  subTitle?: string;
-  categorySlug: string;
-  subCategorySlug: string;
-  images: string[];
-  description: string;
-  features?: string[];
-  keyFeatures?: string[];
-  specifications?: Record<string, any>;
-  rating?: number;
-  reviewCount?: number;
-  isFeatured?: boolean;
-}
-
-export const products: Product[] = [
+[
   {
     "id": "69fc18a88314a6709cec9a63",
     "name": "DS-2CD3118G2-I",
@@ -5266,4 +5249,4 @@ export const products: Product[] = [
     "reviewCount": 0,
     "isFeatured": false
   }
-];
+]

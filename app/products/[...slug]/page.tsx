@@ -604,69 +604,20 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           document.body
         )}
 
-        {/* Product Hero Section */}
-        <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-maroon/10">
-          <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-maroon/15 via-transparent to-transparent pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-gray-500 font-black uppercase tracking-widest text-[10px] mb-12 bg-white w-fit px-4 py-2 rounded-full border border-gray-100 shadow-sm">
-              <Link href="/products" className="hover:text-maroon transition-colors">Catalog</Link>
-              <ChevronRight size={10} className="text-gray-300" />
-              <Link href={`/products/${slug[0]}`} className="hover:text-maroon transition-colors">{data.category?.name || slug[0]}</Link>
-              <ChevronRight size={10} className="text-gray-300" />
-              <Link href={`/products/${slug[0]}/${slug[1]}`} className="hover:text-maroon transition-colors">{data.sub?.name || slug[1]}</Link>
-              <ChevronRight size={10} className="text-gray-300" />
-              <span className="text-maroon truncate max-w-[150px]">{product.name}</span>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="h-px w-12 bg-maroon" />
-                  <span className="text-maroon font-black uppercase tracking-[0.3em] text-xs">Product Details</span>
-                </div>
-                <h1 className="inline-block text-2xl sm:text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-[#C41E3A] uppercase tracking-tight mb-4 leading-none py-1">
-                  {product.name}
-                </h1>
-                <p className="text-xl font-bold text-[#C41E3A] uppercase tracking-tight mb-8">
-                  {product.subTitle}
-                </p>
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => setShowEnquiryModal(true)}
-                    className="px-8 py-4 bg-maroon text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-black transition-all shadow-xl shadow-maroon/20 active:scale-95"
-                  >
-                    Enquire Now
-                  </button>
-                  <button
-                    onClick={generatePDF}
-                    className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-full font-black uppercase tracking-widest text-[10px] hover:border-maroon hover:text-maroon transition-all shadow-sm"
-                  >
-                    Datasheet
-                  </button>
-                </div>
-              </div>
-
-              {/* Floating product visual in hero */}
-              <div className="hidden lg:block relative group">
-                <div className="absolute inset-0 bg-maroon/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-                <div className="relative aspect-square bg-white rounded-[40px] border-[2px] border-[#C41E3A] p-12 flex items-center justify-center shadow-2xl overflow-hidden group">
-
-                  {product.images?.[0] ? (
-                    <img src={product.images[0]} alt="" className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500 relative z-30" />
-                  ) : (
-                    <ShieldCheck size={100} className="text-gray-200 relative z-30" />
-                  )}
-                </div>
-              </div>
-            </div>
+        {/* Product Details Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32">
+          {/* Breadcrumbs */}
+          <div className="flex items-center gap-2 text-gray-500 font-black uppercase tracking-widest text-[10px] mb-10 bg-white w-fit px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+            <Link href="/products" className="hover:text-maroon transition-colors">Catalog</Link>
+            <ChevronRight size={10} className="text-gray-300" />
+            <Link href={`/products/${slug[0]}`} className="hover:text-maroon transition-colors">{data.category?.name || slug[0]}</Link>
+            <ChevronRight size={10} className="text-gray-300" />
+            <Link href={`/products/${slug[0]}/${slug[1]}`} className="hover:text-maroon transition-colors">{data.sub?.name || slug[1]}</Link>
+            <ChevronRight size={10} className="text-gray-300" />
+            <span className="text-maroon truncate max-w-[200px]">{product.name}</span>
           </div>
-        </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
             {/* Image Gallery */}
             <div className="space-y-6">
               <div className="aspect-square rounded-[40px] bg-gray-50 border-[2px] border-[#C41E3A] flex items-center justify-center p-12 overflow-hidden relative group">
@@ -760,29 +711,58 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          {/* Full Specifications Section */}
-          <div className="mt-32 border-t border-gray-100 pt-20">
-            <div className="flex items-center gap-4 mb-12">
-              <div className="p-3 bg-gray-50 rounded-2xl text-maroon">
-                <Info size={24} />
-              </div>
-              <div>
-                <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Full Specifications</h2>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Deep Technical Analysis</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
-              {product.features?.map((feat: string, i: number) => (
-                <div key={i} className="flex gap-6 items-start group">
-                  <span className="text-3xl font-black text-[#C41E3A] transition-colors">{(i + 1).toString().padStart(2, '0')}</span>
-                  <p className="text-sm font-bold text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
-                    {feat}
-                  </p>
+          {/* 6 Technical Specifications Cards */}
+          {product.specifications && Object.keys(product.specifications).length > 0 && (
+            <div className="mt-20 border-t border-gray-100 pt-16">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-maroon/5 rounded-2xl text-maroon border border-maroon/10">
+                  <ShieldCheck size={24} />
                 </div>
-              ))}
+                <div>
+                  <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Technical Specifications</h2>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Certified Hardware Performance</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div
+                    key={key}
+                    className="p-6 rounded-3xl bg-gray-50/80 border border-gray-100 shadow-sm hover:border-maroon/20 hover:bg-white hover:shadow-md transition-all group"
+                  >
+                    <span className="text-[10px] font-black text-maroon uppercase tracking-widest block mb-2">{key}</span>
+                    <p className="text-sm font-bold text-gray-900 leading-snug">{String(value)}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Full Features & Capabilities Section */}
+          {product.features && product.features.length > 0 && (
+            <div className="mt-20 border-t border-gray-100 pt-16">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-gray-50 rounded-2xl text-maroon">
+                  <Info size={24} />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Key Capabilities & Features</h2>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Deep Technical Analysis</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
+                {product.features.map((feat: string, i: number) => (
+                  <div key={i} className="flex gap-5 items-start group p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                    <span className="text-2xl font-black text-[#C41E3A] shrink-0">{(i + 1).toString().padStart(2, '0')}</span>
+                    <p className="text-sm font-bold text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                      {feat}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </main>
     );
