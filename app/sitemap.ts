@@ -1,15 +1,9 @@
 import { MetadataRoute } from "next";
-import mongoose from "mongoose";
+import { categories, subCategories, products } from "@/data/catalog";
 
 const SITE_URL = "https://hikvisionuae.ae";
-const MONGODB_URI = process.env.MONGODB_URI as string;
 
-async function connectDB() {
-  if (mongoose.connection.readyState >= 1) return;
-  await mongoose.connect(MONGODB_URI);
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/products`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
@@ -33,77 +27,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/solutions/hospitality`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 
-  try {
-    await connectDB();
-    const db = mongoose.connection.db!;
+  // Category pages
+  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
+    url: `${SITE_URL}/products/${cat.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
 
-    // Fetch all categories
-    const categories = await db.collection("categories").find({}, { projection: { slug: 1, updatedAt: 1 } }).toArray();
-    const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-      url: `${SITE_URL}/products/${cat.slug}`,
-      lastModified: cat.updatedAt ?? new Date(),
-      changeFrequency: "weekly",
-      priority: 0.85,
-    }));
+  // SubCategory pages
+  const subCategoryPages: MetadataRoute.Sitemap = subCategories.map((sub) => ({
+    url: `${SITE_URL}/products/${sub.categorySlug}/${sub.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
 
-    // Fetch all subcategories with their parent category slugs
-    const subcategories = await db.collection("subcategories")
-      .aggregate([
-        {
-          $lookup: {
-            from: "categories",
-            localField: "category",
-            foreignField: "_id",
-            as: "parentCategory",
-          },
-        },
-        { $unwind: "$parentCategory" },
-        { $project: { slug: 1, "parentCategory.slug": 1, updatedAt: 1 } },
-      ])
-      .toArray();
+  // Product pages
+  const productPages: MetadataRoute.Sitemap = products.map((prod) => ({
+    url: `${SITE_URL}/products/${prod.categorySlug}/${prod.subCategorySlug}/${prod.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
 
-    const subCategoryPages: MetadataRoute.Sitemap = subcategories.map((sub) => ({
-      url: `${SITE_URL}/products/${sub.parentCategory.slug}/${sub.slug}`,
-      lastModified: sub.updatedAt ?? new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    }));
-
-    // Fetch all products with category + subcategory slugs
-    const products = await db.collection("products")
-      .aggregate([
-        {
-          $lookup: {
-            from: "categories",
-            localField: "category",
-            foreignField: "_id",
-            as: "cat",
-          },
-        },
-        {
-          $lookup: {
-            from: "subcategories",
-            localField: "subCategory",
-            foreignField: "_id",
-            as: "sub",
-          },
-        },
-        { $unwind: "$cat" },
-        { $unwind: "$sub" },
-        { $project: { slug: 1, "cat.slug": 1, "sub.slug": 1, updatedAt: 1 } },
-      ])
-      .toArray();
-
-    const productPages: MetadataRoute.Sitemap = products.map((prod) => ({
-      url: `${SITE_URL}/products/${prod.cat.slug}/${prod.sub.slug}/${prod.slug}`,
-      lastModified: prod.updatedAt ?? new Date(),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    }));
-
-    return [...staticPages, ...categoryPages, ...subCategoryPages, ...productPages];
-  } catch (err) {
-    console.error("Sitemap generation error:", err);
-    return staticPages;
-  }
+  return [...staticPages, ...categoryPages, ...subCategoryPages, ...productPages];
 }

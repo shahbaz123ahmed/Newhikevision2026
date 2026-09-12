@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/mongodb';
-import { Product } from '@/models/Product';
-import { Category } from '@/models/Category'; // Ensure model is registered
-import { SubCategory } from '@/models/SubCategory'; // Ensure model is registered
+import { getProductBySlug, getCategories, getSubCategories } from '@/data/catalog';
+
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export async function GET(
   request: Request,
@@ -10,16 +10,32 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    await dbConnect();
-    const product = await Product.findOne({ slug })
-      .populate('category')
-      .populate('subCategory');
+    const product = getProductBySlug(slug);
 
     if (!product) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
-    return NextResponse.json(product);
+    const allCats = getCategories();
+    const allSubs = getSubCategories();
+
+    const populated = {
+      ...product,
+      category: allCats.find((c) => c.slug === product.categorySlug) || {
+        slug: product.categorySlug,
+        name: product.categorySlug,
+      },
+      subCategory: allSubs.find((s) => s.slug === product.subCategorySlug) || {
+        slug: product.subCategorySlug,
+        name: product.subCategorySlug,
+      },
+    };
+
+    return NextResponse.json(populated, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    });
   } catch (error) {
     console.error('Failed to fetch product:', error);
     return NextResponse.json({ error: 'Failed to fetch product' }, { status: 500 });

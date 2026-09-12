@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import ConditionalLayout from "@/components/ConditionalLayout";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const SITE_URL = "https://hikvisionuae.ae";
@@ -121,8 +122,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-import ScrollToTop from "@/components/ScrollToTop";
 
 export default function RootLayout({
   children,

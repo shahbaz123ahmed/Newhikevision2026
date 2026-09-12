@@ -1,12 +1,17 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/mongodb';
-import { Category } from '@/models/Category';
+import { getAllCategories } from '@/data/catalog';
+
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export async function GET() {
   try {
-    await dbConnect();
-    const categories = await Category.find().sort({ name: 1 });
-    return NextResponse.json(categories);
+    const categories = getAllCategories();
+    return NextResponse.json(categories, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    });
   } catch (error) {
     console.error('Failed to fetch categories:', error);
     return NextResponse.json({ error: 'Failed to fetch categories' }, { status: 500 });

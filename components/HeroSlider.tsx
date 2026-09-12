@@ -66,14 +66,13 @@ const posters = [
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrent((prev) => (prev + 1) % posters.length);
     setTimeout(() => setIsAnimating(false), 800);
-  };
+  };  
 
   const prevSlide = () => {
     if (isAnimating) return;
@@ -83,7 +82,6 @@ export default function HeroSlider() {
   };
 
   useEffect(() => {
-    setMounted(true);
     const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -108,7 +106,7 @@ export default function HeroSlider() {
               fill
               sizes="100vw"
               className={`object-cover object-[75%_center] md:object-center transition-all duration-[2000ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
-                mounted && index === current ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
+                index === current ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
               }`}
               priority
               quality={75}
@@ -121,7 +119,7 @@ export default function HeroSlider() {
           {/* Content */}
           <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-12 md:pb-0 md:items-center pt-24 md:pt-24">
             <div className={`max-w-3xl text-white transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[400ms] ${
-              mounted && index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-3 sm:mb-6 ${poster.accent === 'gold' ? 'bg-gold/20 border-gold/30 text-gold' : 'bg-maroon/20 border-maroon/30 text-maroon'}`}>
                 <Shield className="w-3 h-3 sm:w-4 sm:h-4" />

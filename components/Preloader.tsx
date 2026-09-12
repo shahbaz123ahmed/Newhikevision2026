@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { ShieldCheck } from 'lucide-react';
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);

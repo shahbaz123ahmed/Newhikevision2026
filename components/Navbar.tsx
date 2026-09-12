@@ -3,39 +3,18 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Phone, Mail, ShieldCheck, Menu, X, ChevronRight, MapPin, ArrowRight, Building2, Store, HeartPulse, GraduationCap } from 'lucide-react';
+import { getNavCatalog } from '@/data/catalog';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [categories, setCategories] = useState<any[]>([]);
-  const [activeCategory, setActiveCategory] = useState<any>(null);
+  const [categories, setCategories] = useState<any[]>(() => getNavCatalog());
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-
-    const fetchCatalog = async () => {
-      try {
-        const res = await fetch('/api/nav-products');
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const contentType = res.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new TypeError("Response is not JSON");
-        }
-        const data = await res.json();
-        if (Array.isArray(data)) {
-          setCategories(data);
-          if (data.length > 0) setActiveCategory(data[0]);
-        }
-      } catch (err) {
-        console.error('Nav catalog fetch error:', err);
-      }
-    };
-    fetchCatalog();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -110,7 +89,7 @@ export default function Navbar() {
       </div>
 
       {/* Main navigation - Clean and Modern */}
-      <nav className={`transition-all duration-300 ${open ? 'bg-white' : scrolled ? 'bg-white/95 backdrop-blur-md' : 'bg-white'} ${scrolled ? 'py-2' : 'py-4'}`}>
+      <nav className={`relative transition-all duration-300 ${open ? 'bg-white' : scrolled ? 'bg-white/95 backdrop-blur-md' : 'bg-white'} ${scrolled ? 'py-2' : 'py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -129,7 +108,7 @@ export default function Navbar() {
               </Link>
 
               {/* Products Dropdown - Mega Menu */}
-              <div className="relative group/prod">
+              <div className="group/prod">
                 <Link 
                   href="/products" 
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
@@ -138,9 +117,9 @@ export default function Navbar() {
                   <ChevronRight size={14} className="rotate-90 group-hover/prod:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
-                {/* Products Mega Menu - Redesigned to match screenshot */}
-                <div className="absolute top-full left-1/2 -translate-x-[45%] pt-4 opacity-0 invisible translate-y-4 group-hover/prod:opacity-100 group-hover/prod:visible group-hover/prod:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                  <div className="bg-white rounded-[32px] shadow-[0_25px_80px_rgba(0,0,0,0.18)] border border-gray-100 p-0 w-[1000px] overflow-hidden flex flex-col">
+                {/* Products Mega Menu - Perfectly Centered */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/prod:opacity-100 group-hover/prod:visible group-hover/prod:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
+                  <div className="bg-white rounded-[32px] shadow-[0_25px_80px_rgba(0,0,0,0.18)] border border-gray-100 p-0 w-[95vw] max-w-[1080px] overflow-hidden flex flex-col">
                     {/* Header */}
                     <div className="px-10 py-6 border-b border-gray-50 flex items-center justify-between bg-gray-50/50">
                       <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">Security Solutions</h3>
@@ -154,7 +133,7 @@ export default function Navbar() {
                           (cat.subCategories || []).map((sub: any) => ({ ...sub, catSlug: cat.slug }))
                         ).map((sub) => (
                           <Link
-                            key={sub._id}
+                            key={sub._id || sub.slug}
                             href={`/products/${sub.catSlug}/${sub.slug}`}
                             className="flex items-start gap-5 group/sub-item"
                             onClick={() => setOpen(false)}
@@ -190,7 +169,7 @@ export default function Navbar() {
               </div>
 
               {/* Technologies Dropdown */}
-              <div className="relative group/tech">
+              <div className="group/tech">
                 <Link 
                   href="/technologies" 
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
@@ -199,8 +178,8 @@ export default function Navbar() {
                   <ChevronRight size={14} className="rotate-90 group-hover/tech:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                  <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-0 w-[90vw] max-w-[850px] overflow-hidden flex h-[480px]">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/tech:opacity-100 group-hover/tech:visible group-hover/tech:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
+                  <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-0 w-[95vw] max-w-[850px] overflow-hidden flex h-[480px]">
                     {/* Left: Featured Technology */}
                     <div className="w-[45%] relative group/img overflow-hidden border-r border-gray-50">
                       <img 
@@ -314,7 +293,7 @@ export default function Navbar() {
               </div>
 
               {/* Solutions Dropdown */}
-              <div className="relative group/sol">
+              <div className="group/sol">
                 <Link 
                   href="/solutions" 
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
@@ -323,7 +302,7 @@ export default function Navbar() {
                   <ChevronRight size={14} className="rotate-90 group-hover/sol:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/sol:opacity-100 group-hover/sol:visible group-hover/sol:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/sol:opacity-100 group-hover/sol:visible group-hover/sol:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
                   <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-6 w-[95vw] max-w-[1000px] overflow-hidden relative">
                     <div className="flex items-center justify-between mb-6 px-2">
                        <div className="space-y-1">
