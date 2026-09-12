@@ -1,0 +1,612 @@
+[
+  {
+    "id": "69fc18b08314a6709cec9ab1",
+    "name": "DS-KH8082WTE1",
+    "slug": "ds-kh8082wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH8082WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18aa8314a6709cec9a71",
+    "name": "DS-KH1350WTE1",
+    "slug": "ds-kh1350wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH1350WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ab8314a6709cec9a79",
+    "name": "DS-KH6557WTE1",
+    "slug": "ds-kh6557wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH6557WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18b18314a6709cec9ab9",
+    "name": "DS-KH8350-WTE1",
+    "slug": "ds-kh8350-wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [
+      "https://res.cloudinary.com/dywfpe9dw/image/upload/v1778494713/hikvision_uae/products/rwfoojv4jvzeqilmhd7e.jpg"
+    ],
+    "description": "The Hikvision DS-KH8350-WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18b18314a6709cec9ac1",
+    "name": "DS-KH6320-WTE1",
+    "slug": "ds-kh6320-wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [
+      "https://res.cloudinary.com/dywfpe9dw/image/upload/v1778494720/hikvision_uae/products/dqfkujbxecvoozbtbqxm.jpg"
+    ],
+    "description": "The DS-KH6320-WTE1 is a premium 7-inch indoor station designed for modern video intercom and security applications. Featuring a responsive touch interface, reliable communication capabilities, and seamless integration with Hikvision systems, it delivers a smooth user experience for residential, commercial, and enterprise environments. Its compact design, easy installation process, and dependable performance make it an ideal choice for advanced access control and visitor management solutions.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Display",
+      "Audio": "Built-in Microphone and Speaker",
+      "Communication": "Two-Way Audio Support",
+      "Installation": "Wall Mounted Design",
+      "Integration": "Compatible with Hikvision Intercom Systems"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": true,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ae8314a6709cec9a99",
+    "name": "DS-KH6296WTE1",
+    "slug": "ds-kh6296wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH6296WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ae8314a6709cec9aa1",
+    "name": "DS-KH4282WTE1",
+    "slug": "ds-kh4282wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH4282WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ac8314a6709cec9a81",
+    "name": "DS-KH6993WTE1",
+    "slug": "ds-kh6993wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH6993WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ad8314a6709cec9a91",
+    "name": "DS-KH9334WTE1",
+    "slug": "ds-kh9334wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH9334WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18a98314a6709cec9a69",
+    "name": "DS-KH9744WTE1",
+    "slug": "ds-kh9744wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH9744WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": true,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18b28314a6709cec9ac9",
+    "name": "DS-KH6350-WTE1",
+    "slug": "ds-kh6350-wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [
+      "https://res.cloudinary.com/dywfpe9dw/image/upload/v1778494727/hikvision_uae/products/vih0v5syxfp3i5csbdbl.jpg"
+    ],
+    "description": "The Hikvision DS-KH6350-WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18b38314a6709cec9ad1",
+    "name": "DS-KH7933WTE1",
+    "slug": "ds-kh7933wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [
+      "https://res.cloudinary.com/dywfpe9dw/image/upload/v1778494734/hikvision_uae/products/yxon7h0ezrotvwnxjyk3.jpg"
+    ],
+    "description": "The Hikvision DS-KH7933WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": true,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18ac8314a6709cec9a89",
+    "name": "DS-KH9785WTE1",
+    "slug": "ds-kh9785wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH9785WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  },
+  {
+    "id": "69fc18af8314a6709cec9aa9",
+    "name": "DS-KH9040WTE1",
+    "slug": "ds-kh9040wte1",
+    "subTitle": "Advanced Indoor Stations Device",
+    "categorySlug": "video-intercom",
+    "subCategorySlug": "indoor-stations",
+    "images": [],
+    "description": "The Hikvision DS-KH9040WTE1 is an enterprise-grade video intercom indoor station engineered to deliver seamless communication and visitor management across UAE residential and commercial properties. Featuring a vibrant high-definition capacitive touch display and ultra-clear two-way audio with advanced noise suppression, it allows occupants to effortlessly view, converse with, and grant entry to visitors. Built with premium materials, robust network security protocols, and plug-and-play Hikvision system interoperability, this indoor station guarantees dependable around-the-clock operation and effortless access control management.",
+    "features": [
+      "7-inch Capacitive HD Touchscreen Display",
+      "Crystal Clear Two-Way Audio with Noise Suppression",
+      "One-Touch Remote Door Unlocking & Live Monitoring",
+      "Seamless Integration with Hikvision Intercom & IP Cameras",
+      "Standard PoE (802.3af) & 12V DC Power Supply Options",
+      "Built-in Wi-Fi & RJ45 Ethernet Network Connectivity",
+      "MicroSD Card Storage Slot for Message & Snapshot History",
+      "Sleek Modern Wall-Mounted Architectural Finish"
+    ],
+    "keyFeatures": [
+      "HD Touchscreen",
+      "Two-Way Audio",
+      "Remote Unlock",
+      "Live Camera View",
+      "PoE Power",
+      "Wi-Fi Enabled",
+      "Smart Integration",
+      "Slim Modern Design"
+    ],
+    "specifications": {
+      "Display": "7-inch Capacitive Touch Screen",
+      "Resolution": "1024 × 600 HD Color Display",
+      "Audio": "Built-in Omnidirectional Mic & Speaker",
+      "Communication": "TCP/IP, Wi-Fi 802.11 b/g/n, RTSP",
+      "Installation": "Surface Wall Mounting with Bracket",
+      "Integration": "Hikvision Door Stations & IP Cameras"
+    },
+    "rating": 5,
+    "reviewCount": 0,
+    "isFeatured": false,
+    "categoryId": "cat_video_intercom",
+    "categoryName": "Video Intercom"
+  }
+]
