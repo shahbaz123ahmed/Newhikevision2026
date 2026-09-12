@@ -117,62 +117,117 @@ export default function Navbar() {
                   <ChevronRight size={14} className="rotate-90 group-hover/prod:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
-                {/* Products Mega Menu - Perfectly Centered & Compact */}
+                {/* Products Mega Menu - Split Premium Layout */}
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/prod:opacity-100 group-hover/prod:visible group-hover/prod:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
-                  <div className="bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-100 p-0 w-[92vw] max-w-[960px] overflow-hidden flex flex-col">
-                    {/* Header */}
-                    <div className="px-8 py-5 border-b border-gray-50 flex items-center justify-between bg-gray-50/60">
-                      <div>
-                        <h3 className="text-lg font-black text-gray-900 uppercase tracking-tight">Security Solutions</h3>
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Explore our 4 core technology categories</p>
-                      </div>
-                      <Link 
-                        href="/products" 
-                        onClick={() => setOpen(false)}
-                        className="text-[11px] font-black text-maroon hover:text-gold uppercase tracking-widest flex items-center gap-1.5 transition-colors"
-                      >
-                        <span>View All Catalog</span>
-                        <ArrowRight size={13} />
-                      </Link>
-                    </div>
-
-                    {/* Categories Compact Grid */}
-                    <div className="p-6 bg-white">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {categories.map((cat) => (
+                  <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-0 w-[95vw] max-w-[850px] overflow-hidden flex h-[480px]">
+                    {/* Left: Featured Security Solutions */}
+                    <div className="w-[45%] relative group/img overflow-hidden border-r border-gray-50">
+                      <img 
+                        src="/solutions.png" 
+                        alt="Hikvision Security Solutions" 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110" 
+                      />
+                      {/* Gradient Overlay - Black themed */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                      
+                      {/* Content Overlay */}
+                      <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                        <div className="space-y-3 transform transition-all duration-500 group-hover/img:-translate-y-2">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 backdrop-blur-md">
+                            <ShieldCheck size={12} className="text-gold" />
+                            <span className="text-[10px] font-black text-gold uppercase tracking-[0.2em]">Official Catalog</span>
+                          </div>
+                          <h4 className="text-3xl font-black text-white uppercase tracking-tight leading-none">
+                            Security <span className="text-gold">Solutions</span>
+                          </h4>
+                          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px]">
+                            Comprehensive enterprise hardware engineered for UAE
+                          </p>
+                          
                           <Link 
-                            key={cat._id || cat.slug}
-                            href={`/products/${cat.slug}`}
-                            onClick={() => setOpen(false)}
-                            className="flex flex-col justify-between bg-gray-50/70 hover:bg-white rounded-2xl p-4 border border-gray-100/90 hover:border-maroon/30 hover:shadow-lg hover:shadow-maroon/5 transition-all duration-300 group/cat-card"
+                            href="/products" 
+                            onClick={() => setOpen(false)} 
+                            className="inline-flex items-center gap-2 mt-4 text-gold font-black text-[11px] uppercase tracking-[0.2em] group/btn"
                           >
-                            <div className="flex items-center gap-3.5 mb-4">
-                              <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center p-2 shrink-0 group-hover/cat-card:border-maroon/40 shadow-sm transition-colors">
-                                {cat.image ? (
-                                  <img src={cat.image} alt={cat.name} className="w-full h-full object-contain group-hover/cat-card:scale-110 transition-transform duration-300" />
-                                ) : (
-                                  <ShieldCheck size={20} className="text-maroon/30" />
-                                )}
-                              </div>
-                              <div className="space-y-0.5 min-w-0">
-                                <h4 className="text-[13px] font-black text-gray-900 uppercase tracking-tight group-hover/cat-card:text-maroon transition-colors line-clamp-1">
-                                  {cat.name}
-                                </h4>
-                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest block">Hikvision Official</span>
-                              </div>
-                            </div>
-
-                            <div className="pt-2 border-t border-gray-200/50 flex items-center justify-between text-maroon font-black text-[11px] uppercase tracking-[0.15em] group-hover/cat-card:text-gold transition-colors">
-                              <span>Explore Products</span>
-                              <ArrowRight size={13} className="group-hover/cat-card:translate-x-1 transition-transform" />
-                            </div>
+                            <span>Explore Global Standards</span>
+                            <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform" />
                           </Link>
-                        ))}
+                        </div>
+                      </div>
+                      
+                      {/* Decorative elements */}
+                      <div className="absolute top-8 left-8 w-12 h-[1px] bg-white/30"></div>
+                      <div className="absolute top-8 left-8 w-[1px] h-12 bg-white/30"></div>
+                    </div>
+
+                    {/* Right: Category List */}
+                    <div className="w-[55%] flex flex-col bg-white">
+                      <div className="p-8 border-b border-gray-50 bg-gray-50/30 flex items-center justify-between">
+                         <span className="text-[11px] font-black text-gray-900 uppercase tracking-[0.25em]">
+                           Security <span className="text-maroon">Solutions</span>
+                         </span>
+                         <div className="flex gap-1">
+                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                            <div className="w-1 h-1 rounded-full bg-gold"></div>
+                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                         </div>
+                      </div>
+
+                      <div className="flex-1 p-6 grid grid-cols-1 gap-1 overflow-y-auto custom-scrollbar">
+                        {categories.map((cat) => {
+                          const descriptors: Record<string, string> = {
+                            'video-intercom': 'Smart IP & 2-Wire Video Door Stations',
+                            'led-displays': 'Commercial & Fine Pitch Video Walls',
+                            'turbo-hd-products': 'High Definition Analog & DVR Systems',
+                            'network-products': 'IP Cameras, NVRs & Network Switches'
+                          };
+                          const desc = descriptors[cat.slug] || 'Enterprise security hardware';
+
+                          return (
+                            <Link 
+                              key={cat._id || cat.slug} 
+                              href={`/products/${cat.slug}`}
+                              onClick={() => setOpen(false)}
+                              className="flex items-center gap-5 p-3.5 rounded-2xl hover:bg-gray-50 group/item transition-all duration-300 border border-transparent hover:border-gray-100"
+                            >
+                              <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm p-1.5 transition-all duration-500 group-hover/item:shadow-md group-hover/item:scale-105 bg-white flex items-center justify-center">
+                                 {cat.image ? (
+                                   <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" />
+                                 ) : (
+                                   <ShieldCheck size={20} className="text-maroon/30" />
+                                 )}
+                              </div>
+                              <div className="flex-1 space-y-1">
+                                <div className="flex items-center justify-between">
+                                  <h5 className="text-[15px] font-black text-gray-900 group-hover/item:text-maroon transition-colors tracking-tight uppercase">
+                                    {cat.name}
+                                  </h5>
+                                  <div className="w-6 h-6 rounded-full bg-maroon/0 flex items-center justify-center text-maroon group-hover/item:bg-maroon group-hover/item:text-white transition-all duration-500 opacity-0 group-hover/item:opacity-100">
+                                     <ChevronRight size={14} />
+                                  </div>
+                                </div>
+                                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
+                                  {desc}
+                                </p>
+                                <div className="h-[2px] w-0 bg-gold group-hover/item:w-12 transition-all duration-500" />
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Bottom Accent */}
+                      <div className="p-5 bg-gray-50/50 border-t border-gray-50 flex items-center justify-center">
+                         <Link 
+                           href="/products" 
+                           onClick={() => setOpen(false)}
+                           className="text-[10px] font-black text-maroon uppercase tracking-[0.2em] hover:text-gold transition-colors flex items-center gap-2"
+                         >
+                            <span>View All Categories</span>
+                            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
+                         </Link>
                       </div>
                     </div>
-                    
-                    {/* Bottom Footer/Accent */}
-                    <div className="h-1 bg-gradient-to-r from-maroon via-gold to-maroon"></div>
                   </div>
                 </div>
               </div>
