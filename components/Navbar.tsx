@@ -117,73 +117,56 @@ export default function Navbar() {
                   <ChevronRight size={14} className="rotate-90 group-hover/prod:rotate-[-90deg] transition-transform duration-300" />
                 </Link>
 
-                {/* Products Mega Menu - Perfectly Centered */}
+                {/* Products Mega Menu - Perfectly Centered & Compact */}
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/prod:opacity-100 group-hover/prod:visible group-hover/prod:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
-                  <div className="bg-white rounded-[32px] shadow-[0_25px_80px_rgba(0,0,0,0.18)] border border-gray-100 p-0 w-[95vw] max-w-[1080px] overflow-hidden flex flex-col">
+                  <div className="bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-100 p-0 w-[92vw] max-w-[960px] overflow-hidden flex flex-col">
                     {/* Header */}
-                    <div className="px-10 py-6 border-b border-gray-50 flex items-center justify-between bg-gray-50/50">
-                      <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">Security Solutions</h3>
-                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Explore our professional range of Hikvision technology</p>
+                    <div className="px-8 py-5 border-b border-gray-50 flex items-center justify-between bg-gray-50/60">
+                      <div>
+                        <h3 className="text-lg font-black text-gray-900 uppercase tracking-tight">Security Solutions</h3>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Explore our 4 core technology categories</p>
+                      </div>
+                      <Link 
+                        href="/products" 
+                        onClick={() => setOpen(false)}
+                        className="text-[11px] font-black text-maroon hover:text-gold uppercase tracking-widest flex items-center gap-1.5 transition-colors"
+                      >
+                        <span>View All Catalog</span>
+                        <ArrowRight size={13} />
+                      </Link>
                     </div>
 
-                    {/* Categories Grid */}
-                    <div className="p-8 bg-white max-h-[600px] overflow-y-auto custom-scrollbar">
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Categories Compact Grid */}
+                    <div className="p-6 bg-white">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {categories.map((cat) => (
-                          <div 
+                          <Link 
                             key={cat._id || cat.slug}
-                            className="flex flex-col bg-gray-50/70 hover:bg-gray-50 rounded-2xl p-5 border border-gray-100/80 hover:border-gold/50 transition-all duration-300 group/cat-card"
+                            href={`/products/${cat.slug}`}
+                            onClick={() => setOpen(false)}
+                            className="flex flex-col justify-between bg-gray-50/70 hover:bg-white rounded-2xl p-4 border border-gray-100/90 hover:border-maroon/30 hover:shadow-lg hover:shadow-maroon/5 transition-all duration-300 group/cat-card"
                           >
-                            <Link
-                              href={`/products/${cat.slug}`}
-                              className="flex items-center gap-4 mb-4"
-                              onClick={() => setOpen(false)}
-                            >
-                              <div className="w-14 h-14 rounded-xl bg-white border border-gray-100 flex items-center justify-center p-2.5 shrink-0 group-hover/cat-card:border-maroon shadow-sm transition-colors">
+                            <div className="flex items-center gap-3.5 mb-4">
+                              <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center p-2 shrink-0 group-hover/cat-card:border-maroon/40 shadow-sm transition-colors">
                                 {cat.image ? (
                                   <img src={cat.image} alt={cat.name} className="w-full h-full object-contain group-hover/cat-card:scale-110 transition-transform duration-300" />
                                 ) : (
-                                  <ShieldCheck size={22} className="text-maroon/30" />
+                                  <ShieldCheck size={20} className="text-maroon/30" />
                                 )}
                               </div>
                               <div className="space-y-0.5 min-w-0">
-                                <h4 className="text-[14px] font-black text-gray-900 uppercase tracking-tight group-hover/cat-card:text-maroon transition-colors truncate">
+                                <h4 className="text-[13px] font-black text-gray-900 uppercase tracking-tight group-hover/cat-card:text-maroon transition-colors line-clamp-1">
                                   {cat.name}
                                 </h4>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Hikvision Official</span>
+                                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest block">Hikvision Official</span>
                               </div>
-                            </Link>
+                            </div>
 
-                            {/* Subcategories if any */}
-                            {cat.subCategories && cat.subCategories.length > 0 ? (
-                              <div className="space-y-2 mb-3 pt-2 border-t border-gray-200/50 flex-1">
-                                {cat.subCategories.map((sub: any) => (
-                                  <Link
-                                    key={sub._id || sub.slug}
-                                    href={`/products/${cat.slug}/${sub.slug}`}
-                                    className="text-xs font-bold text-gray-600 hover:text-maroon transition-colors flex items-center justify-between py-1 group/sub-link"
-                                    onClick={() => setOpen(false)}
-                                  >
-                                    <span className="truncate">{sub.name}</span>
-                                    <ChevronRight size={12} className="text-gray-300 group-hover/sub-link:text-maroon group-hover/sub-link:translate-x-0.5 transition-all shrink-0" />
-                                  </Link>
-                                ))}
-                              </div>
-                            ) : (
-                              <p className="text-[11px] text-gray-400 font-medium mb-3 pt-2 border-t border-gray-200/50 flex-1">
-                                Enterprise security hardware & solutions.
-                              </p>
-                            )}
-
-                            <Link
-                              href={`/products/${cat.slug}`}
-                              className="inline-flex items-center gap-1.5 text-maroon font-black text-[11px] uppercase tracking-[0.15em] group-hover/cat-card:text-gold transition-colors mt-auto pt-2"
-                              onClick={() => setOpen(false)}
-                            >
+                            <div className="pt-2 border-t border-gray-200/50 flex items-center justify-between text-maroon font-black text-[11px] uppercase tracking-[0.15em] group-hover/cat-card:text-gold transition-colors">
                               <span>Explore Products</span>
                               <ArrowRight size={13} className="group-hover/cat-card:translate-x-1 transition-transform" />
-                            </Link>
-                          </div>
+                            </div>
+                          </Link>
                         ))}
                       </div>
                     </div>
