@@ -1,1 +1,322 @@
-[]
+[
+  {
+    "id": "ds-kb8113-ime1-b",
+    "name": "DS-KB8113-IME1(B)",
+    "subTitle": "2 MP Vandal-Resistant Door Station",
+    "slug": "ds-kb8113-ime1-b",
+    "categoryId": "cat_video_intercom",
+    "categorySlug": "video-intercom",
+    "categoryName": "Video Intercom",
+    "subCategoryId": "sub_video_intercom_pro_series",
+    "subCategorySlug": "video-intercom-pro-series",
+    "subCategoryName": "Video Intercom Pro Series",
+    "images": [
+      "/vidcom/vidp1.webp"
+    ],
+    "rating": 5,
+    "isFeatured": true,
+    "description": "A durable 2MP vandal-resistant video doorbell with IR illumination for clear day and night video. Supports PoE, Hik-Connect remote access, mechanical doorbell calling, and web configuration. With IK09 and IP65 protection, it is ideal for secure indoor and outdoor entrances across UAE residential and commercial properties. Built with industrial-grade materials, two-way audio communication, and tamper alarms to ensure dependable 24/7 security and effortless visitor management.",
+    "features": [
+      "2MP HD Camera with IR supplement providing excellent image quality",
+      "Supports standard PoE power supply (IEEE 802.3af)",
+      "Supports mechanical doorbell, easier to call",
+      "Convenient Hik-Connect APP Mobile Control: Receive calls, open the door and live view remotely",
+      "Supports web configuration and remote maintenance",
+      "Higher protection level: IK09 impact resistance and IP65 weatherproof",
+      "Built-in omnidirectional microphone and high-output loudspeaker with noise suppression",
+      "Motion detection and tamper alarm protection for entrance security"
+    ],
+    "keyFeatures": [
+      "2MP HD Camera",
+      "IR Night Vision",
+      "PoE Powered",
+      "Hik-Connect App",
+      "IK09 & IP65",
+      "Web Config",
+      "Two-Way Audio",
+      "Tamper Alarm"
+    ],
+    "specifications": [
+      {
+        "label": "Camera",
+        "value": "2MP HD CMOS with IR Night Vision"
+      },
+      {
+        "label": "Night Vision",
+        "value": "IR supplement illumination up to 3m"
+      },
+      {
+        "label": "Audio",
+        "value": "Two-way audio with noise suppression & echo cancellation"
+      },
+      {
+        "label": "Protection",
+        "value": "IK09 Vandal-Resistant & IP65 Weatherproof"
+      },
+      {
+        "label": "Connectivity",
+        "value": "10/100 Mbps Ethernet & Hik-Connect Cloud"
+      },
+      {
+        "label": "Installation",
+        "value": "Surface mounting for indoor & outdoor entrances"
+      }
+    ]
+  },
+  {
+    "id": "ds-kd-bk",
+    "name": "DS-KD-BK",
+    "subTitle": "KD8 Series Pro Modular Door Station – Blank Module",
+    "slug": "ds-kd-bk",
+    "categoryId": "cat_video_intercom",
+    "categorySlug": "video-intercom",
+    "categoryName": "Video Intercom",
+    "subCategoryId": "sub_video_intercom_pro_series",
+    "subCategorySlug": "video-intercom-pro-series",
+    "subCategoryName": "Video Intercom Pro Series",
+    "images": [
+      "/vidcom/vidp2.webp"
+    ],
+    "rating": 5,
+    "isFeatured": true,
+    "description": "The Hikvision DS-KD-BK is a blank module designed to fill unused spaces in KD8 Series modular door stations. It provides a clean, professional installation while allowing easy system expansion for future security modules across residential and commercial properties in the UAE. Featuring an IP65 weatherproof rating, high-grade durable construction, and seamless integration with modular gang boxes, this unit maintains the aesthetic and structural integrity of your entrance security layout.",
+    "features": [
+      "Blank module designed specifically for KD8 Series modular door stations",
+      "Fills unused modular slots during multi-gang entrance panel installation",
+      "IP65 weatherproof protection for dependable outdoor environmental resilience",
+      "Easy to install, replace, and extend with future functional modules",
+      "High-grade durable build quality ensuring long-term aesthetic finish",
+      "Compatible with standard flush and surface mounting gang frames",
+      "Protects internal wiring and connectors from dust and moisture exposure",
+      "Preserves the uniform appearance of luxury building intercom panels"
+    ],
+    "keyFeatures": [
+      "Blank Module",
+      "KD8 Series",
+      "IP65 Protection",
+      "Modular Design",
+      "Easy Install",
+      "Weather Resistant",
+      "Durable Build",
+      "Clean Finish"
+    ],
+    "specifications": [
+      {
+        "label": "Module Type",
+        "value": "Blank cover module for KD8 Series"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Modular door station gang frames"
+      },
+      {
+        "label": "Protection",
+        "value": "IP65 weatherproof outdoor rating"
+      },
+      {
+        "label": "Material",
+        "value": "High-durability flame-retardant polymer"
+      },
+      {
+        "label": "Installation",
+        "value": "Flush mount / Surface mount frame snap-in"
+      },
+      {
+        "label": "Dimensions",
+        "value": "Standard single modular unit size"
+      }
+    ]
+  },
+  {
+    "id": "ds-kd-dis",
+    "name": "DS-KD-DIS",
+    "subTitle": "KD8 Series Pro Modular Door Station – Display Module",
+    "slug": "ds-kd-dis",
+    "categoryId": "cat_video_intercom",
+    "categorySlug": "video-intercom",
+    "categoryName": "Video Intercom",
+    "subCategoryId": "sub_video_intercom_pro_series",
+    "subCategorySlug": "video-intercom-pro-series",
+    "subCategoryName": "Video Intercom Pro Series",
+    "images": [
+      "/vidcom/vidp3.webp"
+    ],
+    "rating": 5,
+    "isFeatured": true,
+    "description": "The Hikvision DS-KD-DIS is a 3.5-inch LCD display module for KD8 Series modular door stations, providing easy access to dialing, PIN code unlocking, and contact lists. It supports up to 2,000 contacts, multiple languages, and reliable outdoor installation with IP65 protection. Designed for premium residential towers and commercial complexes across the UAE, it features backlight compensation for crystal-clear readability in direct sunlight and smooth system integration with Hikvision video intercom networks.",
+    "features": [
+      "3.5-inch high-resolution LCD screen for intuitive interactive information display",
+      "Supports room dialing, PIN code unlock verification, and searchable contact directory",
+      "High-capacity internal database storing up to 2,000 contacts and resident directories",
+      "IP65 weatherproof protection engineered for harsh outdoor environmental resilience",
+      "Automatic backlight compensation ensuring excellent visibility in bright sunlight",
+      "Multilingual interface support for diverse residential and commercial user bases",
+      "Four physical navigation buttons for rapid directory scrolling and dialing",
+      "Seamless plug-and-play modular connectivity with KD8 Series main door station units"
+    ],
+    "keyFeatures": [
+      "3.5-Inch LCD",
+      "2,000 Contacts",
+      "PIN Unlock",
+      "IP65 Weatherproof",
+      "Backlight Boost",
+      "Multi-Language",
+      "KD8 Modular",
+      "Easy Dialing"
+    ],
+    "specifications": [
+      {
+        "label": "Display",
+        "value": "3.5-inch LCD screen (320 × 480 resolution)"
+      },
+      {
+        "label": "Capacity",
+        "value": "Up to 2,000 contacts and room directory"
+      },
+      {
+        "label": "Operation",
+        "value": "4 physical backlight navigation buttons"
+      },
+      {
+        "label": "Protection",
+        "value": "IP65 outdoor weatherproof certified"
+      },
+      {
+        "label": "Connectivity",
+        "value": "Modular cascade bus to main door station"
+      },
+      {
+        "label": "Power",
+        "value": "Powered directly by KD8 main unit (12V DC)"
+      }
+    ]
+  },
+  {
+    "id": "ds-kd-e",
+    "name": "DS-KD-E",
+    "subTitle": "KD8 Series Pro Modular Door Station – EM Card Reader Module",
+    "slug": "ds-kd-e",
+    "categoryId": "cat_video_intercom",
+    "categorySlug": "video-intercom",
+    "categoryName": "Video Intercom",
+    "subCategoryId": "sub_video_intercom_pro_series",
+    "subCategorySlug": "video-intercom-pro-series",
+    "subCategoryName": "Video Intercom Pro Series",
+    "images": [
+      "/vidcom/vidp4.webp"
+    ],
+    "rating": 5,
+    "isFeatured": true,
+    "description": "The Hikvision DS-KD-E is an EM card reader module designed for convenient and secure door access across KD8 Series modular door stations. It supports card-based door unlocking, card issuance, and high-frequency RFID identification. Built with IP65 outdoor protection and backlight compensation for reliable operation in challenging weather conditions, it is ideal for residential villas, gated communities, and commercial office entrances in Dubai and the UAE.",
+    "features": [
+      "EM card reader module engineered specifically for KD8 Series modular door stations",
+      "Supports instant contactless door unlocking via 125 kHz EM proximity RFID cards",
+      "Supports convenient card issuance and credential registration directly through the system",
+      "IP65 weatherproof protection for dependable outdoor environmental resilience",
+      "Integrated backlight compensation for easy identification and visibility in low light",
+      "Easy to install, configure, and extend with modular gang frames",
+      "High-speed card verification with audible beep and LED status indication",
+      "Seamless cascade bus integration with KD8 Series main video intercom units"
+    ],
+    "keyFeatures": [
+      "EM Card Reader",
+      "RFID Unlock",
+      "Card Issuance",
+      "IP65 Weatherproof",
+      "Backlight LED",
+      "KD8 Modular",
+      "Fast Verification",
+      "Easy Install"
+    ],
+    "specifications": [
+      {
+        "label": "Card Type",
+        "value": "125 kHz EM proximity card"
+      },
+      {
+        "label": "Reading Distance",
+        "value": "20 to 50 mm contact-less read"
+      },
+      {
+        "label": "Protection",
+        "value": "IP65 outdoor weatherproof certified"
+      },
+      {
+        "label": "Backlight",
+        "value": "Supported (LED status backlight)"
+      },
+      {
+        "label": "Connectivity",
+        "value": "Modular cascade bus to main door station"
+      },
+      {
+        "label": "Power",
+        "value": "Powered directly by KD8 main unit (12V DC)"
+      }
+    ]
+  },
+  {
+    "id": "ds-kd-in",
+    "name": "DS-KD-IN",
+    "subTitle": "KD8 Series Pro Modular Door Station – Indicator Module",
+    "slug": "ds-kd-in",
+    "categoryId": "cat_video_intercom",
+    "categorySlug": "video-intercom",
+    "categoryName": "Video Intercom",
+    "subCategoryId": "sub_video_intercom_pro_series",
+    "subCategorySlug": "video-intercom-pro-series",
+    "subCategoryName": "Video Intercom Pro Series",
+    "images": [
+      "/vidcom/vidp5.webp"
+    ],
+    "rating": 5,
+    "isFeatured": true,
+    "description": "The Hikvision DS-KD-IN is an indicator module designed for KD8 Series modular door stations, providing clear status indications for calling, door opening, and two-way audio. With IP65 protection and backlight compensation, it ensures reliable visibility and easy operation for visitors and residents in the UAE. Engineered with high-efficiency LED status icons and seamless modular snap-in connectivity, it enhances accessibility and communication clarity at any entrance.",
+    "features": [
+      "Indicator module designed specifically for KD8 Series modular door station systems",
+      "Clear illuminated visual status indicators for Calling, Speaking, and Door Unlocked",
+      "IP65 weatherproof protection engineered for harsh outdoor environmental resilience",
+      "Automatic backlight compensation ensuring excellent visibility in bright sunlight or darkness",
+      "Easy to install, configure, and extend across multi-gang entrance mounting frames",
+      "Accessibility-friendly visual cues assisting hearing-impaired visitors and guests",
+      "High-durability flame-retardant industrial front panel construction",
+      "Seamless cascade bus integration powered directly through the main door station unit"
+    ],
+    "keyFeatures": [
+      "Status Indicator",
+      "Call & Speak",
+      "Door Unlock Icon",
+      "IP65 Weatherproof",
+      "Backlight LED",
+      "KD8 Modular",
+      "Accessibility Ready",
+      "Easy Install"
+    ],
+    "specifications": [
+      {
+        "label": "Indicators",
+        "value": "3 LED status icons (Calling, Speaking, Door Open)"
+      },
+      {
+        "label": "Protection",
+        "value": "IP65 outdoor weatherproof certified"
+      },
+      {
+        "label": "Backlight",
+        "value": "Supported (clear night visibility)"
+      },
+      {
+        "label": "Mounting",
+        "value": "Modular flush / surface mount gang frame"
+      },
+      {
+        "label": "Connectivity",
+        "value": "Modular cascade bus to main door station"
+      },
+      {
+        "label": "Power",
+        "value": "Powered directly by KD8 main unit (12V DC)"
+      }
+    ]
+  }
+]

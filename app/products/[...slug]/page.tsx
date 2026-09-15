@@ -25,6 +25,7 @@ import {
   getSubCategoryBySlug,
   getProducts,
   getProductBySlug,
+  getChildSubCategories,
 } from '@/data/catalog';
 
 const HERO_IMAGES: Record<string, string> = {
@@ -77,27 +78,67 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           setError(true);
         }
       } else if (slug.length === 2) {
-        // Sub-category Page
+        // Sub-category Page (could be group with children or direct subcategory)
         const cat = getCategoryBySlug(slug[0]);
         const sub = getSubCategoryBySlug(slug[1]);
-        const prodData = getProducts({ subCategorySlug: slug[1] });
+        const children = getChildSubCategories(slug[1]);
 
-        if (sub) {
-          setData({ type: 'subcategory', sub, products: prodData, category: cat || { name: slug[0], slug: slug[0] } });
+        if (children && children.length > 0) {
+          setData({
+            type: 'subcategory_group',
+            sub,
+            children,
+            category: cat || { name: slug[0], slug: slug[0] }
+          });
+        } else if (sub) {
+          const prodData = getProducts({ subCategorySlug: slug[1] });
+          setData({
+            type: 'subcategory',
+            sub,
+            products: prodData,
+            category: cat || { name: slug[0], slug: slug[0] }
+          });
         } else {
           setError(true);
         }
       } else if (slug.length === 3) {
-        // Product Detail Page
+        // Could be Product Detail Page OR Nested Series Subcategory Page
         const product = getProductBySlug(slug[2]);
         const cat = getCategoryBySlug(slug[0]);
-        const sub = getSubCategoryBySlug(slug[1]);
+        const parentSub = getSubCategoryBySlug(slug[1]);
+        const seriesSub = getSubCategoryBySlug(slug[2]);
 
         if (product) {
           setData({
             type: 'product',
             product,
-            sub: sub || { name: slug[1], slug: slug[1] },
+            sub: parentSub || { name: slug[1], slug: slug[1] },
+            category: cat || { name: slug[0], slug: slug[0] }
+          });
+        } else if (seriesSub) {
+          const prodData = getProducts({ subCategorySlug: slug[2] });
+          setData({
+            type: 'subcategory',
+            sub: seriesSub,
+            parentSub,
+            products: prodData,
+            category: cat || { name: slug[0], slug: slug[0] }
+          });
+        } else {
+          setError(true);
+        }
+      } else if (slug.length === 4) {
+        // Nested Product Detail Page (e.g. /products/network-products/network-cameras/deepinview-series/product-slug)
+        const product = getProductBySlug(slug[3]);
+        const cat = getCategoryBySlug(slug[0]);
+        const parentSub = getSubCategoryBySlug(slug[1]);
+        const seriesSub = getSubCategoryBySlug(slug[2]);
+
+        if (product) {
+          setData({
+            type: 'product',
+            product,
+            sub: seriesSub || parentSub || { name: slug[2], slug: slug[2] },
             category: cat || { name: slug[0], slug: slug[0] }
           });
         } else {
@@ -318,29 +359,30 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 relative z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {data.subCategories?.map((sub: any) => (
               <div
                 key={sub.id || sub.slug || sub._id}
-                className="group bg-white rounded-[40px] p-10 border border-gray-100 shadow-xl shadow-gray-200/40 hover:shadow-maroon/10 transition-all duration-500 flex flex-col h-full"
+                className="group bg-white rounded-[32px] p-8 sm:p-10 border border-gray-100/90 shadow-md shadow-gray-200/40 hover:shadow-2xl hover:shadow-maroon/15 hover:border-maroon/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
               >
-                <div className="w-24 h-24 rounded-3xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-maroon/20 transition-all duration-500 overflow-hidden p-4">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-maroon via-red-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100/60 border border-gray-100 flex items-center justify-center mb-6 group-hover:scale-105 group-hover:border-maroon/20 transition-all duration-300 overflow-hidden p-4">
                   {sub.image ? (
                     <img src={sub.image} alt={sub.name} className="w-full h-full object-contain" />
                   ) : (
-                    <ShieldCheck size={40} className="text-maroon/10" />
+                    <ShieldCheck size={40} className="text-maroon/20" />
                   )}
                 </div>
 
-                <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 group-hover:text-maroon transition-colors">
+                <h2 className="text-xl sm:text-2xl font-black text-gray-900 uppercase tracking-tight mb-3 group-hover:text-maroon transition-colors">
                   {sub.name}
                 </h2>
 
-                <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
                   <Link
                     href={`/products/${slug[0]}/${sub.slug}`}
-                    className="inline-flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[10px] hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[11px] hover:gap-3 transition-all"
                   >
                     Explore Products <ArrowRight size={14} />
                   </Link>
@@ -353,14 +395,13 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
     );
   }
 
-  // SUBCATEGORY VIEW
-  if (data.type === 'subcategory') {
+  // SUBCATEGORY GROUP VIEW (e.g. Network Cameras -> DeepinView, Pro, etc.)
+  if (data.type === 'subcategory_group') {
     const heroBg = HERO_IMAGES[slug[1]] || data.sub?.image;
     return (
       <main className="min-h-screen bg-gray-50 pb-20">
-        {/* Subcategory Hero */}
         <section
-          className="relative pt-32 pb-24 overflow-hidden page-hero"
+          className="relative pt-32 pb-20 overflow-hidden page-hero"
           style={heroBg ? {
             backgroundImage: `linear-gradient(to bottom, rgba(15, 15, 17, 0.50), rgba(22, 22, 28, 0.60)), url(${heroBg})`,
             backgroundSize: 'cover',
@@ -368,7 +409,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
           } : undefined}
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/20 to-transparent" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center gap-2 text-gold font-black uppercase tracking-widest text-[10px] mb-8 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 backdrop-blur-md">
@@ -380,56 +421,175 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
             </div>
 
             <div className="max-w-4xl">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6 leading-none">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-gold" />
+                <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Product Series</span>
+              </div>
+              <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 leading-none">
+                {data.sub?.name}
+              </h1>
+              <p className="text-white/60 text-lg font-medium leading-relaxed max-w-2xl">
+                Explore specialized series under {data.sub?.name}, built for enterprise reliability and cutting-edge performance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {data.children?.map((child: any) => (
+              <div
+                key={child.id || child.slug}
+                className="group bg-white rounded-[32px] p-8 sm:p-10 border border-gray-100/90 shadow-md shadow-gray-200/40 hover:shadow-2xl hover:shadow-maroon/15 hover:border-maroon/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-maroon via-red-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100/60 border border-gray-100 flex items-center justify-center mb-6 group-hover:scale-105 group-hover:border-maroon/20 transition-all duration-300 overflow-hidden p-4">
+                  {child.image ? (
+                    <img src={child.image} alt={child.name} className="w-full h-full object-contain" />
+                  ) : (
+                    <ShieldCheck size={40} className="text-maroon/20" />
+                  )}
+                </div>
+
+                <h2 className="text-xl sm:text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 group-hover:text-maroon transition-colors">
+                  {child.name}
+                </h2>
+
+                <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                  <Link
+                    href={`/products/${slug[0]}/${slug[1]}/${child.slug}`}
+                    className="inline-flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[11px] hover:gap-3 transition-all"
+                  >
+                    Explore Series <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // SUBCATEGORY / SERIES VIEW
+  if (data.type === 'subcategory') {
+    const heroBg = HERO_IMAGES[slug[slug.length - 1]] || data.sub?.image;
+    return (
+      <main className="min-h-screen bg-gray-50 pb-20">
+        {/* Subcategory Hero */}
+        <section
+          className="relative pt-32 pb-16 overflow-hidden page-hero"
+          style={heroBg ? {
+            backgroundImage: `linear-gradient(to bottom, rgba(15, 15, 17, 0.55), rgba(22, 22, 28, 0.70)), url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          } : undefined}
+        >
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/20 to-transparent" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="flex items-center gap-2 text-gold font-black uppercase tracking-widest text-[10px] mb-6 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/10 backdrop-blur-md">
+              <Link href="/products" className="hover:text-white transition-colors">Catalog</Link>
+              <ChevronRight size={10} className="text-white/30" />
+              <Link href={`/products/${slug[0]}`} className="hover:text-white transition-colors">{data.category?.name || slug[0]}</Link>
+              {data.parentSub && (
+                <>
+                  <ChevronRight size={10} className="text-white/30" />
+                  <Link href={`/products/${slug[0]}/${data.parentSub.slug}`} className="hover:text-white transition-colors">{data.parentSub.name}</Link>
+                </>
+              )}
+              <ChevronRight size={10} className="text-white/30" />
+              <span className="text-white/40">{data.sub?.name}</span>
+            </div>
+
+            <div className="max-w-4xl">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4 leading-tight">
                 {data.sub?.name || slug[1].replace(/-/g, ' ')}
               </h1>
-              <div className="flex items-center gap-6">
-                <p className="text-gold font-bold uppercase tracking-widest text-xs">
+              <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gold/15 border border-gold/30 rounded-full text-gold font-bold uppercase tracking-widest text-[11px]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                   {data.products.length} Professional Products
-                </p>
-                <div className="h-4 w-px bg-white/20" />
-                <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Hikvision Pro Series</p>
+                </span>
+                <div className="h-4 w-px bg-white/20 hidden sm:block" />
+                <p className="text-white/60 text-xs font-bold uppercase tracking-widest">Hikvision Pro Series • UAE Official</p>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        {/* Product Grid Section - Clean, Modern & No Banner Overlap */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 relative z-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
             {data.products.length > 0 ? data.products.map((prod: any) => (
               <Link
                 key={prod.id || prod.slug || prod._id}
-                href={`/products/${slug[0]}/${slug[1]}/${prod.slug}`}
-                className="group bg-white rounded-3xl p-6 border border-maroon shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:shadow-maroon/10 transition-all duration-500 flex flex-col"
+                href={`/products/${slug.join('/')}/${prod.slug}`}
+                className="group relative bg-white rounded-[26px] p-5 border border-gray-200/90 shadow-sm hover:shadow-2xl hover:shadow-maroon/15 hover:border-maroon/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden"
               >
-                <div className="aspect-square rounded-2xl bg-gray-50 flex items-center justify-center mb-6 relative overflow-hidden p-8">
-                  {prod.images?.[0] ? (
-                    <img src={prod.images[0]} alt={prod.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
-                  ) : (
-                    <ShieldCheck size={48} className="text-maroon/5" />
-                  )}
-                  <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-xl border border-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Eye size={16} className="text-maroon" />
+                {/* Top Subtle Red Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-maroon to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Product Image Stage */}
+                <div className="relative aspect-square rounded-2xl bg-gradient-to-b from-gray-50 via-slate-50/60 to-gray-100/70 p-6 flex items-center justify-center overflow-hidden border border-gray-100 mb-4 group-hover:bg-red-50/10 transition-colors duration-300">
+                  {/* Floating Brand Badge */}
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="px-2.5 py-1 bg-white/95 backdrop-blur-md rounded-lg text-[9px] font-black uppercase tracking-wider text-maroon shadow-sm border border-gray-100">
+                      Hikvision
+                    </span>
                   </div>
+
+                  {/* Quick Action Icon */}
+                  <div className="absolute top-3 right-3 z-10 w-8 h-8 rounded-xl bg-white/90 backdrop-blur-md shadow-sm border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-maroon group-hover:text-white group-hover:border-maroon transition-all duration-300">
+                    <Eye size={14} />
+                  </div>
+
+                  {prod.images?.[0] ? (
+                    <img
+                      src={prod.images[0]}
+                      alt={prod.name}
+                      className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-500 ease-out"
+                    />
+                  ) : (
+                    <ShieldCheck size={48} className="text-maroon/10" />
+                  )}
                 </div>
 
-                <div className="flex-grow">
-                  <span className="text-[9px] font-black text-maroon uppercase tracking-widest block mb-1">{data.category?.name}</span>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tight mb-2 line-clamp-1">{prod.subTitle}</p>
-                  <h3 className="text-[14px] font-black text-gray-900 uppercase tracking-tight group-hover:text-maroon transition-colors mb-4 line-clamp-2 leading-snug">
+                {/* Product Content Details */}
+                <div className="flex-grow flex flex-col">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[10px] font-black text-maroon uppercase tracking-widest truncate">
+                      {data.category?.name || 'Video Intercom'}
+                    </span>
+                    <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded shrink-0">
+                      Pro Series
+                    </span>
+                  </div>
+
+                  <h3 className="text-[15px] font-black text-gray-900 uppercase tracking-tight group-hover:text-maroon transition-colors mb-1.5 line-clamp-1 leading-snug">
                     {prod.name}
                   </h3>
+
+                  <p className="text-[11px] font-medium text-gray-500 uppercase tracking-tight line-clamp-2 leading-relaxed mb-4">
+                    {prod.subTitle || prod.description || 'Hikvision Professional Security System'}
+                  </p>
                 </div>
 
-                <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
-                  <div className="flex gap-1">
+                {/* Card Bottom / Star Rating & Action Button */}
+                <div className="pt-3.5 border-t border-gray-100 flex items-center justify-between mt-auto">
+                  <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((s) => (
-                      <div key={s} className={`w-1.5 h-1.5 rounded-full ${s <= (prod.rating || 5) ? 'bg-gold' : 'bg-gray-200'}`} />
+                      <Star
+                        key={s}
+                        size={11}
+                        className={s <= (prod.rating || 5) ? 'fill-amber-400 text-amber-400' : 'text-gray-200'}
+                      />
                     ))}
                   </div>
-                  <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">
-                    Pro Series
+
+                  <span className="inline-flex items-center gap-1 text-[10px] font-black text-maroon uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                    View Product <ArrowRight size={12} />
                   </span>
                 </div>
               </Link>
@@ -607,12 +767,21 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
         {/* Product Details Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32">
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-gray-500 font-black uppercase tracking-widest text-[10px] mb-10 bg-white w-fit px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+          <div className="flex items-center gap-2 text-gray-500 font-black uppercase tracking-widest text-[10px] mb-10 bg-white w-fit px-4 py-2 rounded-full border border-gray-100 shadow-sm flex-wrap">
             <Link href="/products" className="hover:text-maroon transition-colors">Catalog</Link>
             <ChevronRight size={10} className="text-gray-300" />
             <Link href={`/products/${slug[0]}`} className="hover:text-maroon transition-colors">{data.category?.name || slug[0]}</Link>
-            <ChevronRight size={10} className="text-gray-300" />
-            <Link href={`/products/${slug[0]}/${slug[1]}`} className="hover:text-maroon transition-colors">{data.sub?.name || slug[1]}</Link>
+            {slug.length > 2 && slug.slice(1, -1).map((seg: string, idx: number) => {
+              const segPath = slug.slice(0, idx + 2).join('/');
+              return (
+                <span key={seg} className="inline-flex items-center gap-2">
+                  <ChevronRight size={10} className="text-gray-300" />
+                  <Link href={`/products/${segPath}`} className="hover:text-maroon transition-colors">
+                    {seg.replace(/-/g, ' ')}
+                  </Link>
+                </span>
+              );
+            })}
             <ChevronRight size={10} className="text-gray-300" />
             <span className="text-maroon truncate max-w-[200px]">{product.name}</span>
           </div>
@@ -711,32 +880,7 @@ export default function ProductsCatchAllPage({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          {/* 6 Technical Specifications Cards */}
-          {product.specifications && Object.keys(product.specifications).length > 0 && (
-            <div className="mt-20 border-t border-gray-100 pt-16">
-              <div className="flex items-center gap-4 mb-10">
-                <div className="p-3 bg-maroon/5 rounded-2xl text-maroon border border-maroon/10">
-                  <ShieldCheck size={24} />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Technical Specifications</h2>
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Certified Hardware Performance</p>
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div
-                    key={key}
-                    className="p-6 rounded-3xl bg-gray-50/80 border border-gray-100 shadow-sm hover:border-maroon/20 hover:bg-white hover:shadow-md transition-all group"
-                  >
-                    <span className="text-[10px] font-black text-maroon uppercase tracking-widest block mb-2">{key}</span>
-                    <p className="text-sm font-bold text-gray-900 leading-snug">{String(value)}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Full Features & Capabilities Section */}
           {product.features && product.features.length > 0 && (

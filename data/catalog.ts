@@ -37,11 +37,20 @@ export function getCategoryBySlug(slug: string): Category | undefined {
 }
 
 // 3. Get subcategories (optionally by category slug)
-export function getSubCategories(categorySlug?: string): SubCategory[] {
-  if (!categorySlug) return subCategories;
+export function getSubCategories(categorySlug?: string, includeNested: boolean = false): SubCategory[] {
+  if (!categorySlug) {
+    return includeNested ? subCategories : subCategories.filter((s: any) => !s.parentSlug);
+  }
   return subCategories.filter(
-    (s) => s.categorySlug.toLowerCase() === categorySlug.toLowerCase()
+    (s: any) =>
+      s.categorySlug.toLowerCase() === categorySlug.toLowerCase() &&
+      (includeNested || !s.parentSlug)
   );
+}
+
+// 3b. Get child subcategories/series for a parent subcategory
+export function getChildSubCategories(parentSlug: string): SubCategory[] {
+  return subCategories.filter((s: any) => s.parentSlug?.toLowerCase() === parentSlug.toLowerCase());
 }
 
 // 4. Get subcategory by slug
@@ -102,7 +111,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 // 7. Get complete Nav Catalog structure
 export function getNavCatalog(): NavCategoryItem[] {
   return categories.map((cat) => {
-    const catSubs = subCategories.filter((s) => s.categorySlug === cat.slug);
+    const catSubs = subCategories.filter((s: any) => s.categorySlug === cat.slug && !s.parentSlug);
 
     const mappedSubs = catSubs.map((sub) => {
       const topProducts = products
