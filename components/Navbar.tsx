@@ -37,51 +37,51 @@ export default function Navbar() {
       <div className={`brand-bar bg-maroon text-white overflow-hidden transition-all duration-300 ${scrolled ? 'h-0 opacity-0 pointer-events-none' : 'h-10'}`}>
         <div className="max-w-7xl mx-auto pl-2 pr-4 sm:pl-4 sm:pr-6 lg:pl-6 lg:pr-8 flex items-center justify-between h-10">
           <div className="flex items-center gap-4 sm:gap-6">
-            <a href="mailto:sales@hikvisionuae.ae" className="flex items-center gap-2 text-[10px] sm:text-xs hover:text-gold transition-colors">
-              <Mail size={12} className="text-gold" />
+            <a href="mailto:sales@hikvisionuae.ae" className="flex items-center gap-2 text-[10px] sm:text-xs hover:text-white/80 transition-colors">
+              <Mail size={12} className="text-white/90" />
               <span className="font-medium">sales@hikvisionuae.ae</span>
             </a>
-            <a href="tel:+971509693134" className="hidden sm:flex items-center gap-2 text-[10px] sm:text-xs hover:text-gold transition-colors">
-              <Phone size={12} className="text-gold" />
+            <a href="tel:+971509693134" className="hidden sm:flex items-center gap-2 text-[10px] sm:text-xs hover:text-white/80 transition-colors">
+              <Phone size={12} className="text-white/90" />
               <span className="font-bold">+971 50 969 3134</span>
             </a>
           </div>
-          
+
           <div className="hidden md:flex flex-1 justify-center mx-12 overflow-hidden relative h-10 items-center">
             <div className="animate-marquee whitespace-nowrap py-1 flex items-center">
-                <img src="/navbar/bluetick.png" alt="Verified" className="h-4 w-4 object-contain inline-block mr-2" />
-                <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                  #1 CCTV DISTRIBUTOR IN UAE | DUBAI | SHARJAH | AJMAN
-                </span>
-                
-                <span className="mx-8 text-gold opacity-50">|</span>
+              <img src="/navbar/bluetick.png" alt="Verified" className="h-4 w-4 object-contain inline-block mr-2" />
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-rose-200 to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                #1 CCTV DISTRIBUTOR IN UAE | DUBAI | SHARJAH | AJMAN
+              </span>
 
-                <img src="/navbar/greentick.png" alt="Trusted" className="h-4 w-4 object-contain inline-block mr-2" />
-                <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                  AUTHORIZED HIKVISION PARTNER | 24/7 TECHNICAL SUPPORT | EXPERT INSTALLATION ACROSS ALL EMIRATES
-                </span>
+              <span className="mx-8 text-white/50">|</span>
 
-                {/* Second copy for loop - integrated into same flow to avoid stacking */}
-                <span className="mx-8 text-gold opacity-50">|</span>
+              <img src="/navbar/greentick.png" alt="Trusted" className="h-4 w-4 object-contain inline-block mr-2" />
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-rose-200 to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                AUTHORIZED HIKVISION PARTNER | 24/7 TECHNICAL SUPPORT | EXPERT INSTALLATION ACROSS ALL EMIRATES
+              </span>
 
-                <img src="/navbar/bluetick.png" alt="Verified" className="h-4 w-4 object-contain inline-block mr-2" />
-                <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                  #1 CCTV DISTRIBUTOR IN UAE | DUBAI | SHARJAH | AJMAN
-                </span>
-                
-                <span className="mx-8 text-gold opacity-50">|</span>
+              {/* Second copy for loop - integrated into same flow to avoid stacking */}
+              <span className="mx-8 text-white/50">|</span>
 
-                <img src="/navbar/greentick.png" alt="Trusted" className="h-4 w-4 object-contain inline-block mr-2" />
-                <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                  AUTHORIZED HIKVISION PARTNER | 24/7 TECHNICAL SUPPORT | EXPERT INSTALLATION ACROSS ALL EMIRATES
-                </span>
+              <img src="/navbar/bluetick.png" alt="Verified" className="h-4 w-4 object-contain inline-block mr-2" />
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-rose-200 to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                #1 CCTV DISTRIBUTOR IN UAE | DUBAI | SHARJAH | AJMAN
+              </span>
+
+              <span className="mx-8 text-white/50">|</span>
+
+              <img src="/navbar/greentick.png" alt="Trusted" className="h-4 w-4 object-contain inline-block mr-2" />
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-rose-200 to-white bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                AUTHORIZED HIKVISION PARTNER | 24/7 TECHNICAL SUPPORT | EXPERT INSTALLATION ACROSS ALL EMIRATES
+              </span>
             </div>
             {/* Subtle underline glow */}
-            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent"></span>
+            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
           </div>
 
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-black tracking-widest uppercase text-gold">
-            <ShieldCheck size={14} />
+          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-black tracking-widest uppercase text-white">
+            <ShieldCheck size={14} className="text-white" />
             <span className="hidden sm:inline">Official Distributor</span>
             <span className="sm:hidden">Official</span>
           </div>
@@ -100,8 +100,8 @@ export default function Navbar() {
 
             {/* Desktop links - Centered typography */}
             <div className="hidden md:flex items-center space-x-1">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors"
               >
                 Home
@@ -109,8 +109,8 @@ export default function Navbar() {
 
               {/* Products Dropdown - Mega Menu */}
               <div className="group/prod">
-                <Link 
-                  href="/products" 
+                <Link
+                  href="/products"
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
                   Products
@@ -122,39 +122,39 @@ export default function Navbar() {
                   <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-0 w-[95vw] max-w-[850px] overflow-hidden flex h-[480px]">
                     {/* Left: Featured Security Solutions */}
                     <div className="w-[45%] relative group/img overflow-hidden border-r border-gray-50">
-                      <img 
-                        src="/solutions.png" 
-                        alt="Hikvision Security Solutions" 
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110" 
+                      <img
+                        src="/navbar/securitysolution.png"
+                        alt="Hikvision Security Solutions"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-110"
                       />
-                      {/* Gradient Overlay - Black themed */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
-                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+
                       {/* Content Overlay */}
-                      <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                        <div className="space-y-3 transform transition-all duration-500 group-hover/img:-translate-y-2">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 backdrop-blur-md">
-                            <ShieldCheck size={12} className="text-gold" />
-                            <span className="text-[10px] font-black text-gold uppercase tracking-[0.2em]">Official Catalog</span>
+                      <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div className="space-y-2.5 transform transition-all duration-500 group-hover/img:-translate-y-2">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon/20 border border-maroon/40 backdrop-blur-md">
+                            <ShieldCheck size={12} className="text-maroon" />
+                            <span className="text-[10px] font-black text-white uppercase tracking-[0.2em]">Official Catalog</span>
                           </div>
-                          <h4 className="text-3xl font-black text-white uppercase tracking-tight leading-none">
-                            Security <span className="text-gold">Solutions</span>
+                          <h4 className="text-2xl font-black text-white uppercase tracking-tight leading-none">
+                            Security <span className="text-maroon">Solutions</span>
                           </h4>
-                          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px]">
+                          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[220px]">
                             Comprehensive enterprise hardware engineered for UAE
                           </p>
-                          
-                          <Link 
-                            href="/products" 
-                            onClick={() => setOpen(false)} 
-                            className="inline-flex items-center gap-2 mt-4 text-gold font-black text-[11px] uppercase tracking-[0.2em] group/btn"
+
+                          <Link
+                            href="/products"
+                            onClick={() => setOpen(false)}
+                            className="inline-flex items-center gap-2 mt-2 text-white font-black text-[11px] uppercase tracking-[0.2em] group/btn hover:text-maroon transition-colors"
                           >
                             <span>Explore Global Standards</span>
-                            <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform" />
+                            <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform text-maroon" />
                           </Link>
                         </div>
                       </div>
-                      
+
                       {/* Decorative elements */}
                       <div className="absolute top-8 left-8 w-12 h-[1px] bg-white/30"></div>
                       <div className="absolute top-8 left-8 w-[1px] h-12 bg-white/30"></div>
@@ -163,14 +163,14 @@ export default function Navbar() {
                     {/* Right: Category List */}
                     <div className="w-[55%] flex flex-col bg-white">
                       <div className="p-8 border-b border-gray-50 bg-gray-50/30 flex items-center justify-between">
-                         <span className="text-[11px] font-black text-gray-900 uppercase tracking-[0.25em]">
-                           Security <span className="text-maroon">Solutions</span>
-                         </span>
-                         <div className="flex gap-1">
-                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
-                            <div className="w-1 h-1 rounded-full bg-gold"></div>
-                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
-                         </div>
+                        <span className="text-[11px] font-black text-gray-900 uppercase tracking-[0.25em]">
+                          Security <span className="text-maroon">Solutions</span>
+                        </span>
+                        <div className="flex gap-1">
+                          <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                          <div className="w-1 h-1 rounded-full bg-maroon/40"></div>
+                          <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                        </div>
                       </div>
 
                       <div className="flex-1 p-6 grid grid-cols-1 gap-1 overflow-y-auto custom-scrollbar">
@@ -184,18 +184,18 @@ export default function Navbar() {
                           const desc = descriptors[cat.slug] || 'Enterprise security hardware';
 
                           return (
-                            <Link 
-                              key={cat._id || cat.slug} 
+                            <Link
+                              key={cat._id || cat.slug}
                               href={`/products/${cat.slug}`}
                               onClick={() => setOpen(false)}
                               className="flex items-center gap-5 p-3.5 rounded-2xl hover:bg-gray-50 group/item transition-all duration-300 border border-transparent hover:border-gray-100"
                             >
                               <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm p-1.5 transition-all duration-500 group-hover/item:shadow-md group-hover/item:scale-105 bg-white flex items-center justify-center">
-                                 {cat.image ? (
-                                   <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" />
-                                 ) : (
-                                   <ShieldCheck size={20} className="text-maroon/30" />
-                                 )}
+                                {cat.image ? (
+                                  <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" />
+                                ) : (
+                                  <ShieldCheck size={20} className="text-maroon/30" />
+                                )}
                               </div>
                               <div className="flex-1 space-y-1">
                                 <div className="flex items-center justify-between">
@@ -203,13 +203,13 @@ export default function Navbar() {
                                     {cat.name}
                                   </h5>
                                   <div className="w-6 h-6 rounded-full bg-maroon/0 flex items-center justify-center text-maroon group-hover/item:bg-maroon group-hover/item:text-white transition-all duration-500 opacity-0 group-hover/item:opacity-100">
-                                     <ChevronRight size={14} />
+                                    <ChevronRight size={14} />
                                   </div>
                                 </div>
                                 <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
                                   {desc}
                                 </p>
-                                <div className="h-[2px] w-0 bg-gold group-hover/item:w-12 transition-all duration-500" />
+                                <div className="h-[2px] w-0 bg-maroon group-hover/item:w-12 transition-all duration-500" />
                               </div>
                             </Link>
                           );
@@ -218,14 +218,14 @@ export default function Navbar() {
 
                       {/* Bottom Accent */}
                       <div className="p-5 bg-gray-50/50 border-t border-gray-50 flex items-center justify-center">
-                         <Link 
-                           href="/products" 
-                           onClick={() => setOpen(false)}
-                           className="text-[10px] font-black text-maroon uppercase tracking-[0.2em] hover:text-gold transition-colors flex items-center gap-2"
-                         >
-                            <span>View All Categories</span>
-                            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
-                         </Link>
+                        <Link
+                          href="/products"
+                          onClick={() => setOpen(false)}
+                          className="text-[10px] font-black text-maroon uppercase tracking-[0.2em] hover:text-maroon/80 transition-colors flex items-center gap-2"
+                        >
+                          <span>View All Categories</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -234,8 +234,8 @@ export default function Navbar() {
 
               {/* Technologies Dropdown */}
               <div className="group/tech">
-                <Link 
-                  href="/technologies" 
+                <Link
+                  href="/technologies"
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
                   Technologies
@@ -246,31 +246,39 @@ export default function Navbar() {
                   <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-0 w-[95vw] max-w-[850px] overflow-hidden flex h-[480px]">
                     {/* Left: Featured Technology */}
                     <div className="w-[45%] relative group/img overflow-hidden border-r border-gray-50">
-                      <img 
-                        src="/Technologies/Core Tech.png" 
-                        alt="Advanced Core Technologies" 
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110" 
+                      <img
+                        src="/navbar/core-tech.png"
+                        alt="Advanced Core Technologies"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110"
                       />
                       {/* Gradient Overlay - Black themed */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
-                      
+
                       {/* Content Overlay */}
-                      <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                        <div className="space-y-3 transform transition-all duration-500 group-hover/img:-translate-y-2">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 backdrop-blur-md">
-                            <ShieldCheck size={12} className="text-gold" />
-                            <span className="text-[10px] font-black text-gold uppercase tracking-[0.2em]">Industry Leader</span>
+                      <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div className="space-y-2.5 transform transition-all duration-500 group-hover/img:-translate-y-2">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon/20 border border-maroon/40 backdrop-blur-md">
+                            <ShieldCheck size={12} className="text-maroon" />
+                            <span className="text-[10px] font-black text-white uppercase tracking-[0.2em]">Industry Leader</span>
                           </div>
-                          <h4 className="text-3xl font-black text-white uppercase tracking-tight leading-none">Core <span className="text-gold">Tech</span></h4>
-                          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[200px]">Next-generation intelligence for a safer world</p>
-                          
-                          <Link href="/technologies" className="inline-flex items-center gap-2 mt-4 text-gold font-black text-[11px] uppercase tracking-[0.2em] group/btn">
+                          <h4 className="text-2xl font-black text-white uppercase tracking-tight leading-none">
+                            Core <span className="text-maroon">Tech</span>
+                          </h4>
+                          <p className="text-white/80 text-xs font-bold uppercase tracking-[0.15em] leading-relaxed max-w-[220px]">
+                            Next-generation intelligence for a safer world
+                          </p>
+
+                          <Link
+                            href="/technologies"
+                            onClick={() => setOpen(false)}
+                            className="inline-flex items-center gap-2 mt-2 text-white font-black text-[11px] uppercase tracking-[0.2em] group/btn hover:text-maroon transition-colors"
+                          >
                             <span>Explore Global Standards</span>
-                            <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform" />
+                            <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform text-maroon" />
                           </Link>
                         </div>
                       </div>
-                      
+
                       {/* Decorative elements */}
                       <div className="absolute top-8 left-8 w-12 h-[1px] bg-white/30"></div>
                       <div className="absolute top-8 left-8 w-[1px] h-12 bg-white/30"></div>
@@ -279,52 +287,52 @@ export default function Navbar() {
                     {/* Right: Technology List */}
                     <div className="w-[55%] flex flex-col bg-white">
                       <div className="p-8 border-b border-gray-50 bg-gray-50/30 flex items-center justify-between">
-                         <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Signature Technologies</span>
-                         <div className="flex gap-1">
-                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
-                            <div className="w-1 h-1 rounded-full bg-gold"></div>
-                            <div className="w-1 h-1 rounded-full bg-maroon"></div>
-                         </div>
+                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Signature Technologies</span>
+                        <div className="flex gap-1">
+                          <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                          <div className="w-1 h-1 rounded-full bg-maroon/40"></div>
+                          <div className="w-1 h-1 rounded-full bg-maroon"></div>
+                        </div>
                       </div>
 
                       <div className="flex-1 p-6 grid grid-cols-1 gap-1 overflow-y-auto custom-scrollbar">
                         {[
-                          { 
-                            name: 'TandemVu', 
-                            href: '/technologies/tandemvu', 
-                            desc: 'Dual-lens comprehensive coverage', 
-                            icon: '/Technologies/TandemVu.png',
+                          {
+                            name: 'TandemVu',
+                            href: '/technologies/tandemvu',
+                            desc: 'Dual-lens comprehensive coverage',
+                            icon: '/navbar/TandemVu.png',
                             accent: 'border-blue-500/20 bg-blue-50/30'
                           },
-                          { 
-                            name: 'AcuSense', 
-                            href: '/technologies/acusense', 
-                            desc: 'AI-powered accurate detection', 
-                            icon: '/Technologies/AcuSense.png',
+                          {
+                            name: 'AcuSense',
+                            href: '/technologies/acusense',
+                            desc: 'AI-powered accurate detection',
+                            icon: '/navbar/AcuSenseUAE.png',
                             accent: 'border-maroon/20 bg-maroon/5'
                           },
-                          { 
-                            name: 'DarkFighter', 
-                            href: '/technologies/darkfighter', 
-                            desc: 'Ultra-low light optimization', 
-                            icon: '/Technologies/DarkFighter.png',
+                          {
+                            name: 'DarkFighter',
+                            href: '/technologies/darkfighter',
+                            desc: 'Ultra-low light optimization',
+                            icon: '/navbar/HikvisionDarkFighter.png',
                             accent: 'border-indigo-500/20 bg-indigo-50/30'
                           },
-                          { 
-                            name: 'ColorVu', 
-                            href: '/technologies/colorvu', 
-                            desc: '24/7 Vivid color imaging', 
-                            icon: '/Technologies/ColorVu.png',
-                            accent: 'border-gold/20 bg-gold/5'
+                          {
+                            name: 'ColorVu',
+                            href: '/technologies/colorvu',
+                            desc: '24/7 Vivid color imaging',
+                            icon: '/navbar/ColorVuUAE.png',
+                            accent: 'border-maroon/20 bg-maroon/5'
                           },
                         ].map((tech) => (
-                          <Link 
-                            key={tech.name} 
-                            href={tech.href} 
+                          <Link
+                            key={tech.name}
+                            href={tech.href}
                             className="flex items-center gap-5 p-4 rounded-2xl hover:bg-gray-50 group/item transition-all duration-300 border border-transparent hover:border-gray-100"
                           >
                             <div className={`w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-gray-100 shadow-sm p-1 transition-all duration-500 group-hover/item:shadow-md group-hover/item:scale-105 bg-white`}>
-                               <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                              <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
                             </div>
                             <div className="flex-1 space-y-1">
                               <div className="flex items-center justify-between">
@@ -332,13 +340,13 @@ export default function Navbar() {
                                   {tech.name}
                                 </h5>
                                 <div className="w-6 h-6 rounded-full bg-maroon/0 flex items-center justify-center text-maroon group-hover/item:bg-maroon group-hover/item:text-white transition-all duration-500 opacity-0 group-hover/item:opacity-100">
-                                   <ChevronRight size={14} />
+                                  <ChevronRight size={14} />
                                 </div>
                               </div>
                               <p className="text-[11px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
                                 {tech.desc}
                               </p>
-                              <div className="h-[2px] w-0 bg-gold group-hover/item:w-12 transition-all duration-500" />
+                              <div className="h-[2px] w-0 bg-maroon group-hover/item:w-12 transition-all duration-500" />
                             </div>
                           </Link>
                         ))}
@@ -346,10 +354,10 @@ export default function Navbar() {
 
                       {/* Bottom Accent */}
                       <div className="p-6 bg-gray-50/50 border-t border-gray-50 flex items-center justify-center">
-                         <Link href="/technologies" className="text-[10px] font-black text-maroon uppercase tracking-[0.2em] hover:text-gold transition-colors flex items-center gap-2">
-                            <span>View technical documentation</span>
-                            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
-                         </Link>
+                        <Link href="/technologies" className="text-[10px] font-black text-maroon uppercase tracking-[0.2em] hover:text-maroon/80 transition-colors flex items-center gap-2">
+                          <span>View technical documentation</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -358,8 +366,8 @@ export default function Navbar() {
 
               {/* Solutions Dropdown */}
               <div className="group/sol">
-                <Link 
-                  href="/solutions" 
+                <Link
+                  href="/solutions"
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors flex items-center gap-1"
                 >
                   Solutions
@@ -369,50 +377,50 @@ export default function Navbar() {
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-4 group-hover/sol:opacity-100 group-hover/sol:visible group-hover/sol:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-50">
                   <div className="bg-white rounded-[32px] shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-gray-100 p-6 w-[95vw] max-w-[1000px] overflow-hidden relative">
                     <div className="flex items-center justify-between mb-6 px-2">
-                       <div className="space-y-1">
-                          <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">Industry <span className="text-maroon">Solutions</span></h3>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Tailored security for every sector</p>
-                       </div>
-                       <Link href="/solutions" className="text-[10px] font-black text-maroon hover:text-gold transition-colors uppercase tracking-[0.2em] flex items-center gap-2 group/all">
-                          <span>View All Solutions</span>
-                          <ArrowRight size={14} className="group-hover/all:translate-x-1 transition-transform" />
-                       </Link>
+                      <div className="space-y-1">
+                        <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight">Industry <span className="text-maroon">Solutions</span></h3>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Tailored security for every sector</p>
+                      </div>
+                      <Link href="/solutions" className="text-[10px] font-black text-maroon hover:text-maroon/80 transition-colors uppercase tracking-[0.2em] flex items-center gap-2 group/all">
+                        <span>View All Solutions</span>
+                        <ArrowRight size={14} className="group-hover/all:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
 
                     <div className="grid grid-cols-4 gap-4">
                       {[
-                        { name: 'Manufacturing', href: '/solutions/manufacturing', desc: 'Industrial security', img: '/Solutions/Manufacturing.png', icon: Building2 },
-                        { name: 'Retail', href: '/solutions/retail', desc: 'Business intelligence', img: '/Solutions/Retail.png', icon: Store },
-                        { name: 'Healthcare', href: '/solutions/healthcare', desc: 'Safety & access', img: '/Solutions/Healthcare.png', icon: HeartPulse },
-                        { name: 'Education', href: '/solutions/education', desc: 'Campus security', img: '/Solutions/Education.png', icon: GraduationCap },
+                        { name: 'Manufacturing', href: '/solutions/manufacturing', desc: 'Industrial security', img: '/navbar/Manufacture thumb.png', icon: Building2 },
+                        { name: 'Retail', href: '/solutions/retail', desc: 'Business intelligence', img: '/navbar/Retail Thumb.png', icon: Store },
+                        { name: 'Healthcare', href: '/solutions/healthcare', desc: 'Safety & access', img: '/navbar/Health care thumb.png', icon: HeartPulse },
+                        { name: 'Education', href: '/solutions/education', desc: 'Campus security', img: '/navbar/education thumb.png', icon: GraduationCap },
                       ].map((sol) => (
-                        <Link 
-                          key={sol.name} 
-                          href={sol.href} 
+                        <Link
+                          key={sol.name}
+                          href={sol.href}
                           className="group/item flex flex-col gap-4"
                         >
                           <div className="relative h-32 rounded-2xl overflow-hidden shadow-md border border-gray-100">
                             <img src={sol.img} alt={sol.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/item:scale-110" />
                             <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/10 transition-colors duration-500"></div>
-                            
+
                             {/* Accent Bar */}
                             <div className="absolute top-0 left-0 w-full h-1 bg-maroon transform scale-x-0 group-hover/item:scale-x-100 transition-transform duration-500 origin-left"></div>
                           </div>
 
                           <div className="px-1 space-y-2">
                             <div className="flex items-center gap-2">
-                               <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-maroon border border-gray-100 group-hover/item:bg-maroon group-hover/item:text-white transition-all duration-300">
-                                  <sol.icon size={14} />
-                               </div>
-                               <div className="flex flex-col">
-                                 <h4 className="text-[14px] font-black text-gray-900 uppercase tracking-tight group-hover/item:text-maroon transition-colors">{sol.name}</h4>
-                                 <span className="text-gray-400 text-[8px] font-bold uppercase tracking-[0.2em]">{sol.desc}</span>
-                               </div>
+                              <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-maroon border border-gray-100 group-hover/item:bg-maroon group-hover/item:text-white transition-all duration-300">
+                                <sol.icon size={14} />
+                              </div>
+                              <div className="flex flex-col">
+                                <h4 className="text-[14px] font-black text-gray-900 uppercase tracking-tight group-hover/item:text-maroon transition-colors">{sol.name}</h4>
+                                <span className="text-gray-400 text-[8px] font-bold uppercase tracking-[0.2em]">{sol.desc}</span>
+                              </div>
                             </div>
-                            
+
                             <div className="flex items-center justify-between pt-1 border-t border-gray-50 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500">
-                               <span className="text-[9px] font-black text-maroon uppercase tracking-widest">Explore Solution</span>
-                               <ChevronRight size={12} className="text-gold" />
+                              <span className="text-[9px] font-black text-maroon uppercase tracking-widest">Explore Solution</span>
+                              <ChevronRight size={12} className="text-maroon" />
                             </div>
                           </div>
                         </Link>
@@ -421,18 +429,18 @@ export default function Navbar() {
 
                     {/* Bottom Decorative Element */}
                     <div className="mt-6 pt-4 border-t border-gray-50 flex items-center justify-center gap-8">
-                       <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
-                          <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Enterprise Ready</span>
-                       </div>
-                       <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></div>
-                          <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Local Support</span>
-                       </div>
-                       <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
-                          <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">UAE Compliant</span>
-                       </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
+                        <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Enterprise Ready</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-maroon/40 animate-pulse"></div>
+                        <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Local Support</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-maroon animate-pulse"></div>
+                        <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">UAE Compliant</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -442,9 +450,9 @@ export default function Navbar() {
                 { name: 'About Us', href: '/about' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
+                <Link
+                  key={link.name}
+                  href={link.href}
                   className="px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-gray-900 hover:text-maroon transition-colors"
                 >
                   {link.name}
@@ -454,9 +462,9 @@ export default function Navbar() {
 
             {/* Right side - CTA Button */}
             <div className="hidden md:flex items-center">
-              <a 
-                href="tel:+971509693134" 
-                className="flex items-center gap-2 px-6 py-2.5 rounded-full font-bold bg-maroon text-white hover:bg-gold hover:text-maroon transition-all shadow-md hover:shadow-lg active:scale-95"
+              <a
+                href="tel:+971509693134"
+                className="flex items-center gap-2 px-6 py-2.5 rounded-full font-bold bg-maroon text-white hover:bg-[#a01830] transition-all shadow-md hover:shadow-lg active:scale-95"
               >
                 <span>Call Us</span>
                 <Phone size={14} />
@@ -465,8 +473,8 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center pr-1 sm:pr-2">
-              <button 
-                onClick={() => setOpen(!open)} 
+              <button
+                onClick={() => setOpen(!open)}
                 className="p-2 text-maroon hover:bg-gray-100 rounded-lg transition-colors"
                 aria-label="Toggle menu"
               >
@@ -481,10 +489,10 @@ export default function Navbar() {
           <div className={`flex flex-col h-full transform transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-10'}`}>
             <div className="px-6 py-8 space-y-2 overflow-y-auto h-full pb-32">
               <div className="mb-8 p-6 bg-maroon rounded-3xl text-white">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-2">Need Assistance?</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-rose-200 mb-2">Need Assistance?</p>
                 <p className="text-sm font-medium mb-4 opacity-80">Our experts are available 24/7 for technical support.</p>
                 <a href="tel:+971509693134" className="inline-flex items-center gap-2 text-lg font-black text-white">
-                  <Phone size={18} className="text-gold" />
+                  <Phone size={18} className="text-white" />
                   +971 50 969 3134
                 </a>
               </div>
@@ -497,9 +505,9 @@ export default function Navbar() {
                 { name: 'About Us', href: '/about', icon: ShieldCheck },
                 { name: 'Contact Us', href: '/contact', icon: Mail },
               ].map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
+                <Link
+                  key={link.name}
+                  href={link.href}
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between p-5 rounded-2xl bg-gray-50 hover:bg-maroon hover:text-white transition-all group"
                 >
@@ -509,19 +517,19 @@ export default function Navbar() {
                     </div>
                     <span className="text-lg font-black uppercase tracking-tight">{link.name}</span>
                   </div>
-                  <ChevronRight size={20} className="text-gold group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight size={20} className="text-maroon group-hover:translate-x-1 transition-transform" />
                 </Link>
               ))}
             </div>
-            
+
             {/* Mobile Menu Footer */}
             <div className="mt-auto p-6 border-t border-gray-100 bg-gray-50 flex items-center justify-between">
               <div className="flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
-                   <Phone size={14} className="text-maroon" />
+                  <Phone size={14} className="text-maroon" />
                 </div>
                 <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
-                   <Mail size={14} className="text-maroon" />
+                  <Mail size={14} className="text-maroon" />
                 </div>
               </div>
               <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Hikvision UAE Official</span>

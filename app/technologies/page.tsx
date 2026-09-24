@@ -12,7 +12,7 @@ const technologies = [
     name: "TandemVu",
     slug: "tandemvu",
     description: "Dual-lens technology that combines a large area overview with detailed PTZ tracking, ensuring you never miss a moment.",
-    image: "/Technologies/TandemVu.png",
+    image: "/navbar/TandemVu.png",
     accent: "bg-blue-500/10 text-blue-600",
     features: ["Broad Area Coverage", "Detail PTZ Tracking", "AI Detection"]
   },
@@ -20,7 +20,7 @@ const technologies = [
     name: "AcuSense",
     slug: "acusense",
     description: "AI-powered detection that accurately distinguishes humans and vehicles from other moving objects, reducing false alarms by up to 90%.",
-    image: "/Technologies/AcuSense.png",
+    image: "/navbar/AcuSenseUAE.png",
     accent: "bg-maroon/10 text-maroon",
     features: ["Human Detection", "Vehicle Identification", "Real-time Alerts"]
   },
@@ -28,7 +28,7 @@ const technologies = [
     name: "DarkFighter",
     slug: "darkfighter",
     description: "Industry-leading low-light technology that captures high-quality, full-color images in near-total darkness.",
-    image: "/Technologies/DarkFighter.png",
+    image: "/navbar/HikvisionDarkFighter.png",
     accent: "bg-indigo-500/10 text-indigo-600",
     features: ["Ultra-low Light", "High Sensitivity", "Crystal Clear Night Vision"]
   },
@@ -36,8 +36,8 @@ const technologies = [
     name: "ColorVu",
     slug: "colorvu",
     description: "Provides 24/7 vivid color imaging with high-performance sensors and advanced lenses for accurate details in darkness.",
-    image: "/Technologies/ColorVu.png",
-    accent: "bg-gold/10 text-gold",
+    image: "/navbar/ColorVuUAE.png",
+    accent: "bg-maroon/10 text-maroon",
     features: ["24/7 Color", "Large Aperture", "Soft Supplemental Light"]
   }
 ];
@@ -45,62 +45,44 @@ const technologies = [
 export default function TechnologiesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Premium Technologies Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
-        
-        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
-            <div className="space-y-8 pl-4 lg:pl-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold font-black text-xs uppercase tracking-[0.2em]">
-                <ShieldCheck size={14} />
-                <span>Next-Gen Security Standards</span>
-              </div>
-              <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.85] tracking-tight">
-                THE FUTURE OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">INTELLIGENCE</span>
-              </h1>
-              <p className="text-xl text-white/60 font-medium leading-relaxed max-w-lg">
-                Explore the groundbreaking core technologies that power the world's most advanced surveillance systems. From AI-driven detection to vivid color night vision.
-              </p>
-              <div className="flex items-center gap-4">
-                <a 
-                  href="/Download%20Pdf.pdf" 
-                  download 
-                  className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all active:scale-95 shadow-2xl inline-block"
-                >
-                  Download Catalog
-                </a>
-                <div className="flex -space-x-3">
-                   {[1,2,3,4].map(i => (
-                     <div key={i} className="w-10 h-10 rounded-full border-2 border-maroon bg-gray-200 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
-                     </div>
-                   ))}
-                   <div className="w-10 h-10 rounded-full border-2 border-maroon bg-gold flex items-center justify-center text-maroon text-[10px] font-black">
-                      +1k
-                   </div>
-                </div>
-                <span className="text-xs font-black text-white/40 uppercase tracking-widest">Trusted by Experts</span>
-              </div>
+      {/* Hero Banner Section */}
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[680px] md:min-h-[720px] sm:max-h-[960px]">
+        <div className="absolute inset-0">
+          <img
+            src="/navbar/thefuture.png"
+            className="w-full h-full object-cover"
+            alt="The Future of Intelligence"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent sm:hidden" />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+        </div>
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-center items-start text-left pb-8 sm:pb-0 z-10">
+          <div className="max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-maroon/20 border border-maroon/30 rounded-full">
+              <ShieldCheck size={14} className="text-maroon" />
+              <span className="text-maroon font-black uppercase tracking-[0.25em] text-xs">
+                Next-Gen Security Standards
+              </span>
             </div>
-            
-            <div className="relative group mt-10 lg:mt-14">
-              <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-3xl transform rotate-6 transition-transform group-hover:rotate-12 duration-1000" />
-              <div className="relative bg-white/5 backdrop-blur-md rounded-[60px] p-6 border border-white/10 overflow-hidden">
-                 <img 
-                   src="/Technologies/Core Tech.png" 
-                   alt="Core Tech" 
-                   className="w-full h-auto object-cover rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                 <div className="absolute bottom-10 left-10 text-white">
-                    <p className="text-5xl font-black uppercase tracking-tight leading-none mb-2">Core <span className="text-gold">Tech</span></p>
-                    <div className="flex items-center gap-3">
-                       <div className="h-px w-8 bg-gold" />
-                       <p className="text-xs font-black uppercase tracking-[0.3em] text-gold/80">Empowering Security</p>
-                    </div>
-                 </div>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight sm:leading-[0.95]">
+              THE FUTURE OF <span className="text-maroon">INTELLIGENCE</span>
+            </h1>
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-lg sm:max-w-xl">
+              Explore the groundbreaking core technologies that power the world's most advanced surveillance systems. From AI-driven detection to vivid color night vision.
+            </p>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="/Download%20Pdf.pdf"
+                download
+                className="inline-flex justify-center items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95"
+              >
+                Download Catalog
+              </a>
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-3">
+                 
+                </div>
+                
               </div>
             </div>
           </div>
@@ -140,16 +122,16 @@ export default function TechnologiesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {technologies.map((tech) => (
-              <Link 
-                key={tech.slug} 
+              <Link
+                key={tech.slug}
                 href={`/technologies/${tech.slug}`}
                 className="group relative bg-white rounded-[2rem] md:rounded-[40px] p-6 sm:p-8 shadow-xl shadow-gray-200/40 border border-gray-100 flex flex-col lg:flex-row gap-8 items-center transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl hover:shadow-maroon/10"
               >
                 <div className="w-full lg:w-[180px] h-[180px] rounded-3xl overflow-hidden bg-gray-50 p-2 shrink-0 border border-gray-50">
-                  <img 
-                    src={tech.image} 
-                    alt={tech.name} 
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" 
+                  <img
+                    src={tech.image}
+                    alt={tech.name}
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
                 <div className="flex-1 space-y-4">
@@ -179,49 +161,67 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Why Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-         <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[100px]" />
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="page-hero rounded-[2.5rem] md:rounded-[50px] p-6 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
-               <div className="w-full md:w-1/2 space-y-6 relative z-10">
-                  <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
-                     ADVANCED <span className="text-gold">SURVEILLANCE</span> FOR EVERY ENVIRONMENT
-                  </h3>
-                  <p className="text-white/70 text-lg font-medium">
-                     Our technologies are engineered to perform in the toughest conditions, from the intense desert heat of the UAE to near-total darkness.
-                  </p>
-                  <div className="grid grid-cols-2 gap-6 pt-4">
-                     <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-gold">
-                           <ShieldCheck size={18} />
-                        </div>
-                        <p className="text-sm font-black text-white uppercase tracking-widest">Reliable</p>
-                        <p className="text-xs text-white/50">24/7 Uninterrupted performance</p>
-                     </div>
-                     <div className="space-y-2">
-                        <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-gold">
-                           <Eye size={18} />
-                        </div>
-                        <p className="text-sm font-black text-white uppercase tracking-widest">Precise</p>
-                        <p className="text-xs text-white/50">High-fidelity detailed imaging</p>
-                     </div>
-                  </div>
-               </div>
-               <div className="w-full md:w-1/2 relative">
-                  <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-[40px] shadow-2xl">
-                     <img 
-                       src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2000&auto=format&fit=crop" 
-                       alt="Technology Visual" 
-                       className="w-full h-auto rounded-[30px] opacity-90"
-                     />
-                     <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gold p-6 rounded-[30px] flex items-center justify-center shadow-2xl">
-                        <Cpu size={40} className="text-maroon" />
-                     </div>
-                  </div>
-               </div>
+<section className="py-24 bg-white relative overflow-hidden">
+  <div className="absolute -top-24 -left-24 w-96 h-96 bg-maroon/5 rounded-full blur-[100px]" />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="page-hero rounded-[2.5rem] md:rounded-[50px] p-6 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
+
+      <div className="w-full md:w-1/2 space-y-6 relative z-10">
+        <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight leading-none">
+          ADVANCED <span className="text-maroon">SURVEILLANCE</span> FOR EVERY ENVIRONMENT
+        </h3>
+
+        <p className="text-white/70 text-lg font-medium">
+          Our technologies are engineered to perform in the toughest conditions, from the intense desert heat of the UAE to near-total darkness.
+        </p>
+
+        <div className="grid grid-cols-2 gap-6 pt-4">
+          <div className="space-y-2">
+            <div className="w-8 h-8 rounded-lg bg-maroon/20 flex items-center justify-center text-maroon">
+              <ShieldCheck size={18} />
             </div>
-         </div>
-      </section>
+            <p className="text-sm font-black text-white uppercase tracking-widest">
+              Reliable
+            </p>
+            <p className="text-xs text-white/50">
+              24/7 Uninterrupted performance
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <div className="w-8 h-8 rounded-lg bg-maroon/20 flex items-center justify-center text-maroon">
+              <Eye size={18} />
+            </div>
+            <p className="text-sm font-black text-white uppercase tracking-widest">
+              Precise
+            </p>
+            <p className="text-xs text-white/50">
+              High-fidelity detailed imaging
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Image */}
+      <div className="w-full md:w-1/2 relative">
+        <div className="group relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-[40px] shadow-2xl overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:border-maroon/50 hover:shadow-[0_20px_60px_rgba(196,30,58,0.35)]">
+
+          <img
+            src="/navbar/future.png"
+            alt="Technology Visual"
+            className="w-full h-auto rounded-[30px] opacity-90 transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:opacity-100"
+          />
+
+          {/* Hover Glow */}
+          <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-maroon/0 via-transparent to-maroon/0 transition-all duration-700 group-hover:from-maroon/20 group-hover:to-red-600/15 pointer-events-none" />
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-24 bg-white">
@@ -232,15 +232,15 @@ export default function TechnologiesPage() {
             Contact our technical team today for a free consultation and find the perfect technology for your security needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="px-12 py-5 bg-maroon text-white rounded-full font-black uppercase tracking-widest text-sm shadow-2xl shadow-maroon/20 hover:bg-maroon transition-all flex items-center gap-3 active:scale-95"
             >
               Contact Sales Team
               <ArrowRight size={18} />
             </Link>
-            <Link 
-              href="/products" 
+            <Link
+              href="/products"
               className="px-12 py-5 border-2 border-gray-100 text-gray-900 rounded-full font-black uppercase tracking-widest text-sm hover:border-maroon transition-all flex items-center gap-3 active:scale-95"
             >
               Browse Products

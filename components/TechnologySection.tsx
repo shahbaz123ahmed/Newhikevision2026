@@ -28,9 +28,9 @@ const technologies = [
     subtitle: "ColorVu Technology UAE",
     description: "Full-color night vision technology adapted for UAE conditions. Delivers crystal-clear color imaging even in complete darkness.",
     icon: <Palette className="w-8 h-8" />,
-    color: "from-gold/20 to-yellow-600/20",
-    border: "group-hover:border-gold/50",
-    textShadow: "shadow-gold/20"
+    color: "from-maroon/20 to-red-600/20",
+    border: "group-hover:border-maroon/50",
+    textShadow: "shadow-maroon/20"
   },
   {
     id: "acusense",
@@ -53,7 +53,7 @@ export default function TechnologySection() {
           <p className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-6">
             Our <span className="text-maroon">Technologies</span>
           </p>
-          <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-maroon mx-auto rounded-full" />
         </div>
 
         <div className="relative">
@@ -61,8 +61,8 @@ export default function TechnologySection() {
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[3px] bg-maroon/40 -translate-y-1/2 z-0" />
           <div className="hidden lg:block absolute top-0 left-1/2 w-[3px] h-full bg-maroon/40 -translate-x-1/2 z-0" />
           
-          {/* Central Octagon - Brand Secondary (Gold) with Continuous Rotation */}
-          <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gold z-10 items-center justify-center shadow-xl animate-[spin_10s_linear_infinite]" 
+          {/* Central Octagon - Brand Primary (Maroon) with Continuous Rotation */}
+          <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-maroon z-10 items-center justify-center shadow-xl animate-[spin_10s_linear_infinite]" 
                style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}>
             <div className="w-12 h-12 bg-white/20 animate-[spin_15s_linear_infinite_reverse]" style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}></div>
           </div>
@@ -82,7 +82,7 @@ export default function TechnologySection() {
                       {tech.icon}
                     </div>
                     <div className="flex-1">
-                      <span className="block text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                      <span className="block text-[10px] font-black uppercase tracking-[0.2em] text-maroon mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
                         {tech.subtitle}
                       </span>
                       <h3 className="text-2xl md:text-3xl font-black text-gray-900 group-hover:text-maroon transition-colors duration-300">
@@ -97,7 +97,7 @@ export default function TechnologySection() {
 
                   <Link 
                     href={`/technologies/${tech.id}`}
-                    className="inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest text-maroon hover:text-gold transition-colors group/btn"
+                    className="inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest text-maroon hover:text-maroon/80 transition-colors group/btn"
                   >
                     Learn More 
                     <span className="w-8 h-8 rounded-full bg-maroon/5 flex items-center justify-center group-hover/btn:bg-maroon group-hover/btn:text-white transition-all duration-300">

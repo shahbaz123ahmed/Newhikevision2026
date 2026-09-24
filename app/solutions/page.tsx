@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Building2, 
   Store, 
@@ -16,7 +17,9 @@ import {
   Building,
   Home,
   Truck,
-  Hotel
+  Hotel,
+  Download,
+  PhoneCall
 } from 'lucide-react';
 
 const industrySolutions = [
@@ -25,7 +28,7 @@ const industrySolutions = [
     slug: "manufacturing",
     desc: "Intelligent production line monitoring, worker safety analytics, and perimeter protection for industrial complexes.",
     icon: Building2,
-    image: "/Solutions/Manufacturing.png",
+    image: "/navbar/Manufacture thumb.png",
     features: ["Thermal Inspection", "PPE Detection", "Access Control"]
   },
   {
@@ -33,7 +36,7 @@ const industrySolutions = [
     slug: "retail",
     desc: "Loss prevention, footfall analytics, and VIP recognition to optimize customer experience and business operations.",
     icon: Store,
-    image: "/Solutions/Retail.png",
+    image: "/navbar/Retail Thumb.png",
     features: ["Heat Mapping", "Queue Management", "POS Integration"]
   },
   {
@@ -41,7 +44,7 @@ const industrySolutions = [
     slug: "healthcare",
     desc: "Patient safety monitoring, restricted area access, and smart hospital management systems.",
     icon: HeartPulse,
-    image: "/Solutions/Healthcare.png",
+    image: "/navbar/Health care thumb.png",
     features: ["Nurse Call Integration", "Stretcher Tracking", "Lab Security"]
   },
   {
@@ -49,7 +52,7 @@ const industrySolutions = [
     slug: "education",
     desc: "Ensuring campus safety with intelligent perimeter guarding, automated attendance, and emergency response systems.",
     icon: GraduationCap,
-    image: "/Solutions/Education.png",
+    image: "/navbar/education thumb.png",
     features: ["Campus Broadcast", "Parent Notifications", "AI Labs"]
   },
   {
@@ -57,7 +60,7 @@ const industrySolutions = [
     slug: "government",
     desc: "Critical infrastructure protection, public safety monitoring, and secure government building management.",
     icon: Building,
-    image: "/Solutions/Manufacturing.png", // Reusing image if specific ones aren't available
+    image: "/navbar/government thumb.png",
     features: ["City Surveillance", "Traffic Management", "Data Centers"]
   },
   {
@@ -65,7 +68,7 @@ const industrySolutions = [
     slug: "residential",
     desc: "Smart villa security, video intercoms, and integrated home automation for modern UAE living.",
     icon: Home,
-    image: "/Solutions/Retail.png",
+    image: "/navbar/residential thumb.png",
     features: ["Mobile Control", "Package Detection", "Smart Locks"]
   },
   {
@@ -73,7 +76,7 @@ const industrySolutions = [
     slug: "logistics",
     desc: "Fleet management, warehouse optimization, and shipment tracking with AI-powered cameras.",
     icon: Truck,
-    image: "/Solutions/Healthcare.png",
+    image: "/navbar/logistic thumb.png",
     features: ["LPR Cameras", "Dock Management", "Route Optimization"]
   },
   {
@@ -81,73 +84,68 @@ const industrySolutions = [
     slug: "hospitality",
     desc: "Guest safety, luxury hotel management, and intelligent parking solutions for premium resorts.",
     icon: Hotel,
-    image: "/Solutions/Education.png",
+    image: "/navbar/hospital thumb.png",
     features: ["Face Check-in", "Pool Safety", "Energy Saving"]
   }
 ];
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-white pt-24">
-      {/* Premium Solutions Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden page-hero">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
-        
-        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
-            <div className="space-y-8 pl-4 lg:pl-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold text-[10px] font-black uppercase tracking-[0.3em]">
-                <ShieldCheck size={14} />
-                <span>Enterprise Solutions Portfolio</span>
-              </div>
-              <h1 className="text-4xl md:text-7xl font-black text-white tracking-tight leading-[0.85] uppercase">
-                Tailored <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Security</span> <br />
-                For Every <span className="text-white/40">Industry.</span>
-              </h1>
-              <p className="text-xl text-white/60 font-medium leading-relaxed max-w-lg border-l-4 border-gold pl-8">
-                Hikvision UAE provides state-of-the-art intelligent solutions optimized for the specific challenges of various sectors across Dubai, Abu Dhabi, and the Northern Emirates.
-              </p>
-              <div className="flex items-center gap-4">
-                <a 
-                  href="/Download%20Pdf.pdf" 
-                  download 
-                  className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all active:scale-95 shadow-2xl inline-block"
-                >
-                  Download Catalog
-                </a>
-                <div className="flex -space-x-3">
-                   {[1,2,3,4].map(i => (
-                     <div key={i} className="w-10 h-10 rounded-full border-2 border-maroon bg-gray-200 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
-                     </div>
-                   ))}
-                   <div className="w-10 h-10 rounded-full border-2 border-maroon bg-gold flex items-center justify-center text-maroon text-[10px] font-black">
-                      +1k
-                   </div>
-                </div>
-                <span className="text-xs font-black text-white/40 uppercase tracking-widest">Trusted by Experts</span>
-              </div>
+    <main className="min-h-screen bg-white">
+      {/* Solutions Hero Banner (Matching Hero Section Style) */}
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[660px] md:min-h-[720px] sm:max-h-[960px]">
+        {/* Background Image */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/herosection/Tailored Security For Every Industry..png"
+            alt="Tailored Security For Every Industry"
+            fill
+            sizes="100vw"
+            className="object-cover object-[75%_center] sm:object-center"
+            priority
+            quality={90}
+          />
+          {/* Partial localized shading for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
+        </div>
+
+        {/* Content - Left Aligned directly over image */}
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-end sm:justify-center items-start text-left pb-8 sm:pb-0">
+          <div className="max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            {/* Tag / Category */}
+            <div className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-[0.25em] mb-2 sm:mb-3 text-maroon">
+              Enterprise Solutions Portfolio
             </div>
-            
-            <div className="relative group mt-10 lg:mt-14">
-              <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-3xl transform rotate-6 transition-transform group-hover:rotate-12 duration-1000" />
-              <div className="relative bg-white/5 backdrop-blur-md rounded-[2.5rem] sm:rounded-[60px] p-6 border border-white/10 overflow-hidden">
-                  <img 
-                    src="/solutions.png" 
-                    alt="Solutions Hero" 
-                    className="w-full aspect-[4/3] lg:aspect-square object-cover rounded-[2rem] sm:rounded-[50px] transition-transform duration-[2s] group-hover:scale-110 drop-shadow-2xl" 
-                  />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                 <div className="absolute bottom-10 left-10 text-white">
-                    <p className="text-5xl font-black uppercase tracking-tight leading-none mb-2">Smart <span className="text-gold">Solutions</span></p>
-                    <div className="flex items-center gap-3">
-                       <div className="h-px w-8 bg-gold" />
-                       <p className="text-xs font-black uppercase tracking-[0.3em] text-gold/80">Industry Specific</p>
-                    </div>
-                 </div>
-              </div>
+
+            {/* Main Heading */}
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-4 leading-tight sm:leading-[1.05]">
+              TAILORED SECURITY{" "}
+              <span className="text-maroon">FOR EVERY INDUSTRY</span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 mb-5 sm:mb-8 leading-relaxed max-w-lg sm:max-w-xl">
+              Hikvision UAE provides state-of-the-art intelligent solutions optimized for the specific challenges of various sectors across Dubai, Abu Dhabi, and the Northern Emirates.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-2 sm:mb-0">
+              <a
+                href="/Download%20Pdf.pdf"
+                download
+                className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95"
+              >
+                Download Catalog
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 backdrop-blur-xl text-white hover:bg-white/10 active:scale-95 transition-all"
+              >
+                Contact Specialists
+                <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </Link>
             </div>
           </div>
         </div>
@@ -161,7 +159,7 @@ export default function SolutionsPage() {
             <p className="text-4xl md:text-5xl font-black text-gray-900 dark:text-[#1D1D1F] tracking-tighter mb-6">
               Our <span className="text-maroon">Expertise</span>
             </p>
-            <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
+            <div className="w-24 h-1.5 bg-maroon mx-auto rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,7 +200,7 @@ export default function SolutionsPage() {
                   </div>
 
                   <div className="mt-auto flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-maroon group-hover:text-gold transition-colors">Explore Solution</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-maroon group-hover:text-[#a01830] transition-colors">Explore Solution</span>
                     <div className="w-8 h-8 rounded-full bg-maroon/5 flex items-center justify-center text-maroon group-hover:bg-maroon group-hover:text-white transition-all">
                       <ArrowRight size={14} />
                     </div>
@@ -249,35 +247,13 @@ export default function SolutionsPage() {
             </div>
             
             <div className="relative">
-              <div className="aspect-square rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl p-2 relative group">
+              <div className="aspect-square rounded-[3rem] bg-gray-100 overflow-hidden shadow-2xl p-2 relative group border border-maroon">
                 <img 
-                  src="/Solutions/Education.png" 
+                  src="/navbar/education thumb.png" 
                   alt="Solution Overview" 
                   className="w-full h-full object-cover rounded-[2.5rem] transition-transform duration-1000 group-hover:scale-110" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
-                <div className="absolute inset-0 bg-black/30 rounded-[2.5rem] m-2"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="text-center space-y-4">
-                      <div className="w-24 h-24 rounded-full bg-gold flex items-center justify-center mx-auto shadow-2xl animate-pulse">
-                         <ShieldCheck className="text-maroon w-12 h-12" />
-                      </div>
-                      <p className="text-white font-black text-2xl uppercase tracking-widest">Certified Security</p>
-                   </div>
-                </div>
-              </div>
-              
-              {/* Decorative Floating Card */}
-              <div className="absolute -bottom-10 -left-10 bg-white dark:bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-200 hidden md:block animate-bounce" style={{ animationDuration: '4s' }}>
-                <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
-                      <CheckCircle2 size={24} />
-                   </div>
-                   <div>
-                      <p className="text-[10px] font-black text-gray-400 dark:text-[#86868B] uppercase tracking-widest">Deployment Status</p>
-                      <p className="text-lg font-black text-gray-900 dark:text-[#1D1D1F] uppercase">Active Support</p>
-                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -288,17 +264,17 @@ export default function SolutionsPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto bg-maroon rounded-[3rem] p-12 shadow-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--brand-gold)_0%,_transparent_50%)] opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-6">
               Ready to Secure <br />
-              Your <span className="text-gold">Industry?</span>
+              Your <span className="text-white underline decoration-white/40">Industry?</span>
             </h2>
-            <p className="text-white/70 mb-10 font-medium max-w-xl mx-auto">
+            <p className="text-white/80 mb-10 font-medium max-w-xl mx-auto">
               Our experts are ready to design a custom solution for your specific requirements.
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-3 px-12 py-5 rounded-2xl bg-white text-maroon font-black text-lg hover:bg-gold transition-all transform hover:-translate-y-1 shadow-xl"
+              className="inline-flex items-center gap-3 px-12 py-5 rounded-2xl bg-white text-maroon font-black text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 shadow-xl"
             >
               Get Expert Advice
               <ArrowRight size={20} />
@@ -309,3 +285,4 @@ export default function SolutionsPage() {
     </main>
   );
 }
+               

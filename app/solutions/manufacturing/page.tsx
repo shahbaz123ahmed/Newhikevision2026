@@ -7,36 +7,41 @@ export default function ManufacturingSolutionPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 page-hero overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[680px] md:min-h-[720px] sm:max-h-[960px]">
+        <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
-            className="w-full h-full object-cover grayscale"
+            src="/navbar/Manufacture thumb.png"
+            className="w-full h-full object-cover"
             alt="Manufacturing Background"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-gold" />
-            <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Industry Solutions</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">
-            Manufacturing <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold">Security</span>
-          </h1>
-          <p className="text-gray-400 text-xl font-bold uppercase tracking-widest max-w-2xl mb-10 leading-relaxed">
-            Hikvision Solutions for Manufacturing in UAE. Secure your factory with advanced surveillance, access control, and AI-powered monitoring.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <button className="px-10 py-5 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-gold hover:text-maroon transition-all shadow-xl active:scale-95">
-              Explore Features
-            </button>
-            <a
-              href="/Download%20Pdf.pdf"
-              download
-              className="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-maroon transition-all active:scale-95 inline-block"
-            >
-              Download PDF
-            </a>
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-center items-start text-left pb-8 sm:pb-0 z-10">
+          <div className="max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
+              <div className="h-px w-8 bg-maroon" />
+              <span className="text-maroon font-black uppercase tracking-[0.25em] text-xs">Industry Solutions</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-4 leading-tight sm:leading-[1.05]">
+              Manufacturing <span className="text-maroon">Security</span>
+            </h1>
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 mb-5 sm:mb-8 leading-relaxed max-w-lg sm:max-w-xl">
+              Hikvision Solutions for Manufacturing in UAE. Secure your factory with advanced surveillance, access control, and AI-powered monitoring.
+            </p>
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-2 sm:mb-0">
+              <Link href="/contact" className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95">
+                Explore Features
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </Link>
+              <a
+                href="/Download%20Pdf.pdf"
+                download
+                className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 backdrop-blur-xl text-white hover:bg-white/10 active:scale-95 transition-all"
+              >
+                Download PDF
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -46,8 +51,8 @@ export default function ManufacturingSolutionPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
             <div>
-              <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tight mb-8">
-                Security for Modern Manufacturing
+              <h2 className="text-4xl font-black text-maroon uppercase tracking-tight mb-8">
+                Security for Modern <span className="text-gray-900">Manufacturing</span>
               </h2>
               <p className="text-gray-600 text-lg font-medium leading-relaxed mb-8">
                 Hikvision delivers robust, scalable security solutions tailored for manufacturing environments in the UAE. Our systems combine high-definition cameras, AI analytics, and integrated access control to protect assets, ensure safety, and optimize operations.
@@ -64,17 +69,13 @@ export default function ManufacturingSolutionPage() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl">
+            <div className="relative group">
+              <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl transition-all duration-700 group-hover:shadow-[0_25px_60px_rgba(196,30,58,0.25)] border border-maroon">
                 <img
-                  src="/Solutions/Manufacturing.png"
-                  className="w-full h-full object-cover"
+                  src="/navbar/security4modern.png"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   alt="Manufacturing Security"
                 />
-              </div>
-              <div className="absolute -bottom-10 -left-10 bg-maroon p-10 rounded-[32px] shadow-2xl hidden md:block">
-                <p className="text-white text-4xl font-black mb-1">24/7</p>
-                <p className="text-white/70 text-xs font-bold uppercase tracking-widest">Active Monitoring</p>
               </div>
             </div>
           </div>
@@ -86,28 +87,27 @@ export default function ManufacturingSolutionPage() {
                 title: "Thermal Imaging Cameras",
                 desc: "24/7 temperature monitoring and early fire detection for industrial safety and asset protection.",
                 icon: <Flame size={32} />,
-                img: "/poster1.png",
+                img: "/navbar/Thermal-Imaging Cameras.png",
                 slug: "thermal-imaging-cameras"
               },
               {
                 title: "PTZ Surveillance Systems",
                 desc: "Pan-Tilt-Zoom cameras for 360° coverage, advanced zoom, and auto-tracking for perimeter security.",
                 icon: <Settings size={32} />,
-                img: "/poster.jpeg",
+                img: "/navbar/PTZ-SurveillanceSystems.png",
                 slug: "ptz-surveillance-systems"
               },
               {
                 title: "AI-Powered Smart Cameras",
                 desc: "Deep learning cameras for intelligent monitoring, PPE compliance, and advanced analytics.",
                 icon: <Cpu size={32} />,
-                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
+                img: "/navbar/AI-Powered.png",
                 slug: "ai-powered-smart-cameras"
               }
             ].map((sol, i) => (
               <div key={i} className="group bg-white rounded-[40px] border border-gray-100 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="h-64 relative overflow-hidden">
                   <img src={sol.img} alt={sol.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-maroon/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="p-8">
                   <div className="text-maroon mb-4">{sol.icon}</div>
@@ -123,10 +123,10 @@ export default function ManufacturingSolutionPage() {
 
           {/* Features Grid */}
           <div className="page-hero rounded-[2.5rem] md:rounded-[60px] p-6 md:p-24 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/10 to-transparent" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-maroon/10 to-transparent" />
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-16">
-                Features & <span className="text-gold">Benefits</span>
+                Features & <span className="text-maroon">Benefits</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {[
@@ -137,12 +137,12 @@ export default function ManufacturingSolutionPage() {
                   { title: "Operational Insights", desc: "Gain actionable insights into facility operations, safety compliance, and workflow optimization through intelligent analytics." },
                   { title: "Early Fire & Hazard Detection", desc: "Thermal imaging and smart sensors for early fire, smoke, and hazard detection to protect assets and personnel." }
                 ].map((feat, i) => (
-                  <div key={i} className="group border-l-2 border-gold/30 pl-8 hover:border-gold transition-colors">
-                    <h4 className="text-white text-xl font-black uppercase tracking-tight mb-4 group-hover:text-gold transition-colors">{feat.title}</h4>
+                  <div key={i} className="group border-l-2 border-maroon/30 pl-8 hover:border-maroon transition-colors">
+                    <h4 className="text-white text-xl font-black uppercase tracking-tight mb-4 group-hover:text-maroon transition-colors">{feat.title}</h4>
                     <p className="text-gray-400 font-medium text-sm leading-relaxed mb-6">{feat.desc}</p>
-                    <button className="text-gold font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:gap-3 transition-all">
+                    <Link href="/contact" className="text-maroon font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:gap-3 transition-all">
                       Learn More <ChevronRight size={12} />
-                    </button>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -155,12 +155,12 @@ export default function ManufacturingSolutionPage() {
       <section className="py-24 page-hero relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
-            Secure Your <span className="text-gold">Facility Today</span>
+            Secure Your <span className="text-maroon">Facility Today</span>
           </h2>
           <p className="text-white/70 text-lg font-bold uppercase tracking-widest mb-12 max-w-2xl mx-auto">
             Expert consultation for industrial security requirements in the UAE.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-white text-maroon rounded-full font-black uppercase tracking-widest hover:bg-gold hover:text-maroon transition-all shadow-2xl active:scale-95">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-[#a01830] transition-all shadow-2xl active:scale-95">
             Get Started Now <ArrowRight size={20} />
           </Link>
         </div>

@@ -42,7 +42,7 @@ export default function DistributorSection() {
               <div className="flex flex-col">
                 <span className="text-sm font-black text-gray-900 uppercase tracking-widest">1000+ Businesses Trust Us</span>
                 <div className="flex items-center gap-2 mt-1">
-                  <div className="flex text-gold">
+                  <div className="flex text-amber-400">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <Star key={i} size={14} fill="currentColor" />
                     ))}
@@ -55,10 +55,10 @@ export default function DistributorSection() {
 
           {/* Right Visual */}
           <div className="flex-1 relative group">
-            <div className="absolute inset-0 bg-maroon/5 rounded-full blur-3xl scale-125 group-hover:bg-gold/5 transition-colors duration-700" />
+            <div className="absolute inset-0 bg-maroon/5 rounded-full blur-3xl scale-125 group-hover:bg-maroon/10 transition-colors duration-700" />
             <div className="relative z-10 p-4 bg-gray-50/50 backdrop-blur-sm border-2 border-[#C41E3A] rounded-[2.5rem] shadow-2xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
               <Image 
-                src="/ecosystem.png" 
+                src="/herosection/Professional Security Solutions for UAE.webp" 
                 alt="Hikvision Security Ecosystem" 
                 width={800} 
                 height={800} 

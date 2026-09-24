@@ -1,26 +1,26 @@
-import { CheckCircle2, ShieldCheck, Zap, Users, Settings } from "lucide-react";
+import { ShieldCheck, Zap, Users, Settings } from "lucide-react";
 import Image from "next/image";
 
 export default function SecurityOverview() {
   const benefits = [
     {
       title: "Complete range of Hikvision products",
-      icon: <ShieldCheck className="text-gold" size={24} />,
+      icon: <ShieldCheck className="text-maroon" size={24} />,
       desc: "Full access to the latest security hardware and software."
     },
     {
       title: "Professional system integration",
-      icon: <Settings className="text-gold" size={24} />,
+      icon: <Settings className="text-maroon" size={24} />,
       desc: "Seamlessly connecting your security ecosystem."
     },
     {
       title: "Local technical support",
-      icon: <Users className="text-gold" size={24} />,
+      icon: <Users className="text-maroon" size={24} />,
       desc: "On-ground experts available across the UAE."
     },
     {
       title: "Customized security solutions",
-      icon: <Zap className="text-gold" size={24} />,
+      icon: <Zap className="text-maroon" size={24} />,
       desc: "Tailored architectures for your specific needs."
     }
   ];
@@ -29,7 +29,7 @@ export default function SecurityOverview() {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-maroon/5 -skew-x-12 translate-x-1/4 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-maroon/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
@@ -82,7 +82,7 @@ export default function SecurityOverview() {
               <div className="pt-10">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-maroon text-white font-black hover:bg-gold transition-all shadow-xl hover:shadow-maroon/20 group"
+                  className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-maroon text-white font-black hover:bg-[#a01830] transition-all shadow-xl hover:shadow-maroon/20 group"
                 >
                   Request a Solution Design
                   <Zap size={18} className="group-hover:fill-current transition-all" />
@@ -98,7 +98,7 @@ export default function SecurityOverview() {
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A] transform group-hover:scale-[1.02] transition-transform duration-700">
                 <div className="absolute inset-0 bg-gradient-to-tr from-maroon/20 to-transparent z-10" />
                 <Image
-                  src="/solutions_bg.png"
+                  src="/herosection/HikUae.webp"
                   alt="Hikvision Security UAE"
                   width={800}
                   height={1000}
@@ -106,29 +106,18 @@ export default function SecurityOverview() {
                   className="w-full h-[350px] sm:h-[500px] lg:h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
 
-                {/* Floating Badge */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 z-20">
-                  <div className="flex items-center gap-6">
-                    <div className="text-center border-r border-white/20 pr-6">
-                      <p className="text-4xl font-black text-gold">100%</p>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">Genuine</p>
+                {/* Floating Badge - Compact & Shows only on hover */}
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 p-2.5 sm:p-3.5 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20 z-20 opacity-0 translate-y-3 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-500 ease-out shadow-2xl">
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <div className="text-center border-r border-white/20 pr-3.5 sm:pr-4">
+                      <p className="text-xl sm:text-2xl font-black text-white leading-none mb-0.5">100%</p>
+                      <p className="text-[9px] font-bold uppercase tracking-widest text-maroon">Genuine</p>
                     </div>
                     <div>
-                      <p className="text-white font-bold">Authorized Distributor</p>
-                      <p className="text-white/60 text-sm">Official UAE Partner Network</p>
+                      <p className="text-white font-bold text-xs sm:text-sm leading-tight">Authorized Distributor</p>
+                      <p className="text-white/70 text-[10px] sm:text-xs">Official UAE Partner Network</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Decorative Cards */}
-              <div className="absolute -top-10 -right-10 w-48 h-48 bg-maroon rounded-3xl p-6 shadow-2xl hidden xl:flex flex-col justify-between transform group-hover:-translate-y-2 transition-transform duration-500">
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white">
-                  <CheckCircle2 size={24} />
-                </div>
-                <div>
-                  <p className="text-3xl font-black text-white">24/7</p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">Support</p>
                 </div>
               </div>
             </div>

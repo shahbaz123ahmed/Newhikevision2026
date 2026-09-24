@@ -33,7 +33,7 @@ export default function SupportSection() {
       {/* Abstract Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-maroon rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold rounded-full blur-[150px] translate-y-1/2 -translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-maroon rounded-full blur-[150px] translate-y-1/2 -translate-x-1/3" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -68,7 +68,7 @@ export default function SupportSection() {
                   <div className="text-maroon group-hover:text-white transition-colors">
                     {step.icon}
                   </div>
-                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gold flex items-center justify-center text-maroon font-black text-sm group-hover:bg-white group-hover:scale-110 transition-all">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center font-black text-sm group-hover:bg-white group-hover:text-maroon group-hover:scale-110 transition-all shadow-md">
                     {step.number}
                   </div>
                 </div>
@@ -84,7 +84,7 @@ export default function SupportSection() {
 
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-[#C41E3A] to-[#A01830] rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--brand-gold)_0%,_transparent_50%)] opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_transparent_50%)] opacity-20 pointer-events-none" />
           
           <div className="flex-1 text-center md:text-left">
             <h4 className="text-2xl md:text-3xl font-black mb-2 text-white">Need Immediate Assistance?</h4>
@@ -94,7 +94,7 @@ export default function SupportSection() {
           <div className="flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto">
             <a 
               href="tel:+971509893134" 
-              className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-white text-maroon font-black text-lg hover:bg-gold transition-all transform hover:-translate-y-1 shadow-xl w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-white text-maroon font-black text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 shadow-xl w-full sm:w-auto justify-center"
             >
               <Phone fill="currentColor" size={20} />
               +971 50 989 3134

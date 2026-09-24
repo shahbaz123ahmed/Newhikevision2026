@@ -12,7 +12,7 @@ export default function WhyChooseUs() {
       title: "Expert Team",
       desc: "Our certified professionals bring years of experience in security system installation and maintenance.",
       icon: <Users size={32} />,
-      color: "gold"
+      color: "maroon"
     },
     {
       title: "Guaranteed Results",
@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reasons.map((reason, i) => (
             <div key={i} className="group relative p-10 rounded-[3rem] bg-gray-50 dark:bg-zinc-900 border border-transparent hover:border-maroon/20 hover:bg-white dark:hover:bg-zinc-800 transition-all duration-500 shadow-sm hover:shadow-2xl">
-              <div className={`w-20 h-20 rounded-2xl ${reason.color === 'maroon' ? 'bg-maroon/10 text-maroon' : 'bg-gold/10 text-gold'} flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm`}>
+              <div className="w-20 h-20 rounded-2xl bg-maroon/10 text-maroon flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
                 {reason.icon}
               </div>
               
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
                 {reason.desc}
               </p>
 
-              <div className="flex items-center gap-2 text-sm font-black text-gray-300 group-hover:text-gold transition-colors tracking-widest uppercase">
+              <div className="flex items-center gap-2 text-sm font-black text-gray-300 group-hover:text-maroon transition-colors tracking-widest uppercase">
                 Excellence Guaranteed <ArrowUpRight size={16} />
               </div>
 
@@ -69,10 +69,10 @@ export default function WhyChooseUs() {
 
         {/* Global UAE Presence Indicator */}
         <div className="mt-24 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] bg-maroon relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--brand-gold)_0%,_transparent_60%)] opacity-20" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.15)_0%,_transparent_60%)] opacity-20" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-white text-center md:text-left">
             <div>
-              <p className="text-gold font-black uppercase tracking-[0.3em] text-xs mb-4">Strategic Locations</p>
+              <p className="text-rose-200 font-black uppercase tracking-[0.3em] text-xs mb-4">Strategic Locations</p>
               <h4 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">Premier Security Partner Across UAE</h4>
               <p className="text-white/70 max-w-xl text-lg">Serving Dubai, Abu Dhabi, Sharjah, and all northern emirates with rapid deployment and localized expert support.</p>
             </div>
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                    <img src={`https://i.pravatar.cc/150?u=${i}`} alt="Expert" className="w-full h-full object-cover" />
                 </div>
               ))}
-              <div className="w-16 h-16 rounded-full border-4 border-maroon bg-gold flex items-center justify-center text-maroon font-black text-xs z-10 shadow-xl">
+              <div className="w-16 h-16 rounded-full border-4 border-maroon bg-white flex items-center justify-center text-maroon font-black text-xs z-10 shadow-xl">
                 +25
               </div>
             </div>

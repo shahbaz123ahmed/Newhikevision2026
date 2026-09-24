@@ -43,12 +43,12 @@ export default function ScrollToTop() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" style={{ animationDuration: '2s' }}></div>
         
         {/* Border Glow */}
-        <div className="absolute inset-0 border border-white/20 rounded-2xl group-hover:border-gold/50 transition-colors"></div>
+        <div className="absolute inset-0 border border-white/20 rounded-2xl group-hover:border-rose-400/50 transition-colors"></div>
 
         {/* Arrow Icon */}
         <div className="relative z-10 flex flex-col items-center">
             <ChevronUp className="w-6 h-6 transition-transform duration-500 group-hover:-translate-y-1" />
-            <div className="w-1 h-1 bg-gold rounded-full mt-0.5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+            <div className="w-1 h-1 bg-white rounded-full mt-0.5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
         </div>
         
         {/* Tooltip */}

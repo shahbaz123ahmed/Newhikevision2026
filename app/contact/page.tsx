@@ -48,12 +48,12 @@ export default function ContactPage() {
           </div>
           
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-gold/10 border border-gold/20 rounded-full mb-8">
-              <MessageSquare size={14} className="text-gold" />
-              <span className="text-gold font-black uppercase tracking-[0.25em] text-[10px]">Contact Hikvision Support</span>
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-maroon/20 border border-maroon/30 rounded-full mb-8">
+              <MessageSquare size={14} className="text-maroon" />
+              <span className="text-maroon font-black uppercase tracking-[0.25em] text-[10px]">Contact Hikvision Support</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
-              Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold">Touch</span>
+              Get In <span className="text-maroon">Touch</span>
             </h1>
             <p className="text-gray-400 text-lg font-bold uppercase tracking-widest max-w-2xl mb-12">
                We're here to help with your security camera needs. Expert consultation for the UAE's leading surveillance technology.
@@ -79,8 +79,8 @@ export default function ContactPage() {
                </div>
             </div>
 
-            <div className="bg-white rounded-[40px] p-8 border border-gray-100 shadow-xl shadow-gray-200/50 group hover:border-gold/20 transition-all duration-500">
-               <div className="w-14 h-14 rounded-2xl bg-gold/5 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-white transition-all">
+            <div className="bg-white rounded-[40px] p-8 border border-gray-100 shadow-xl shadow-gray-200/50 group hover:border-maroon/20 transition-all duration-500">
+               <div className="w-14 h-14 rounded-2xl bg-maroon/5 flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-all">
                   <Mail size={24} />
                </div>
                <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-2">Email Support</h3>
@@ -214,7 +214,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-[60px] p-4 border border-gray-100 shadow-2xl shadow-gray-200/50 overflow-hidden">
              <div className="p-8 text-center">
                 <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tight mb-4">Our <span className="text-maroon">Location</span></h2>
-                <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
+                <div className="h-1 w-20 bg-maroon mx-auto rounded-full" />
              </div>
              <div className="h-[500px] w-full rounded-[40px] overflow-hidden grayscale brightness-90 hover:grayscale-0 transition-all duration-1000 border border-gray-100">
                <iframe 

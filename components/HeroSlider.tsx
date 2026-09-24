@@ -8,18 +8,18 @@ import { ArrowRight, PhoneCall, Shield, ChevronLeft, ChevronRight } from 'lucide
 const posters = [
   {
     id: 1,
-    image: '/hero.png',
+    image: '/herosection/Leading UAE.webp',
     tag: 'Official Platinum Distributor',
     title: 'LEADING UAE IN',
     subtitle: 'SECURITY',
     desc: 'The region\'s most trusted provider of Hikvision solutions, delivering cutting-edge surveillance for government and private sectors.',
     cta1: 'Our Solutions',
     cta2: 'Contact Sales',
-    accent: 'gold'
+    accent: 'maroon'
   },
   {
     id: 2,
-    image: '/poster1.png',
+    image: '/herosection/Smart cities.webp',
     tag: 'AI-Driven Intelligence',
     title: 'SMARTER CITIES',
     subtitle: 'SAFER LIVES',
@@ -30,18 +30,18 @@ const posters = [
   },
   {
     id: 3,
-    image: '/poster.jpeg',
+    image: '/herosection/Uncompremossied production.webp',
     tag: 'Premium Access Control',
     title: 'UNCOMPROMISED',
     subtitle: 'PROTECTION',
     desc: 'State-of-the-art biometric and facial recognition systems designed for the unique security needs of Dubai and Abu Dhabi.',
     cta1: 'View Products',
     cta2: 'Get Quote',
-    accent: 'gold'
+    accent: 'maroon'
   },
   {
     id: 4,
-    image: '/poster3.png',
+    image: '/herosection/thermal..webp',
     tag: 'Thermal Innovation',
     title: 'THERMAL VISION',
     subtitle: 'REINVENTED',
@@ -52,14 +52,14 @@ const posters = [
   },
   {
     id: 5,
-    image: '/poster4.png',
+    image: '/herosection/Smart Home..webp',
     tag: 'Intelligent Living',
     title: 'SMART HOMES',
     subtitle: 'FUTURE-READY',
     desc: 'Seamlessly integrating Hik-Connect ecosystems into modern UAE residences for ultimate control and peace of mind.',
     cta1: 'Smart Home',
     cta2: 'Visit Store',
-    accent: 'gold'
+    accent: 'maroon'
   }
 ];
 
@@ -87,105 +87,113 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-[85vh] sm:h-screen min-h-[580px] sm:min-h-[700px] w-full overflow-hidden bg-[#C41E3A]">
-      {/* Slides */}
-      {posters.map((poster, index) => (
-        <div
-          key={poster.id}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === current
-            ? 'opacity-100 translate-x-0 z-10'
-            : index < current
-              ? 'opacity-0 -translate-x-full z-0'
-              : 'opacity-0 translate-x-full z-0'
+    <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[660px] md:min-h-[720px] sm:max-h-[960px]">
+      {posters.map((poster, index) => {
+        const isActive = index === current;
+        return (
+          <div
+            key={poster.id}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              isActive
+                ? 'opacity-100 translate-x-0 z-10'
+                : index < current
+                  ? 'opacity-0 -translate-x-full z-0 pointer-events-none'
+                  : 'opacity-0 translate-x-full z-0 pointer-events-none'
             }`}
-        >
-          <div className="absolute inset-0 overflow-hidden">
-            <Image
-              src={poster.image}
-              alt={poster.title}
-              fill
-              sizes="100vw"
-              className={`object-cover object-[75%_center] md:object-center transition-all duration-[2000ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
-                index === current ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
-              }`}
-              priority
-              quality={75}
-            />
-          </div>
+          >
+            {/* BACKGROUND IMAGE - Full slide coverage */}
+            <div className="absolute inset-0 overflow-hidden">
+              <Image
+                src={poster.image}
+                alt={poster.title}
+                fill
+                sizes="100vw"
+                className="object-cover object-[75%_center] sm:object-center transition-opacity duration-1000"
+                priority={index === 0}
+                quality={90}
+              />
+              {/* Partial shading around text for crisp visibility without darkening the rest of the image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+              <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+            </div>
 
-          {/* Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 md:bg-gradient-to-r md:from-black/85 md:via-black/45 md:to-transparent" />
+            {/* CONTENT - Left-aligned directly over the image, pushed down on mobile */}
+            <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-end sm:justify-center items-start text-left pb-8 sm:pb-0">
+              <div
+                className={`max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] transition-all duration-700 ease-out ${
+                  isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`}
+              >
+                {/* Tag / Category */}
+                <div className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-[0.25em] mb-2 sm:mb-3 text-maroon">
+                  {poster.tag}
+                </div>
 
-          {/* Content */}
-          <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-12 md:pb-0 md:items-center pt-24 md:pt-24">
-            <div className={`max-w-3xl text-white transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[400ms] ${
-              index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-              <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-[9px] sm:text-xs font-bold uppercase tracking-widest mb-3 sm:mb-6 ${poster.accent === 'gold' ? 'bg-gold/20 border-gold/30 text-gold' : 'bg-maroon/20 border-maroon/30 text-maroon'}`}>
-                <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>{poster.tag}</span>
-              </div>
+                {/* Main Heading */}
+                <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-4 leading-tight sm:leading-[1.05]">
+                  {poster.title}{" "}
+                  <span className="text-maroon">{poster.subtitle}</span>
+                </h1>
 
-              <h1 className="text-2xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-2 sm:mb-4 leading-[0.95] sm:leading-[0.9]">
-                {poster.title} <br />
-                <span className={poster.accent === 'gold' ? 'text-gold' : 'text-maroon'}>{poster.subtitle}</span>
-              </h1>
+                {/* Description */}
+                <p className="text-xs sm:text-base md:text-lg text-gray-200 mb-5 sm:mb-8 leading-relaxed max-w-lg sm:max-w-xl">
+                  {poster.desc}
+                </p>
 
-              <p className="text-xs sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-10 leading-relaxed max-w-xl opacity-90">
-                {poster.desc}
-              </p>
-
-              <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-5">
-                <Link
-                  href="/products"
-                  className={`inline-flex justify-center items-center gap-2 sm:gap-3 px-5 py-3 sm:px-10 sm:py-5 rounded-full text-xs sm:text-lg font-bold transition-all shadow-2xl ${poster.accent === 'gold'
-                    ? 'bg-gold text-maroon hover:bg-white'
-                    : 'bg-maroon text-white hover:bg-gold hover:text-maroon'
-                    }`}
-                >
-                  {poster.cta1}
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex justify-center items-center gap-2 sm:gap-3 px-5 py-3 sm:px-10 sm:py-5 rounded-full text-xs sm:text-lg font-bold border border-white/20 backdrop-blur-xl text-white hover:bg-white/10 transition-all"
-                >
-                  {poster.cta2}
-                  <PhoneCall className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
-                </Link>
+                {/* Action Buttons */}
+                <div className="flex items-center justify-start gap-3 sm:gap-4 mb-2 sm:mb-0">
+                  <Link
+                    href="/products"
+                    className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95"
+                  >
+                    {poster.cta1}
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 backdrop-blur-xl text-white hover:bg-white/10 active:scale-95 transition-all"
+                  >
+                    {poster.cta2}
+                    <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
-      {/* Navigation Controls - Responsive positioning */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 md:left-auto md:right-[72px] lg:right-[120px] top-1/2 md:top-auto md:bottom-12 -translate-y-1/2 md:translate-y-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md z-30"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 md:right-6 lg:right-12 top-1/2 md:top-auto md:bottom-12 -translate-y-1/2 md:translate-y-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md z-30"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={20} />
-      </button>
-
-      {/* Indicators - Hidden on extra small devices to avoid clutter */}
-      <div className="absolute bottom-12 left-6 sm:left-12 z-30 hidden sm:flex gap-3">
-        {posters.map((_, i) => (
+        {/* Navigation Controls - Desktop Only */}
+        <div className="hidden sm:flex items-center">
           <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1 transition-all duration-500 rounded-full ${i === current ? 'w-12 bg-gold' : 'w-4 bg-white/30'}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+            onClick={prevSlide}
+            className="absolute right-[72px] lg:right-[120px] bottom-10 sm:bottom-12 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md z-30"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 sm:right-6 lg:right-12 bottom-10 sm:bottom-12 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all backdrop-blur-md z-30"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
+        {/* Indicators - Bottom Middle on Mobile, Bottom Left on Desktop */}
+        <div className="flex absolute bottom-3 sm:bottom-10 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-10 lg:left-16 xl:left-20 z-30 gap-1.5 sm:gap-3">
+          {posters.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1 transition-all duration-500 rounded-full ${
+                i === current ? 'w-6 sm:w-12 bg-maroon' : 'w-2 sm:w-4 bg-white/30'
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
     </section>
   );
 }

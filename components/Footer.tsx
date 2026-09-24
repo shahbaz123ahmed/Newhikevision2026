@@ -69,7 +69,7 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-br from-gray-50 via-white to-maroon/10 text-gray-900 overflow-hidden">
 
       {/* Decorative top accent line */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-maroon via-gold to-maroon" />
+      <div className="h-[3px] w-full bg-gradient-to-r from-[#A01830] via-maroon to-[#A01830]" />
 
       {/* Subtle grid pattern */}
       <div

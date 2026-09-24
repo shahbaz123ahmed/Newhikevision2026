@@ -3,9 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import ConditionalLayout from "@/components/ConditionalLayout";
 import ScrollToTop from "@/components/ScrollToTop";
+import { generateLocalBusinessJsonLd, generateWebsiteJsonLd, SITE_URL, SITE_NAME } from "@/lib/seo";
 import "./globals.css";
-
-const SITE_URL = "https://hikvisionuae.ae";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -83,35 +82,8 @@ export const metadata: Metadata = {
   category: "Security Technology",
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
-  name: "Hikvision UAE",
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo.webp`,
-  description:
-    "Official authorized distributor of Hikvision security cameras, CCTV systems, NVR, PTZ cameras, access control and AI surveillance solutions in the UAE.",
-  telephone: "+971509693134",
-  email: "sales@hikvisionuae.ae",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "No. 12, Al Khabaisi, Abu Hail",
-    addressLocality: "Dubai",
-    addressCountry: "AE",
-    postalCode: "00000",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 25.285873,
-    longitude: 55.325986,
-  },
-  openingHours: "Mo-Fr 09:00-18:00",
-  priceRange: "$$",
-  areaServed: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "UAE"],
-  sameAs: [
-    "https://www.hikvision.com",
-  ],
-};
+const localBusinessSchema = generateLocalBusinessJsonLd();
+const websiteSchema = generateWebsiteJsonLd();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -130,14 +102,18 @@ export default function RootLayout({
 }>) {
   return (
       <html
-        lang="en"
+        lang="en-AE"
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         suppressHydrationWarning
       >
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ChevronRight, Building2, Store, HeartPulse, GraduationCap, ArrowRight, ShieldCheck, Target, Globe, Flame, Settings, Cpu } from 'lucide-react';
+import { ChevronRight, Building2, Store, HeartPulse, GraduationCap, Building, Home, Truck, Hotel, ArrowRight, ShieldCheck, Target, Globe, Flame, Settings, Cpu } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
@@ -89,15 +89,12 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
   const resolvedParams = await params;
   const pageMeta = solutionMeta[resolvedParams.solution];
 
-
-  
-  // High-quality Unsplash images for solutions
   const solutionsData: Record<string, any> = {
     manufacturing: {
       name: "Manufacturing Solution",
       subtitle: "Industrial security & monitoring in Dubai",
       description: "Secure your production lines, warehouses, and industrial facilities with our state-of-the-art manufacturing solutions. Ensure operational efficiency and worker safety.",
-      heroImg: "/Solutions/Manufacturing.png",
+      heroImg: "/navbar/Manufacture thumb.png",
       icon: Building2,
       benefits: ["Perimeter Protection", "Process Monitoring", "Thermal Detection", "Access Control"]
     },
@@ -105,7 +102,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       name: "Retail Solution",
       subtitle: "Smart business intelligence in Dubai",
       description: "Transform your retail space with intelligent video analytics. Loss prevention combined with customer behavior insights to drive sales and security.",
-      heroImg: "/Solutions/Retail.png",
+      heroImg: "/navbar/Retail Thumb.png",
       icon: Store,
       benefits: ["People Counting", "Heat Mapping", "POS Integration", "Queue Management"]
     },
@@ -113,7 +110,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       name: "Healthcare Solution",
       subtitle: "Patient safety & access control in Dubai",
       description: "Comprehensive security solutions tailored for hospitals and clinics. Protect sensitive areas, ensure patient safety, and manage staff access seamlessly.",
-      heroImg: "/Solutions/Healthcare.png",
+      heroImg: "/navbar/Health care thumb.png",
       icon: HeartPulse,
       benefits: ["Patient Monitoring", "Restricted Area Access", "Pharmacy Security", "Emergency Response"]
     },
@@ -121,15 +118,47 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       name: "Education Solution",
       subtitle: "Campus-wide security systems in Dubai",
       description: "Create a safe learning environment for students and staff. Scalable solutions from single schools to multi-campus universities.",
-      heroImg: "/Solutions/Education.png",
+      heroImg: "/navbar/education thumb.png",
       icon: GraduationCap,
       benefits: ["Campus Surveillance", "Visitor Management", "Emergency Alarms", "Vehicle Access"]
+    },
+    government: {
+      name: "Government Solution",
+      subtitle: "Public safety & critical infrastructure in UAE",
+      description: "Critical infrastructure protection, public safety monitoring, and secure government building management across Dubai, Abu Dhabi, and Northern Emirates.",
+      heroImg: "/navbar/government thumb.png",
+      icon: Building,
+      benefits: ["City Surveillance", "Traffic Management", "Data Center Security", "Perimeter Guarding"]
+    },
+    residential: {
+      name: "Residential Solution",
+      subtitle: "Smart home & villa security systems in UAE",
+      description: "Smart villa security, video intercoms, and integrated home automation engineered for modern UAE living and peace of mind.",
+      heroImg: "/navbar/residential thumb.png",
+      icon: Home,
+      benefits: ["Smart Video Intercoms", "Package & Vehicle Detection", "Access Control & Smart Locks", "Mobile Remote Management"]
+    },
+    logistics: {
+      name: "Logistics Solution",
+      subtitle: "Warehouse & fleet security management in UAE",
+      description: "Fleet management, warehouse optimization, dock management, and shipment tracking powered by AI-driven cameras.",
+      heroImg: "/navbar/logistic thumb.png",
+      icon: Truck,
+      benefits: ["LPR License Plate Recognition", "Dock & Bay Management", "Fleet Asset Tracking", "Warehouse Perimeter AI"]
+    },
+    hospitality: {
+      name: "Hospitality Solution",
+      subtitle: "Luxury hotel & resort security in Dubai",
+      description: "Guest safety, luxury hotel management, intelligent parking solutions, and frictionless check-in for premium resorts and hotels.",
+      heroImg: "/navbar/hospital thumb.png",
+      icon: Hotel,
+      benefits: ["Frictionless Face Check-in", "Pool & Public Area Safety", "VIP Customer Recognition", "Energy-Saving Smart Building"]
     },
     'thermal-imaging-cameras': {
       name: "Thermal Imaging",
       subtitle: "Precision Temperature Intelligence in UAE",
-      description: "Hikvision's Thermal Imaging technology revolutionizes safety in Dubai and Abu Dhabi by visualizing heat. Beyond simple surveillance, these systems detect early-stage fires, monitor critical industrial equipment for overheating, and provide long-range perimeter protection that remains effective in complete darkness, thick smoke, or heavy fog.",
-      heroImg: "no-image",
+      description: "Hikvision's Thermal Imaging technology revolutionizes safety in Dubai and Abu Dhabi by visualizing heat. Beyond simple surveillance, these systems detect early-stage fires, monitor critical industrial equipment for overheating, and provide long-range perimeter protection.",
+      heroImg: "/herosection/thermal..webp",
       icon: Flame,
       benefits: [
         "Proactive Fire Prevention",
@@ -147,8 +176,8 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
     'ptz-surveillance-systems': {
       name: "PTZ Surveillance",
       subtitle: "360° High-Performance Tracking in Dubai",
-      description: "Our Pan-Tilt-Zoom (PTZ) surveillance systems provide unmatched coverage for wide-area monitoring in the UAE. Featuring powerful optical zoom and rapid movement, these cameras are the backbone of security for airports, stadiums, and urban centers across Dubai. With AI-driven auto-tracking, no movement goes unobserved.",
-      heroImg: "no-image",
+      description: "Our Pan-Tilt-Zoom (PTZ) surveillance systems provide unmatched coverage for wide-area monitoring in the UAE. Featuring powerful optical zoom and rapid movement, these cameras are the backbone of security for airports, stadiums, and urban centers across Dubai.",
+      heroImg: "/navbar/securitysolution.png",
       icon: Settings,
       benefits: [
         "Unrivaled 360° Coverage",
@@ -166,8 +195,8 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
     'ai-powered-smart-cameras': {
       name: "AI Smart Cameras",
       subtitle: "Deep Learning Security Analytics for UAE",
-      description: "Step into the future of security with Hikvision AI Smart Cameras. By leveraging deep learning algorithms, these cameras go beyond recording to understanding. They can distinguish between people and vehicles, count footfall for retail intelligence in Dubai, and even identify unauthorized behavior in real-time, providing true operational intelligence.",
-      heroImg: "no-image",
+      description: "Step into the future of security with Hikvision AI Smart Cameras. By leveraging deep learning algorithms, these cameras go beyond recording to understanding. They can distinguish between people and vehicles, count footfall for retail intelligence in Dubai, and even identify unauthorized behavior in real-time.",
+      heroImg: "/navbar/Network products.png",
       icon: Cpu,
       benefits: [
         "Significant False Alarm Reduction",
@@ -188,7 +217,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
     name: "Enterprise Solution",
     subtitle: "Comprehensive business security",
     description: "Tailored security solutions for your specific industry needs. Protect your assets and optimize your operations.",
-    heroImg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
+    heroImg: "/herosection/Tailored Security For Every Industry..png",
     icon: Building2,
     benefits: ["Custom Integration", "Scalable Architecture", "24/7 Monitoring", "Advanced Analytics"]
   };
@@ -197,75 +226,65 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
 
   return (
     <div className="min-h-screen bg-brand-light pb-0 font-sans">
-      {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100 pt-32 pb-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400">
-            <Link href="/" className="hover:text-maroon transition-colors">Home</Link>
-            <ChevronRight size={12} />
-            <Link href="/solutions" className="hover:text-maroon transition-colors">Solutions</Link>
-            <ChevronRight size={12} />
-            <span className="text-maroon capitalize">{resolvedParams.solution}</span>
+      {/* Landscape Hero Section */}
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[680px] md:min-h-[720px] sm:max-h-[960px]">
+        {solutionData.heroImg && solutionData.heroImg !== 'no-image' ? (
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={solutionData.heroImg}
+              alt={solutionData.name}
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+            <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
           </div>
-        </div>
-      </div>
+        ) : (
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+        )}
 
-      {/* Premium Industry Hero */}
-      <section className="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden page-hero">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className={`grid grid-cols-1 ${solutionData.heroImg !== 'no-image' ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-16 items-center`}>
-            {/* Text Content */}
-            <div className={`flex flex-col justify-center ${solutionData.heroImg === 'no-image' ? 'max-w-4xl mx-auto text-center items-center' : ''}`}>
-              <div className="w-16 h-16 bg-white/5 backdrop-blur-md rounded-2xl flex items-center justify-center mb-10 shadow-sm border border-white/10 text-gold">
-                <IconComponent size={32} strokeWidth={1.5} />
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 text-gold font-black text-[10px] uppercase tracking-[0.3em] mb-8 w-max border border-gold/30">
-                <ShieldCheck size={14} />
-                <span>Hikvision Official Solution</span>
-              </div>
-              <h1 className="text-2xl sm:text-4xl md:text-7xl font-black text-white mb-8 uppercase tracking-tight leading-[0.95] sm:leading-[0.85]">
-                {solutionData.name.split(' ')[0]} <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">
-                   {solutionData.name.split(' ').slice(1).join(' ')}
-                </span>
-              </h1>
-              <p className={`text-xl text-white/60 font-medium leading-relaxed max-w-xl ${solutionData.heroImg === 'no-image' ? 'border-l-0 pl-0' : 'border-l-4 border-gold pl-8'} mb-12`}>
-                {solutionData.description}
-              </p>
-              
-              {resolvedParams.solution !== 'ai-powered-smart-cameras' && 
-               resolvedParams.solution !== 'ptz-surveillance-systems' && 
-               resolvedParams.solution !== 'thermal-imaging-cameras' && (
-                <div className="flex items-center gap-4">
-                  <button className="bg-white text-maroon px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-gold transition-all shadow-2xl active:scale-95 inline-flex items-center gap-2">
-                    <span>Explore Features</span>
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-              )}
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-center items-start text-left pb-8 sm:pb-0 z-10">
+          <div className="max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            <div className="flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[10px] sm:text-xs mb-3 sm:mb-4 bg-white/5 w-fit px-3.5 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight size={12} className="text-white/30" />
+              <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
+              <ChevronRight size={12} className="text-white/30" />
+              <span className="text-white/60 capitalize">{resolvedParams.solution}</span>
             </div>
 
-            {/* Image Content */}
-            {solutionData.heroImg !== 'no-image' && (
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gold/10 rounded-[60px] blur-[100px] animate-pulse" />
-                <div className="relative h-[300px] sm:h-[450px] md:h-[550px] overflow-hidden rounded-[2.5rem] md:rounded-[60px] shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-                  <img 
-                    src={solutionData.heroImg} 
-                    alt={solutionData.name} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-10 sm:left-10 sm:right-auto z-20 bg-white/5 backdrop-blur-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-l-4 border-gold max-w-none sm:max-w-xs border border-white/10">
-                    <p className="text-sm font-black text-white uppercase tracking-widest mb-2">Trusted Solution</p>
-                    <p className="text-xs text-white/50 font-medium leading-relaxed">Deployed across top UAE facilities for maximum security and operational excellence.</p>
-                  </div>
-                </div>
-              </div>
-            )}
+            <div className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-[0.25em] mb-2 sm:mb-3 text-maroon">
+              Hikvision Official Solution
+            </div>
+
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-4 leading-tight sm:leading-[1.05]">
+              {solutionData.name.split(' ')[0]}{" "}
+              <span className="text-maroon">{solutionData.name.split(' ').slice(1).join(' ')}</span>
+            </h1>
+
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 mb-5 sm:mb-8 leading-relaxed max-w-lg sm:max-w-xl">
+              {solutionData.description}
+            </p>
+
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-2 sm:mb-0">
+              <Link
+                href="/contact"
+                className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95"
+              >
+                Get Solution Design
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </Link>
+              <a
+                href="/Download%20Pdf.pdf"
+                download
+                className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold border border-white/20 backdrop-blur-xl text-white hover:bg-white/10 active:scale-95 transition-all"
+              >
+                Download PDF
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -279,7 +298,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
             {/* Benefits Cards */}
             <div className="lg:col-span-7">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight mb-4">Key Benefits</h2>
-              <div className="w-20 h-1 bg-gold mb-12 rounded-full" />
+              <div className="w-20 h-1 bg-maroon mb-12 rounded-full" />
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {solutionData.benefits.map((benefit: string, index: number) => (
@@ -298,7 +317,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
             
             {/* Regional Success & Consultation Card */}
             <div className="lg:col-span-5 relative">
-              <div className="absolute -inset-10 bg-gold/5 rounded-full blur-[100px]" />
+              <div className="absolute -inset-10 bg-maroon/5 rounded-full blur-[100px]" />
               <div className="relative bg-white p-10 md:p-12 rounded-[40px] border border-gray-100 shadow-2xl z-10 overflow-hidden">
                 {/* Decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-maroon/5 rounded-bl-full" />
@@ -310,7 +329,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
                 
                 <div className="space-y-8 mb-10">
                   <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-maroon/10 flex items-center justify-center text-maroon shrink-0">
                       <Target size={28} />
                     </div>
                     <div>
@@ -332,7 +351,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
 
                 <div className="p-6 bg-gray-50 rounded-3xl border border-gray-100 mb-10">
                    <div className="flex items-center gap-3 mb-3">
-                      <ShieldCheck className="text-gold" size={18} />
+                      <ShieldCheck className="text-maroon" size={18} />
                       <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">Certified Partner Support</span>
                    </div>
                    <p className="text-xs text-gray-600 font-medium leading-relaxed">
@@ -343,7 +362,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
                 <div className="grid grid-cols-1">
                   <Link 
                     href="/contact"
-                    className="w-full bg-maroon text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-gold hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+                    className="w-full bg-maroon text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#a01830] transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                   >
                     Get Free Design Support
                     <ArrowRight size={18} />
@@ -366,7 +385,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {solutionData.features.map((feature: any, i: number) => (
-                <div key={i} className="p-8 rounded-[40px] bg-brand-light border border-gray-100 hover:border-gold transition-all duration-300">
+                <div key={i} className="p-8 rounded-[40px] bg-brand-light border border-gray-100 hover:border-maroon/30 transition-all duration-300">
                   <div className="w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center font-black mb-6 shadow-lg shadow-maroon/20">
                     {i + 1}
                   </div>
@@ -382,12 +401,12 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
       {/* Final CTA Full Width */}
       <section className="py-24 page-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-maroon/10 rounded-full blur-[150px]" />
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">Ready to <span className="text-gold">Upgrade?</span></h2>
+           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">Ready to <span className="text-maroon">Upgrade?</span></h2>
            <p className="text-white/60 text-xl font-medium mb-12">Connect with our Dubai based technical team for a free site survey and solution design.</p>
-           <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-white text-maroon rounded-full font-black uppercase tracking-widest hover:bg-gold transition-all active:scale-95 shadow-2xl">
+           <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-[#a01830] transition-all active:scale-95 shadow-2xl">
               Get Started Now <ArrowRight size={20} />
            </Link>
         </div>
@@ -421,7 +440,7 @@ export default async function SolutionSubPage({ params }: { params: Promise<{ so
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight">
                   FAQ — <span className="text-maroon">{solutionData.name}</span>
                 </h2>
-                <div className="w-20 h-1 bg-gold mx-auto rounded-full mt-6" />
+                <div className="w-20 h-1 bg-maroon mx-auto rounded-full mt-6" />
               </div>
               <div className="space-y-6">
                 {pageMeta.faqs.map(({ q, a }: { q: string; a: string }, i: number) => (

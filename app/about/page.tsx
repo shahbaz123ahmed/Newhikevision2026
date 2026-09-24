@@ -6,29 +6,31 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white pt-24">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[65vh] sm:h-[calc(100vh-85px)] min-h-[420px] sm:min-h-[600px] flex items-end pb-4 sm:pb-0 sm:items-center pt-16 sm:pt-24 overflow-hidden mb-16">
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[680px] md:min-h-[720px] sm:max-h-[960px] mb-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/hero.png"
+            src="/navbar/securing.png"
             alt="About Hikvision UAE" 
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
         </div>
         
-        <div className="w-[95%] max-w-[1600px] mx-auto relative z-10">
-          <div className="max-w-3xl space-y-6 pl-4 lg:pl-8">
-            <div className="flex items-center gap-3">
-              <div className="h-px w-12 bg-gold" />
-              <span className="text-gold font-black uppercase tracking-[0.3em] text-xs">Hikvision UAE Official</span>
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-center items-start text-left pb-8 sm:pb-0 z-10">
+          <div className="max-w-xl lg:max-w-3xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
+              <div className="h-px w-8 bg-maroon" />
+              <span className="text-maroon font-black uppercase tracking-[0.25em] text-xs sm:text-sm">Hikvision UAE Official</span>
             </div>
             
-            <h1 className="text-2xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] sm:leading-[0.85]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 sm:mb-4 leading-tight sm:leading-[1.05]">
               Securing the UAE <br />
-              With <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-gold">Intelligence.</span>
+              <span className="text-maroon">With Intelligence.</span>
             </h1>
-            <p className="text-white/80 text-sm sm:text-lg font-medium leading-relaxed max-w-2xl">
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-xl">
               As the premier authorized distributor of Hikvision technologies in the United Arab Emirates, we deliver world-class surveillance solutions to government, industrial, and residential sectors.
             </p>
           </div>
@@ -61,10 +63,10 @@ export default function AboutPage() {
             <div className="relative group cursor-pointer">
                <div className="aspect-[4/3] sm:aspect-square rounded-[2rem] sm:rounded-[3rem] bg-gray-100 dark:bg-white/5 border-2 border-[#C41E3A] p-3 sm:p-4 shadow-xl transition-all duration-700 group-hover:shadow-2xl">
                   <div className="w-full h-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden">
-                     <img src="/Solutions/Manufacturing.png" alt="Mission" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1" />
+                     <img src="/navbar/safety.png" alt="Mission" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-1" />
                   </div>
                </div>
-               <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl animate-pulse hidden sm:block"></div>
+               <div className="absolute -top-10 -right-10 w-40 h-40 bg-maroon/10 rounded-full blur-3xl animate-pulse hidden sm:block"></div>
             </div>
             
             <div>
@@ -104,9 +106,9 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter mb-6 sm:mb-8">
-            Building a Safer <span className="text-gold">Future</span> Together.
+            Building a Safer <span className="text-maroon">Future</span> Together.
           </h2>
-          <Link href="/contact" className="inline-flex items-center gap-2.5 sm:gap-3 px-6 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-white text-maroon font-black text-base sm:text-lg hover:bg-gold transition-all shadow-2xl">
+          <Link href="/contact" className="inline-flex items-center gap-2.5 sm:gap-3 px-6 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-white text-maroon font-black text-base sm:text-lg hover:bg-gray-100 transition-all shadow-2xl">
             Partner With Us
             <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
@@ -168,7 +170,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter">
               About <span className="text-maroon">Hikvision UAE</span>
             </h2>
-            <div className="w-20 h-1 bg-gold mx-auto rounded-full mt-6" />
+            <div className="w-20 h-1 bg-maroon mx-auto rounded-full mt-6" />
           </div>
           <div className="space-y-4 sm:space-y-5">
             {[

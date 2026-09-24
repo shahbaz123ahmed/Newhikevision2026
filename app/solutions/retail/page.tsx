@@ -7,36 +7,36 @@ export default function RetailSolutionPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 bg-white overflow-hidden">
-        <div className="absolute inset-0 lg:left-1/2 lg:w-1/2 h-full block">
-           <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/40 lg:bg-gradient-to-r lg:from-white lg:via-white/50 lg:to-transparent z-10" />
-           <img 
-             src="/Solutions/Retail.png" 
-             className="w-full h-full object-cover opacity-20 lg:opacity-100"
-             alt="Retail Security"
-           />
+      <section className="relative mt-[112px] sm:mt-[120px] md:mt-[120px] w-full overflow-hidden bg-[#0c0c0e] h-[72vh] min-h-[560px] max-h-[760px] sm:h-[82vh] md:h-[86vh] lg:h-[88vh] sm:min-h-[680px] md:min-h-[720px] sm:max-h-[960px]">
+        <div className="absolute inset-0">
+          <img 
+            src="/navbar/Retail Thumb.png" 
+            className="w-full h-full object-cover"
+            alt="Retail Security"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:hidden" />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-3/5 lg:w-1/2 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 relative z-20">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-maroon/5 border border-maroon/10 rounded-full mb-8">
+        <div className="relative h-full w-full max-w-[1700px] mx-auto px-4 sm:px-8 md:px-12 lg:px-14 flex flex-col justify-center items-start text-left pb-8 sm:pb-0 z-10">
+          <div className="max-w-xl lg:max-w-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-maroon/20 border border-maroon/30 rounded-full mb-3 sm:mb-4">
               <ShoppingBag size={14} className="text-maroon" />
-              <span className="text-maroon font-black uppercase tracking-[0.2em] text-[10px]">Retail Sector Solutions</span>
+              <span className="text-maroon font-black uppercase tracking-[0.25em] text-xs">Retail Sector Solutions</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tighter mb-8 leading-[0.9]">
-              Retail <br /> <span className="text-maroon">Excellence</span>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 sm:mb-4 leading-tight sm:leading-[1.05]">
+              Retail <span className="text-maroon">Excellence</span>
             </h1>
-            <p className="text-gray-500 text-lg font-bold uppercase tracking-widest mb-12 leading-relaxed">
-              Secure and Optimize Your Retail Space with Advanced Video Surveillance. AI-powered analytics and smart retail solutions for the UAE.
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 mb-5 sm:mb-8 leading-relaxed max-w-lg sm:max-w-xl">
+              Secure and optimize your retail space with advanced video surveillance, AI analytics, and business intelligence for the UAE.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="px-10 py-5 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-gold hover:text-maroon transition-all shadow-xl shadow-maroon/20 active:scale-95">
+            <div className="flex items-center justify-start gap-3 sm:gap-4 mb-2 sm:mb-0">
+              <Link href="/contact" className="inline-flex justify-center items-center gap-2 px-5 py-2.5 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl bg-maroon text-white hover:bg-[#a01830] active:scale-95">
                 Explore Features
-              </button>
-              <div className="flex items-center gap-4 px-6 border-l-2 border-gray-100">
-                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
-                   <ShieldCheck size={24} />
-                </div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Official <br />Hikvision UAE</p>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </Link>
+              <div className="flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/15">
+                <ShieldCheck size={16} className="text-maroon" />
+                <p className="text-xs font-black uppercase tracking-widest text-gray-200">Official Hikvision UAE</p>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function RetailSolutionPage() {
                  title: "Business Intelligence",
                  desc: "Leverage built-in analytics to track customer flow, analyze shopping patterns, and generate heat maps for optimized store layouts.",
                  icon: <BarChart3 size={32} />,
-                 color: "bg-gold"
+                 color: "bg-maroon"
                },
                {
                  title: "Integrated Security Solution",
@@ -90,9 +90,9 @@ export default function RetailSolutionPage() {
                  </div>
                  <h3 className="text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 group-hover:text-maroon transition-colors">{feat.title}</h3>
                  <p className="text-gray-500 font-medium leading-relaxed mb-8">{feat.desc}</p>
-                 <button className="flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[10px] hover:gap-4 transition-all">
+                 <Link href="/contact" className="flex items-center gap-2 text-maroon font-black uppercase tracking-widest text-[10px] hover:gap-4 transition-all">
                    Learn More <ArrowRight size={14} />
-                 </button>
+                 </Link>
                </div>
              ))}
           </div>
@@ -151,7 +151,7 @@ export default function RetailSolutionPage() {
           <div className="max-w-3xl mx-auto">
              <h2 className="text-5xl font-black text-gray-900 uppercase tracking-tight mb-8">Ready to Optimize Your <span className="text-maroon">Retail Space?</span></h2>
              <p className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-12">Expert retail security and analytics solutions across the UAE.</p>
-             <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-gold hover:text-maroon transition-all shadow-2xl active:scale-95">
+             <Link href="/contact" className="inline-flex items-center gap-3 px-12 py-6 bg-maroon text-white rounded-full font-black uppercase tracking-widest hover:bg-[#a01830] transition-all shadow-2xl active:scale-95">
                Request Free Consultation <ArrowRight size={20} />
              </Link>
           </div>

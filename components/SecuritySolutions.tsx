@@ -10,7 +10,7 @@ export default function SecuritySolutions() {
           <div className="flex-1 relative order-2 lg:order-1">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-[#C41E3A] group">
               <Image
-                src="/solutions_bg.png"
+                src="/herosection/Professional Hik.webp"
                 alt="Authorized Hikvision Distributor Showroom"
                 width={800}
                 height={600}
@@ -19,7 +19,7 @@ export default function SecuritySolutions() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-8 left-8 right-8 text-white pointer-events-none">
                 <div className="flex items-center gap-3 mb-2">
-                  <ShieldCheck className="text-gold" size={24} />
+                  <ShieldCheck className="text-rose-300" size={24} />
                   <span className="font-bold tracking-widest uppercase text-xs">Official Partner</span>
                 </div>
                 <p className="text-sm opacity-90">Visit our professional showroom in Dubai for a live demonstration.</p>
@@ -28,14 +28,14 @@ export default function SecuritySolutions() {
 
             {/* Stats Overlay */}
             <div className="absolute -bottom-10 -right-10 bg-maroon text-white p-8 rounded-3xl shadow-2xl hidden md:block z-20 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2">
-              <p className="text-4xl font-black mb-1 leading-none tracking-tighter text-gold">24/7</p>
+              <p className="text-4xl font-black mb-1 leading-none tracking-tighter text-white">24/7</p>
               <p className="text-xs font-bold uppercase tracking-widest opacity-80">Technical <br />Support</p>
             </div>
           </div>
 
           {/* Text Side */}
           <div className="flex-1 order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold font-bold text-xs uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon/10 border border-maroon/20 text-maroon font-bold text-xs uppercase tracking-widest mb-6">
               <ShieldCheck size={14} />
               Authorized Hikvision Distributor - UAE
             </div>
@@ -57,7 +57,7 @@ export default function SecuritySolutions() {
 
                 <a
                   href="tel:+971509893134"
-                  className="inline-flex items-center gap-4 text-2xl md:text-3xl font-black text-maroon hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-4 text-2xl md:text-3xl font-black text-maroon hover:text-[#a01830] transition-colors"
                 >
                   <div className="w-12 h-12 rounded-full bg-maroon/10 flex items-center justify-center text-maroon">
                     <Phone size={24} fill="currentColor" />

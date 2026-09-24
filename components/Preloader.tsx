@@ -32,8 +32,8 @@ export default function Preloader() {
       {/* Background Decorative Elements - Stronger Brand Colors */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-maroon/20 rounded-full blur-[150px] animate-pulse"></div>
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-maroon/5 via-transparent to-gold/5"></div>
-        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-maroon/5 via-transparent to-black/20"></div>
+        <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-maroon/10 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center max-w-sm w-full px-6">
@@ -46,19 +46,19 @@ export default function Preloader() {
             />
         </div>
 
-        {/* Percentage Display - Gold Gradient */}
+        {/* Percentage Display - White / Rose Gradient */}
         <div className="relative mb-8">
-            <span className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-gold to-gold/50 select-none tracking-tighter">
+            <span className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-rose-100 to-rose-200/50 select-none tracking-tighter">
                 {progress.toString().padStart(2, '0')}
             </span>
-            <span className="absolute -right-8 top-4 text-2xl font-black text-gold animate-pulse">%</span>
+            <span className="absolute -right-8 top-4 text-2xl font-black text-white/90 animate-pulse">%</span>
         </div>
 
         {/* Progress Bar Container */}
         <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden relative border border-white/5">
-            {/* Animated Progress Fill - Maroon to Gold */}
+            {/* Animated Progress Fill - Maroon to White */}
             <div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-maroon via-gold to-white transition-all duration-300 ease-out shadow-[0_0_20px_rgba(107,0,0,0.8)]"
+                className="absolute top-0 left-0 h-full bg-gradient-to-r from-maroon via-rose-400 to-white transition-all duration-300 ease-out shadow-[0_0_20px_rgba(196,30,58,0.8)]"
                 style={{ width: `${progress}%` }}
             ></div>
             
